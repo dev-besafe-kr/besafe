@@ -1,10 +1,5 @@
 bind = "0.0.0.0:8080"
 workers = 1
 name = "besafe"
-pidfile = "pidfile"
-errorlog = "errorlog"
-loglevel = "info"
-accesslog = "accesslog"
-access_log_format = '%(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"'
-certfile = "/web/.certbot/config/live/be-safe.kr/fullchain.pem"
-keyfile = "/web/.certbot/config/live/be-safe.kr/privkey.pem"
+certfile = "~/.certbot/config/live/be-safe.kr/fullchain.pem"
+keyfile = "~/.certbot/config/live/be-safe.kr/privkey.pem"
