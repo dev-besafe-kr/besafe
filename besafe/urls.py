@@ -17,6 +17,7 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path, include
 
 from besafe import views
@@ -34,9 +35,11 @@ urlpatterns = [
         "api",
         include(
             [
-                path("/consulting", ConsultingFormView.as_view()),
-                path("/partnership", PartnershipFormView.as_view()),
+                path("consulting", ConsultingFormView.as_view()),
+                path("partnership", PartnershipFormView.as_view()),
             ]
         ),
     ),
 ]
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
