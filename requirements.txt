@@ -1,5 +1,4 @@
 asgiref==3.7.2
--e git+https://github.com/hsol/besafe.git@205d9d91df27a70ad625c43a6f7b62155007d1d9#egg=besafe
 Django==4.2.3
 django-mysql==4.10.0
 gunicorn==20.1.0
