@@ -1,30 +1,7 @@
 @charset "utf-8";
+@import url('http://fonts.googleapis.com/earlyaccess/notosanskr.css');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@font-face {
-    font-family: 'Pretendard-ExtraBold';
-    src: url(../fonts/Pretendard-ExtraBold.otf);
-}
-@font-face {
-    font-family: 'Pretendard-Bold';
-    src: url(../fonts/Pretendard-Bold.otf);
-}
-@font-face {
-    font-family: 'Pretendard-Regular';
-    src: url(../fonts/Pretendard-Regular.otf);
-}
-@font-face {
-    font-family: 'Pretendard-Medium';
-    src: url(../fonts/Pretendard-Medium.otf);
-}
-@font-face {
-    font-family: 'Pretendard-Light';
-    src: url(../fonts/Pretendard-Light.otf);
-}
-@font-face {
-    font-family: 'Pretendard-ExtraLight';
-    src: url(../fonts/Pretendard-ExtraLight.otf);
-}
-
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
 html{
     font-size: 10px;
@@ -45,7 +22,8 @@ body{
     margin:0;
     padding:0;
     box-sizing: border-box;
-    font-family: 'Pretendard-Medium';
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
     overflow-x: hidden;
 }
 
@@ -304,13 +282,13 @@ footer .info-box .info{
     margin-top:0.7rem;
 }
 footer .info-box .info h5{
-    font-family: 'Pretendard-Bold';
+    font-family: 'Pretendard', sans-serif; font-weight:700;
     font-size: 1.6rem;
     color:#0e141e;
 }
 
 footer .info-box .info p{
-    font-family: 'Pretendard-Light';
+    font-family: 'Pretendard', sans-serif; font-weight:300;
     font-size: 1.3rem;
     color:#0e141e;
 }
@@ -340,7 +318,7 @@ footer .info-box .info .footer-list01 li:last-child::after{
     width:0;
 }
 footer .info-box .info .footer-list01 li a{
-    font-family: 'Pretendard-Light';
+    font-family: 'Pretendard', sans-serif; font-weight:300;
     font-size: 1.3rem;
     color:#0e141e;
 }
@@ -448,7 +426,7 @@ footer .sns-list li{
     border-bottom: 0.1rem solid #161616;
 }
 .modal-content .content-hd h2{
-    font-family: 'Pretendard-ExtraBold';
+    font-family: 'Pretendard', sans-serif; font-weight:800;
     font-size: 3.3rem;
     
 }

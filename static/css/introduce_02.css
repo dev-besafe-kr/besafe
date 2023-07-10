@@ -211,7 +211,8 @@ button:hover::before{
     .sec .top .title p{
         margin-top:4rem;
         
-        font-family: 'Pretendard-Regular';
+        font-family: 'Pretendard', sans-serif;
+        font-weight: 400;
         font-size: 1.6rem;
     }
     .sec .top .title span{
@@ -236,13 +237,15 @@ button:hover::before{
     }
 
     .sec .top .ceo p{
-        font-family: 'Pretendard-Regular';
+        font-family: 'Pretendard', sans-serif;
+        font-weight: 400;
     }
     .sec .top .ceo span{
         display: block;
         margin-top:1rem;
 
-        font-family: 'Pretendard-Regular';
+        font-family: 'Pretendard', sans-serif;
+        font-weight: 400;
     }
     .sec .top .ceo h5{
         margin-top:1.5rem;
