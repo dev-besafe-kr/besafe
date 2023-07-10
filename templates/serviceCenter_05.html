@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block head %}
+    <link href="/static/css/serviceCenter_05.css" rel="stylesheet">
+    <script src="/static/js/serviceCenter_05.js"></script>
+{% endblock %}
+{% block article %}
+    <section class="sec guide">
+        <div class="top">
+            <div class="title">
+                <h3>파트너 제휴</h3>
+                <h5>
+                    비세이프와<br>
+                    소중한 인연을 기대합니다.
+                </h5>
+                <p>
+                    보내주신 문의사항은<br>
+                    빠른 시일내에 확인 후 답변드리겠습니다.
+                </p>
+            </div>
+
+            <div class="table-wrap">
+                <span class="line"></span>
+                <table class="table">
+                    <tr>
+                        <td class="info">Add.</td>
+                        <td>세종특별자치시 조치원읍 으뜸길 177 1층</td>
+                    </tr>
+                    <tr>
+                        <td class="info">Tel.</td>
+                        <td>1533-8231</td>
+                    </tr>
+                    <tr>
+                        <td class="info">Fax.</td>
+                        <td>0508-920-7942</td>
+                    </tr>
+                    <tr>
+                        <td class="info">Mail.</td>
+                        <td>besafe.kr@gmail.com</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="bottom">
+            <form action="/api/partnership" method="POST" class="form">
+                {% csrf_token %}
+                <div class="form-wrap">
+                    <p>
+                        <strong>연락처</strong>
+                        <input name="phone" type="text" placeholder="전화/문자 가능한 연락처">
+                        <label></label>
+                    </p>
+                    <p>
+                        <strong>이메일</strong>
+                        <input name="email" type="email" placeholder="sample@besafe.com">
+                        <label></label>
+                    </p>
+                    <p>
+                        <strong>제안내용</strong>
+                        <input name="inquiry" class="contents" type="text" placeholder="제안 내용을 편하게 입력해주세요 :)">
+                        <label></label>
+                    </p>
+                </div>
+                <div class="submit-wrap">
+                    <input class="submit" type="submit" value="제안하기">
+                </div>
+            </form>
+        </div>
+
+    </section>
+{% endblock %}

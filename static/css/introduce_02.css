@@ -1,0 +1,261 @@
+
+.sec .sec-bg{
+    padding-top:17.6rem;
+    padding-bottom:11rem;
+    background-image: url(../images/introduce_02/bg.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.sec .top{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.sec .top .title{
+    overflow: hidden;
+}
+.sec .top .title h3{
+    font-family: 'NotoSansKR-Bold';
+    font-size: 8rem;
+    color:var(--black);
+    line-height: 9.8rem;
+    overflow: hidden;
+
+    animation: opening 1s ease-in-out;
+}
+
+.sec .top .title p{
+
+    margin-top:6.4rem;
+    
+    font-family: 'NotoSansKR-Regular';
+    font-size: 2.4rem;
+    color:var(--black);
+    
+    animation: opening2 1.5s  ease-in-out;
+}
+.sec .top .title span{
+    display:block;
+    margin-top:2.4rem;
+
+    font-size: 3.6rem;
+    color:var(--black);
+    animation: opening2 1.5s  ease-in-out;
+}
+
+.sec .top .title .introduceBtn{
+    position: relative;
+
+    margin-top:5rem;
+    
+    font-family: 'NotoSansKR-Regular';
+    font-size: 1.6rem;
+    color:var(--black);
+
+    width: fit-content;
+    height:6rem;
+    border-radius: 0;
+    border: 1px solid #cccccc90;
+    background-color: rgba(255, 255, 255, 0.2);
+    animation: opening2 1.5s  ease-in-out;
+}
+.sec .top .title .introduceBtn a{
+    display: block;
+    padding:1.8rem 1.4rem;
+    color:black;
+}
+
+button::before{
+    content: "";
+    display: inline-block;
+    z-index: 1;
+    opacity: .1;
+    position: absolute;
+    top: 0;
+    left: -5.7rem;
+    width: 4rem;
+    height: 100%;
+    background-color: var(--maincolor);
+    transform: skew(-30deg);
+    transition: all .8s;
+}
+
+button:hover::before{
+    left: 19rem;
+}
+
+.sec .top .ceo{
+    margin-top: 6.8rem;
+    text-align: right;
+    animation: opening3 2s  ease-in-out;
+}
+.sec .top .ceo{
+    margin-top:8rem;
+}
+
+.sec .top .ceo p{
+    font-family: 'NotoSansKR-Regular';
+    font-size: 1.8rem;
+    color:var(--black);
+}
+.sec .top .ceo span{
+    font-family: 'NotoSansKR-Regular';
+    font-size: 1.8rem;
+    color:var(--black);
+}
+.sec .top .ceo h5{
+    font-weight: lighter;
+    font-size: 3.6rem;
+    color:var(--black);
+}
+
+.sec .bottom .youtube{
+    margin:0 auto;
+}
+.sec .bottom .youtube iframe{
+    width:100vw;
+    height:66vw;
+}
+
+
+
+
+@keyframes opening{
+    from {
+        opacity:0;
+        transform:translateY(100px);
+    }
+    to {
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes opening2{
+    from {
+        opacity:0;
+        transform:translateY(150px);
+    }
+    to {
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+@keyframes opening3{
+    from {
+        opacity:0;
+        transform:translateY(250px);
+    }
+    to {
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+@media screen and (max-width:1280px){ 
+    .sec .top .title{
+        margin-left:3rem;
+    }
+    .sec .top .ceo{
+        text-align: left;
+        margin-left:3rem;
+        margin-bottom:10rem;
+    }
+}
+@media screen and (max-width:800px){ 
+    .sec .top .title{
+        width:90vw;
+    }
+    .sec .top .title h3{
+        font-size: 6rem;
+        line-height: 6.8rem;
+    }
+    
+    .sec .top .title p{
+        font-size: 2rem;
+    }
+    .sec .top .title span{
+        font-size: 2.4rem;
+    }
+    .sec .top .ceo p{
+        font-size: 1.2rem;
+    }
+    .sec .top .ceo span{
+        font-size: 1.2rem;
+    }
+    .sec .top .ceo h5{
+        font-size: 3rem;
+    }
+    
+}
+@media screen and (max-width:415px){ 
+    .sec .sec-bg{
+        padding-top:16rem;
+        padding-bottom:1rem;
+        background-image: url(../images/images_m/introduce_bg.png);
+        background-size:contain;
+    }
+
+    .sec .top .title{
+        width:100%;
+        margin-left:0;
+    }
+    .sec .top .title h3{
+        font-size: 4rem;
+        line-height: 3.5rem;
+    }
+
+    .sec .top .title p{
+        margin-top:4rem;
+        
+        font-family: 'Pretendard-Regular';
+        font-size: 1.6rem;
+    }
+    .sec .top .title span{
+        margin-top:2.2rem;
+
+        font-size: 1.4rem;
+    }
+
+    .sec .top .title .introduceBtn{
+        margin-top:3rem;
+        height:6rem;
+    }
+
+    .sec .top .ceo{
+        margin-top: 6.8rem;
+        text-align: right;
+        margin-left:0;
+        margin-bottom:0;
+    }
+    .sec .top .ceo{
+        margin-top:9rem;
+    }
+
+    .sec .top .ceo p{
+        font-family: 'Pretendard-Regular';
+    }
+    .sec .top .ceo span{
+        display: block;
+        margin-top:1rem;
+
+        font-family: 'Pretendard-Regular';
+    }
+    .sec .top .ceo h5{
+        margin-top:1.5rem;
+
+        font-size: 3rem;
+    }
+
+    .sec .bottom .youtube{
+        margin-top:5rem;
+    }
+    .sec .bottom .youtube iframe{
+        width:100%;
+        height:24rem;
+    }
+
+
+}

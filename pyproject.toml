@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "besafe"
+version = "0.1.0"
+description = ""
+authors = ["HansolLim <dev.hansollim@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^4.2.3"
+django-mysql = "^4.10.0"
+gunicorn = "^20.1.0"
+python-dotenv = "^1.0.0"
+mysqlclient = "^2.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
