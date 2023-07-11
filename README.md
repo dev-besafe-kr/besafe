@@ -1,11 +1,15 @@
 # GUIDE
 `Python 3.9` / `Django 4`
 
-## Develop
+
+## Settings
 ```
 pip install poetry
 poetry install
+```
 
+## Develop
+```
 python manage.py runserver
 ```
 
