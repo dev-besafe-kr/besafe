@@ -15,6 +15,5 @@ python manage.py runserver
 
 ## Production
 ```
-# Gunicorn
 gunicorn besafe:wsgi.application
 ```
