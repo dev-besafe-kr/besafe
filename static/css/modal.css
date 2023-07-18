@@ -48,10 +48,15 @@
     padding: 3rem 2.4rem;
     border-radius: 1rem;
     background-position: center center;
-
     box-shadow: 0 2rem 0.7rem -0.2rem rgba(0, 0, 0, 0.2);
+    background-size: 100%;
+    transition: background-size.5s;
 }
 
+#introModal .modal-content .intro-list01 > li:hover{
+    background-size: 120%;
+    
+}
 #introModal .modal-content .intro-list01 li h5 {
     font-family: 'Pretendard', sans-serif; font-weight:700;
     font-size: 2.4rem;
