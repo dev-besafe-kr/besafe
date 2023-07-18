@@ -35,11 +35,10 @@ urlpatterns = [
         "api",
         include(
             [
-                path("consulting", ConsultingFormView.as_view()),
-                path("partnership", PartnershipFormView.as_view()),
+                path("/consulting", ConsultingFormView.as_view()),
+                path("/partnership", PartnershipFormView.as_view()),
             ]
         ),
     ),
 ]
 urlpatterns += staticfiles_urlpatterns()
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
