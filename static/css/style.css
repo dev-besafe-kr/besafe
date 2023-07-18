@@ -394,13 +394,11 @@ header.type-m .main-logo img {
 .main-slider-sec .main-slider li .text h2 {
     font-family: 'Pretendard', sans-serif;
     font-weight: 200;
-    font-weight: lighter;
     font-size: 5rem;
     color: white;
 }
 
 .main-slider-sec .main-slider li .text h2 strong {
-    font-weight: lighter;
     font-size: 5rem;
     color: white;
 }
