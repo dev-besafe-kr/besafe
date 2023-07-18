@@ -41,14 +41,14 @@ bcrypt = ["bcrypt"]
 
 [[package]]
 name = "django-mysql"
-version = "4.10.0"
+version = "4.11.0"
 description = "Django-MySQL extends Django's built-in MySQL and MariaDB support their specific features not available on other databases."
 category = "main"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "django_mysql-4.10.0-py3-none-any.whl", hash = "sha256:ade1a224995848570c8394ee5b2e0d9575c0be186fe3f04eedc7ff4942d20252"},
-    {file = "django_mysql-4.10.0.tar.gz", hash = "sha256:a248da94ccefa02b912d5eb14015565d4c5cdf984023574e1e38abd12719c918"},
+    {file = "django_mysql-4.11.0-py3-none-any.whl", hash = "sha256:d4b2e9894465c37f40c1ea15c828c3cc4468c4d3ee6baed9a55775c297bd006e"},
+    {file = "django_mysql-4.11.0.tar.gz", hash = "sha256:16606debec965f8619413545d855dc2e5b3997ef6bc6cc2664cf8485a1016b69"},
 ]
 
 [package.dependencies]
