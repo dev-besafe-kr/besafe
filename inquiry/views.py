@@ -16,7 +16,11 @@ class ConsultingFormView(CreateView):
     def get_form_kwargs(self):
         form_kwargs = super().get_form_kwargs()
         form_kwargs["data"] = self.request.POST.dict()
-        form_kwargs["data"]["part"] = ",".join(self.request.POST.getlist("part"))
+        for k in self.request.POST.keys():
+            if not k.startswith("part"):
+                continue
+
+            form_kwargs["data"][k] = ",".join(self.request.POST.getlist(k))
         return form_kwargs
 
 
