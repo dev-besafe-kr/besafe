@@ -13,6 +13,12 @@ class ConsultingFormView(CreateView):
     def get_success_url(self):
         return self.request.path
 
+    def get_form_kwargs(self):
+        form_kwargs = super().get_form_kwargs()
+        form_kwargs["data"] = self.request.POST.dict()
+        form_kwargs["data"]["part"] = ",".join(self.request.POST.getlist("part"))
+        return form_kwargs
+
 
 class PartnershipFormView(CreateView):
     template_name = "success_json.json"
