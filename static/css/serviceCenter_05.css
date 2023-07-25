@@ -64,6 +64,9 @@
 
 .sec .bottom{
     margin-top:13.8rem;
+    background-color: #f4f6f893;
+    border-radius: 2rem;
+    padding:3rem;
 }
 
 .sec .bottom .form-wrap{
@@ -109,6 +112,7 @@
     width:59.1rem;
     border: 0;
     border-bottom: 0.1rem solid #d6dae1;
+    background-color: #f4f6f893;
 }
 
 .sec .bottom .form p input::placeholder{
@@ -117,7 +121,7 @@
 }
 .sec .bottom .form p .contents{
     width:128rem;
-    padding-bottom:36rem;
+    padding-bottom:6rem;
 }
 
 input:focus,
@@ -126,15 +130,16 @@ input:active{
 }
 
 .sec .bottom .form .submit-wrap{
-    width:100vw;
+    width:100%;
     text-align: center;
 }
 
 .sec .bottom .form .submit{
     width: fit-content;
-    padding:3rem 11rem;
+    padding:2rem 6rem;
     background-color: var(--maincolor);
     border: none;
+    border-radius: 1rem;
 
     font-family: 'Pretendard', sans-serif; font-weight:700;
     font-size: 2.4rem;
@@ -176,6 +181,9 @@ input:active{
     }
     .sec .top .table-wrap{
         margin-top:10rem;
+    }
+    .sec .bottom .form .submit-wrap{
+        width:100vw;
     }
 }
 @media screen and (max-width:415px){ 

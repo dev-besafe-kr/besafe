@@ -75,7 +75,7 @@ $(function(){
             var bottom_of_element = $(this).offset().top + $(this).outerHeight()/5;
             var bottom_of_window = $(window).scrollTop() + $(window).height();
             
-            if( bottom_of_window > bottom_of_element ){
+            if( bottom_of_window > bottom_of_element && bottom_of_element!=0){
                 var typingIdx = 0;
                 var typingTxt = "이유1. 사전 보증으로 최대 1억원 자금조달"; // 타이핑될 텍스트를 가져온다
                 typingTxt = typingTxt.split(""); // 한글자씩 자른다.
@@ -106,8 +106,10 @@ $(function(){
             
             var bottom_of_element = $(this).offset().top + $(this).outerHeight()/5;
             var bottom_of_window = $(window).scrollTop() + $(window).height();
+            console.log(bottom_of_window);
+            console.log(bottom_of_element);
             
-            if( bottom_of_window > bottom_of_element ){
+            if( bottom_of_window > bottom_of_element && bottom_of_element!=0){
                 var typingIdx = 0;
                 var typingTxt = "이유2. 특허권을 통해 저금리 자금조달"; // 타이핑될 텍스트를 가져온다
                 typingTxt = typingTxt.split(""); // 한글자씩 자른다.
@@ -140,7 +142,7 @@ $(function(){
             var bottom_of_element = $(this).offset().top + $(this).outerHeight()/5;
             var bottom_of_window = $(window).scrollTop() + $(window).height();
             
-            if( bottom_of_window > bottom_of_element ){
+            if( bottom_of_window > bottom_of_element && bottom_of_element!=0){
                 var typingIdx = 0;
                 var typingTxt = "이유3. 일반사업자와의 명백한 차이"; // 타이핑될 텍스트를 가져온다
                 typingTxt = typingTxt.split(""); // 한글자씩 자른다.
@@ -174,7 +176,7 @@ $(function(){
             var bottom_of_element = $(this).offset().top + $(this).outerHeight()/5;
             var bottom_of_window = $(window).scrollTop() + $(window).height();
             
-            if( bottom_of_window > bottom_of_element ){
+            if( bottom_of_window > bottom_of_element && bottom_of_element!=0){
                 var typingIdx = 0;
                 var typingTxt = "이유4. 세금 절세 효과."; // 타이핑될 텍스트를 가져온다
                 typingTxt = typingTxt.split(""); // 한글자씩 자른다.
@@ -204,7 +206,7 @@ $(function(){
             var bottom_of_element = $(this).offset().top + $(this).outerHeight()/5;
             var bottom_of_window = $(window).scrollTop() + $(window).height();
             
-            if( bottom_of_window > bottom_of_element ){
+            if( bottom_of_window > bottom_of_element && bottom_of_element!=0){
                 var typingIdx = 0;
                 var typingTxt = "이유5. 정부 지원사업 설계 & 기업인증에 활용"; // 타이핑될 텍스트를 가져온다
                 typingTxt = typingTxt.split(""); // 한글자씩 자른다.

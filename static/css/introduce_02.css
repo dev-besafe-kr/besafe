@@ -106,17 +106,17 @@ button:hover::before{
     color:var(--black);
 }
 .sec .top .ceo h5{
-    font-weight: lighter;
     font-size: 3.6rem;
     color:var(--black);
 }
 
 .sec .bottom .youtube{
     margin:0 auto;
+    height:aut
 }
 .sec .bottom .youtube iframe{
-    width:100vw;
-    height:66vw;
+    width:1280px;
+    height:720px;
 }
 
 
@@ -163,6 +163,10 @@ button:hover::before{
         text-align: left;
         margin-left:3rem;
         margin-bottom:10rem;
+    }
+    .sec .bottom .youtube iframe{
+        width:100vw;
+        height:50vw;
     }
 }
 @media screen and (max-width:800px){ 

@@ -1187,7 +1187,7 @@ header.type-m .main-logo img {
 
 .pg4-sec .top .right-area .circle {
 
-    animation: rotate_image 6s linear infinite;
+    animation: rotate_image 10s linear infinite;
     transform-origin: 50% 50%;
     width: 31.7rem;
     height: 31.7rem;
@@ -1364,6 +1364,7 @@ header.type-m .main-logo img {
 }
 
 .pg5-sec .pg5-list02 {
+    margin-top:1rem;
     width: 128rem;
 }
 
