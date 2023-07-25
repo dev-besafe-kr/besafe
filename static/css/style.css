@@ -85,7 +85,7 @@ button::before {
     height: 100%;
     background-color: #fff;
     transform: skew(-30deg);
-    transition: all .8s;
+    transition: all .4s;
 }
 button>a{
     z-index: 20 !important;
