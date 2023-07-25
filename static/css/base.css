@@ -85,7 +85,7 @@ button::before{
     height: 100%;
     background-color: #fff;
     transform: skew(-30deg);
-    transition: all .4s;
+    transition: all .8s;
 }
 button:hover::before{
     left: 190px;
