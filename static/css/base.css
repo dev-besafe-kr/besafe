@@ -87,9 +87,6 @@ button::before{
     transform: skew(-30deg);
     transition: all .8s;
 }
-button:hover::before{
-    left: 190px;
-}
 header.type-m button:hover::before{
     left: 400px;
 }
