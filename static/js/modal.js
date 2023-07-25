@@ -30,7 +30,7 @@ showModal = (modalId) => {
 
 $(function () {
     $.each(['show', 'hide'], function (i, ev) {
-        var el = $.fn[ev];
+        const el = $.fn[ev];
         $.fn[ev] = function () {
             this.trigger(ev);
             return el.apply(this, arguments);
@@ -58,7 +58,12 @@ $(function () {
     });
 
     $('.modal').on({
-        "show": function () {
+        "hide": function (e) {
+            if (this !== e.target) return false;
+
+            const $form = $(this).find("form");
+            if ($form.length === 0) return;
+            $form[0].reset();
         },
         "click": function (e) {
             if (e.target === $(this).get(0)) {

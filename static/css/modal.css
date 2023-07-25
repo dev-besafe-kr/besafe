@@ -387,7 +387,7 @@
 
 }
 
-#freeModal .modal-content .freeBox .freeBox-list01 li input[type="text"] {
+#freeModal .modal-content .freeBox .freeBox-list01 li input[type="text"], #freeModal .modal-content .freeBox .freeBox-list01 li textarea {
     width: 100%;
     height: 6rem;
     border-radius: 2rem;
@@ -404,7 +404,9 @@
 }
 
 #freeModal .modal-content .freeBox .freeBox-list01 li input[type="text"]:focus,
-#freeModal .modal-content .freeBox .freeBox-list01 li input[type="text"]:active {
+#freeModal .modal-content .freeBox .freeBox-list01 li input[type="text"]:active,
+#freeModal .modal-content .freeBox .freeBox-list01 li textarea:focus,
+#freeModal .modal-content .freeBox .freeBox-list01 li textarea:active{
     width: 99%;
     height: 6rem;
     border-radius: 2rem;
@@ -461,8 +463,9 @@
 #freeModal .modal-content #freeBox03 .freeBox-list01 li select option {
 }
 
-#freeModal .modal-content #freeBox03 .freeBox-list01 .inquiry input {
+#freeModal .modal-content #freeBox03 .freeBox-list01 .inquiry textarea {
     height: 18rem;
+    padding-top: 1rem;
     padding-bottom: 13rem;
 }
 

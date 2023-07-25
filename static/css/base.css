@@ -702,3 +702,5 @@ footer .sns-list li{
         padding-left: 0px;
     }
 }
+
+fieldset {border: 0;}
