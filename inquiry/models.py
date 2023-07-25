@@ -7,7 +7,32 @@ from django_mysql.models import ListCharField
 
 class ConsultingInquiry(models.Model):
     part = ListCharField(
-        base_field=models.CharField(max_length=10), max_length=100, verbose_name="지원파트"
+        base_field=models.CharField(max_length=10),
+        max_length=100,
+        verbose_name="(제거예정) 파트",
+        default="",
+        null=True,
+    )
+    part01 = ListCharField(
+        base_field=models.CharField(max_length=10),
+        max_length=100,
+        verbose_name="자금유치 파트",
+        default="",
+        null=True,
+    )
+    part02 = ListCharField(
+        base_field=models.CharField(max_length=10),
+        max_length=100,
+        verbose_name="브랜딩/마케팅 파트",
+        default="",
+        null=True,
+    )
+    part03 = ListCharField(
+        base_field=models.CharField(max_length=10),
+        max_length=100,
+        verbose_name="개발 파트",
+        default="",
+        null=True,
     )
     company_name = models.CharField(max_length=16, verbose_name="회사명")
     name = models.CharField(max_length=16, verbose_name="이름")

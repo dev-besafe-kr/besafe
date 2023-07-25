@@ -6,7 +6,9 @@ from inquiry.models import ConsultingInquiry, PartnershipInquiry
 @admin.register(ConsultingInquiry)
 class ConsultingAdmin(admin.ModelAdmin):
     readonly_fields = [
-        "part",
+        "part01",
+        "part02",
+        "part03",
         "company_name",
         "name",
         "phone",
@@ -14,7 +16,15 @@ class ConsultingAdmin(admin.ModelAdmin):
         "sales",
         "inquiry",
     ]
-    list_display = ["id", "part", "company_name", "business", "sales"]
+    list_display = [
+        "id",
+        "part01",
+        "part02",
+        "part03",
+        "company_name",
+        "business",
+        "sales",
+    ]
 
     def has_add_permission(self, request):
         return False

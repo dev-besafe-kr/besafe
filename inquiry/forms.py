@@ -4,6 +4,11 @@ from inquiry.models import ConsultingInquiry, PartnershipInquiry
 
 
 class ConsultingForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.fields["part"].required = False
+
     class Meta:
         model = ConsultingInquiry
         exclude = ["reg_ts"]
