@@ -28,8 +28,9 @@ class ConsultingForm(forms.ModelForm):
             <h1>비세이프 홈페이지를 통해 새로운 컨설팅이 요청되었습니다.</h1>
             <table>
             <tr><th>항목</th><td>{','.join([*i.part01, *i.part02, *i.part03])}</td></tr>
-            <tr><th>요청자</th><td>{i.name}</td></tr>
             <tr><th>업체명</th><td>{i.company_name}</td></tr>
+            <tr><th>요청자</th><td>{i.name}</td></tr>
+            <tr><th>연락처</th><td>{i.phone}</td></tr>
             <tr><th>업종</th><td>{i.business}</td></tr>
             <tr><th>매출</th><td>{i.sales}</td></tr>
             <tr><th>내용</th><td>{i.inquiry}</td></tr>
