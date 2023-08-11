@@ -19,10 +19,13 @@
     <link rel="shortcut icon" href="/static/manifest/favicon.ico">
     <link rel="manifest" href="/static/manifest/manifest.webmanifest">
 
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
     {% block head %}{% endblock %}
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MLJHB3QBCS"></script>
 </head>
 <body>
 <div id="wrap">
@@ -199,7 +202,8 @@
     </div>
     <header class="header type-pc">
         <div class="header-inner">
-            <h1 class="main-logo"><a href="/"><img loading="lazy" src="/static/images/main_logo.png" alt="비세이프"></a></h1>
+            <h1 class="main-logo"><a href="/"><img loading="lazy" src="/static/images/main_logo.png" alt="비세이프"></a>
+            </h1>
             <nav class="nav">
                 <ul class="gnb">
                     <li><a href="/introduce">비세이프 소개</a></li>
@@ -237,7 +241,8 @@
                     <span id="h-bottom"></span>
                 </div>
             </div>
-            <h1 class="main-logo"><a href="/"><img loading="lazy" src="/static/images/main_logo.png" alt="비세이프로고"></a></h1>
+            <h1 class="main-logo"><a href="/"><img loading="lazy" src="/static/images/main_logo.png" alt="비세이프로고"></a>
+            </h1>
         </div>
     </header>
     <article>{% block article %}{% endblock %}</article>
@@ -263,8 +268,12 @@
                 </div>
             </div>
             <ul class="footer-list02 sns-list">
-                <li><a href="https://pf.kakao.com/_xlQaUb" target="_blank"><img loading="lazy" src="/static/images/footer_sns01.png" alt="카카오톡채널"></a></li>
-                <li><a href="https://www.instagram.com/besafe.kr/" target="_blank"><img loading="lazy" src="/static/images/footer_sns02.png" alt="인스타그램"></a></li>
+                <li><a href="https://pf.kakao.com/_xlQaUb" target="_blank"><img loading="lazy"
+                                                                                src="/static/images/footer_sns01.png"
+                                                                                alt="카카오톡채널"></a></li>
+                <li><a href="https://www.instagram.com/besafe.kr/" target="_blank"><img loading="lazy"
+                                                                                        src="/static/images/footer_sns02.png"
+                                                                                        alt="인스타그램"></a></li>
             </ul>
         </div>
 
@@ -288,7 +297,8 @@
     <div id="useModal" class="modal" style="display: none;">
         <div class="modal-content">
             <div class="panel">
-                <button class="close-btn"><img loading="lazy" src="/static/images/btn_close_modal.svg" alt="닫기버튼"></button>
+                <button class="close-btn"><img loading="lazy" src="/static/images/btn_close_modal.svg" alt="닫기버튼">
+                </button>
 
 
                 <div class="content-hd">
@@ -748,7 +758,8 @@
     <div id="privacyModal" class="modal" style="display: none;">
         <div class="modal-content">
             <div class="panel">
-                <button class="close-btn"><img loading="lazy" src="/static/images/btn_close_modal.svg" alt="닫기버튼"></button>
+                <button class="close-btn"><img loading="lazy" src="/static/images/btn_close_modal.svg" alt="닫기버튼">
+                </button>
 
 
                 <div class="content-hd">
@@ -1239,7 +1250,16 @@
     </div>
 
 </div>
+<script>
+    window.dataLayer = window.dataLayer || [];
 
+    function gtag() {
+        dataLayer.push(arguments);
+    }
 
+    gtag('js', new Date());
+
+    gtag('config', 'G-MLJHB3QBCS');
+</script>
 </body>
 </html>
