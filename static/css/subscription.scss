@@ -1,0 +1,55 @@
+.sec {
+  font-size: 11px;
+  @media screen and (max-width: 415px) {
+    font-size: 8px;
+  }
+
+  .top {
+    padding: 3em 0;
+
+    .title {
+      padding-top: 5em;
+      text-align: center;
+
+      h3 {
+        font-family: 'Noto Sans KR', sans-serif;
+        font-weight: 700;
+        font-size: 4em;
+        color: var(--black);
+        margin-bottom: 0.3em;
+      }
+
+      h5 {
+        font-family: 'Pretendard', sans-serif;
+        font-weight: 400;
+        font-size: 1.8rem;
+        color: var(--black);
+      }
+    }
+  }
+
+  .bottom {
+    padding: 2.5em 0;
+
+    .columns {
+      display: flex;
+      flex-flow: row;
+      gap: 1em;
+
+      .column {
+        width: calc(100% / 3);
+        min-height: 100px;
+        border: 1px solid var(--gray);
+        border-radius: 1em;
+
+        @media screen and (max-width: 415px) {
+          width: 100%;
+        }
+      }
+
+      @media screen and (max-width: 415px) {
+        flex-flow: column;
+      }
+    }
+  }
+}

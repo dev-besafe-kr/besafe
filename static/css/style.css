@@ -10,13 +10,6 @@ body {
     font-size: 1rem;
 }
 
-:root {
-    --maincolor: #03c75a;
-    --maincolorHover: #00be56;
-    --black: #0e141e;
-    --white: #fffefe;
-}
-
 
 * {
     margin: 0;

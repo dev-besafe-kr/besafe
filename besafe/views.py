@@ -1,5 +1,7 @@
 from django.views.generic import TemplateView
 
+from subscription.models import SubscriptionModel
+
 
 class Index(TemplateView):
     template_name = "index.html"
@@ -23,3 +25,13 @@ class Program(TemplateView):
 
 class ServiceCenter(TemplateView):
     template_name = "serviceCenter_05.html"
+
+
+class Subscription(TemplateView):
+    template_name = "subscription.html"
+
+    def get_context_data(self, **kwargs):
+        context_data = super().get_context_data(**kwargs)
+        context_data["subscription_models"] = SubscriptionModel.objects.all()
+
+        return context_data

@@ -31,12 +31,13 @@ urlpatterns = [
     path("introduce", views.Introduce.as_view()),
     path("program", views.Program.as_view()),
     path("service", views.ServiceCenter.as_view()),
+    path("subscription", views.Subscription.as_view()),
     path(
-        "api",
+        "api/",
         include(
             [
-                path("/consulting", ConsultingFormView.as_view()),
-                path("/partnership", PartnershipFormView.as_view()),
+                path("consulting", ConsultingFormView.as_view()),
+                path("partnership", PartnershipFormView.as_view()),
             ]
         ),
     ),

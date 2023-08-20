@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block head %}
+    <link href="/static/css/subscription.css" rel="stylesheet">
+    <script src="/static/js/subscription.js"></script>
+{% endblock %}
+{% block article %}
+    <section class="sec guide">
+        <div class="top">
+            <div class="title">
+                <h3>비세이프 <br class="type-m"/>구독 결제 서비스</h3>
+                <h5>차별화된 서비스를 지금 바로 경험 해보세요.</h5>
+            </div>
+
+        </div>
+        <div class="bottom">
+            <div class="columns">
+                {% for subscription_model in subscription_models %}
+                <div class="column"></div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

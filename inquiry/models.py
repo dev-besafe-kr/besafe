@@ -1,11 +1,13 @@
 from django.db import models
 from django_mysql.models import ListCharField
 
+from besafe.models import BaseModel
+
 
 # Create your models here.
 
 
-class ConsultingInquiry(models.Model):
+class ConsultingInquiry(BaseModel):
     part = ListCharField(
         base_field=models.CharField(max_length=10),
         max_length=100,
@@ -52,7 +54,7 @@ class ConsultingInquiry(models.Model):
         return f"컨설팅 요청 [{self.company_name}]({self.id})"
 
 
-class PartnershipInquiry(models.Model):
+class PartnershipInquiry(BaseModel):
     phone = models.CharField(max_length=16, verbose_name="연락처")
     email = models.EmailField(max_length=32, verbose_name="이메일")
     inquiry = models.TextField(verbose_name="제안내용")
