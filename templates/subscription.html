@@ -7,15 +7,54 @@
     <section class="sec guide">
         <div class="top">
             <div class="title">
-                <h3>비세이프 <br class="type-m"/>구독 결제 서비스</h3>
-                <h5>차별화된 서비스를 지금 바로 경험 해보세요.</h5>
+                <h1>비세이프 <br class="type-m"/>구독 결제 서비스</h1>
+                <h3>차별화된 서비스를 지금 바로 경험 해보세요.</h3>
             </div>
 
         </div>
         <div class="bottom">
             <div class="columns">
                 {% for subscription_model in subscription_models %}
-                <div class="column"></div>
+                    <div class="column">
+                        <div class="codename">
+                            <label>{{ SubscriptionModelCodename[subscription_model.codename].label }}</label></div>
+                        <div class="name">{{ subscription_model.name }}</div>
+                        <div class="pricing">
+                            <ul>
+                                {% for pricing in subscription_model.pricings.all() %}
+                                    <li>
+                                        <span class="description">{{ pricing.vat_prefix }}{{ SubscriptionModelPricingType[pricing.pricing_type].label }}</span>
+                                        <span class="amount">{{ "{:,}".format(pricing.amount) }}원</span>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% if subscription_model.inherit or subscription_model.main_services %}
+                            <div class="main-services">
+                                <div class="title">주요 서비스</div>
+                                {% if subscription_model.inherit %}
+                                    <label class="inherit">+
+                                        모든 {{ SubscriptionModelCodename[subscription_model.inherit.codename].label }}
+                                        기능</label>
+                                {% endif %}
+                                <ul>
+                                    {% for service in subscription_model.main_services %}
+                                        <li>{{ service }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+                        {% if subscription_model.etc_services %}
+                            <div class="etc-services">
+                                <div class="title">+ 기타 부대 업무</div>
+                                <ul>
+                                    {% for service in subscription_model.etc_services %}
+                                        <li>{{ service }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+                    </div>
                 {% endfor %}
             </div>
         </div>

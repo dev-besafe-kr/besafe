@@ -74,7 +74,7 @@
       border-right: 0.6rem solid #ffffff00;
     }
     50% {
-      border-right: 0.6rem solid var(--maincolor);
+      border-right: 0.6rem solid var(--primary);
     }
     100% {
       border-right: 0.6rem solid #ffffff00;
@@ -145,7 +145,7 @@
 
     width: fit-content;
     padding:1.8rem 5.6rem;
-    background-color: var(--maincolor);
+    background-color: var(--primary);
     border-radius: 1rem;
 
     font-family: 'Pretendard', sans-serif; font-weight:700;
@@ -185,7 +185,7 @@
     color:var(--black);
 }
 .pg1-sec .pg1-list01 li .img-wrap p > b{
-    color: var(--maincolor);
+    color: var(--primary);
 }
 
 
@@ -234,7 +234,7 @@
 }
 
 .pg2-sec .contents-wrap .text > h5 > b{
-    color:var(--maincolor);
+    color:var(--primary);
 }
 
 
@@ -259,7 +259,7 @@
 
     font-family: 'Pretendard', sans-serif; font-weight:700;
     font-size: 4.2rem;
-    color:var(--maincolor);
+    color:var(--primary);
 }
 .reason-title h3::after{
     content: "";
@@ -279,7 +279,7 @@
     line-height: 3.2rem;
 }
 .reason-title p > strong{
-    color:var(--maincolor);
+    color:var(--primary);
 }
 
 .pg3-sec .bar{
@@ -447,7 +447,7 @@ article .bar > p{
     margin-top:3.6rem;
 
     font-size: 2.4rem;
-    color: var(--maincolor);
+    color: var(--primary);
 
 }
 .pg4-sec .wrap-list .pg4-list01 li .box{
@@ -456,7 +456,7 @@ article .bar > p{
     width:24rem;
     height:22rem;
     border-radius: 1rem;
-    border:  0.2rem solid var(--maincolor);
+    border:  0.2rem solid var(--primary);
 
     text-align: center;
     padding:4.2rem 0 1.8rem 0;
@@ -474,7 +474,7 @@ article .bar > p{
 
     width: fit-content;
     padding:0.8rem 1.8rem;
-    background-color: var(--maincolor);
+    background-color: var(--primary);
     border-radius: 1rem;
 }
 
@@ -486,7 +486,7 @@ article .bar > p{
 .pg4-sec .wrap-list .text h5{
     font-family: 'Pretendard', sans-serif; font-weight:700;
     font-size: 3.6rem;
-    color:var(--maincolor);
+    color:var(--primary);
 }
 .pg4-sec .wrap-list .text p{
     margin-top:2.8rem;
@@ -497,7 +497,7 @@ article .bar > p{
     line-height: 3.2rem;
 }
 .pg4-sec .wrap-list .text p > strong{
-    color:var(--maincolor);
+    color:var(--primary);
 }
 
 .pg5-sec{
@@ -687,7 +687,7 @@ article .bar > p{
 
     width:100%;
     height:5rem;
-    background-color: var(--maincolor);
+    background-color: var(--primary);
 
     font-family: 'Pretendard', sans-serif; font-weight:700;
     font-size: 2.4rem;
@@ -709,7 +709,7 @@ article .bar > p{
 
     font-family: 'Pretendard', sans-serif; font-weight:700;
     font-size: 2.8rem;
-    color:var(--maincolor);
+    color:var(--primary);
 }
 .pg7-sec .pg7-list01 li .merit .pg7-list01-dep2{
     display: flex;
@@ -754,7 +754,7 @@ article .bar > p{
     color:black
 }
 .pg7-sec .pg7-list01 li p strong{
-    color: var(--maincolor);
+    color: var(--primary);
 }
 
 
@@ -914,7 +914,7 @@ article .bar > p{
 
     font-family: 'Pretendard', sans-serif; font-weight:300;
     font-size: 1.6rem;
-    color:var(--maincolor);
+    color:var(--primary);
     cursor: pointer;
 
 }
@@ -928,7 +928,7 @@ article .bar > p{
     margin-top:0.2rem;
     bottom: 0;
     left: 0.1rem;
-    background: var(--maincolor);
+    background: var(--primary);
 }
 .pg8-sec .box .text > h3{
     margin-top:9.8rem;
@@ -1022,7 +1022,7 @@ article .bar > p{
 }
 .pg8-sec .box .review .pg8-list02 li .contents p > strong{
     padding:0 0.5rem;
-    background-color: var(--maincolor);
+    background-color: var(--primary);
     color:white;
 }
 
@@ -1105,7 +1105,7 @@ article .bar > p{
     width:2rem;
     height:0.4rem;
     border-radius: 0.2rem;
-    background-color: var(--maincolor);
+    background-color: var(--primary);
 }
 .pg9-sec .contents .left > p{
     margin-top:2.4rem; 
@@ -1365,7 +1365,7 @@ article .bar > p{
     
         width:100%;
         height:100%;
-        background-color: var(--maincolor);
+        background-color: var(--primary);
     
         font-family: 'Pretendard', sans-serif; font-weight:700;
         font-size: 2.2rem;
@@ -1383,7 +1383,7 @@ article .bar > p{
     .pg7-sec .pg7-list01 li .merit h5 > span{
         font-family: 'Pretendard', sans-serif; font-weight:700;
         font-size: 4.6rem;
-        color:var(--maincolor)
+        color:var(--primary)
     }
 
     .pg7-sec .pg7-list01 li .merit .pg7-list01-dep2{
@@ -1739,7 +1739,7 @@ article .bar > p{
         font-size: 1.4rem;
     }
     .pg9-sec .contents .right .more a{
-        color:var(--maincolor);
+        color:var(--primary);
     }
     .pg9-sec .contents .right .more::after{
         content: '';
@@ -1751,7 +1751,7 @@ article .bar > p{
         bottom: 0;
         left: 50%;
         transform: translate(-50%,0);
-        background: var(--maincolor);
+        background: var(--primary);
     }
     
 }
@@ -1884,7 +1884,7 @@ article .bar > p{
         font-size: 1.8rem;
         color:white;
         border-radius: 2.3rem;
-        background-color: var(--maincolor);
+        background-color: var(--primary);
     }
     .pg2-sec .arrow{
         width:1.5rem;
@@ -2024,7 +2024,7 @@ article .bar > p{
         margin-top:0;
 
         font-size: 2.4rem;
-        color: var(--maincolor);
+        color: var(--primary);
 
     }
     .pg4-sec .wrap-list .pg4-list01 li .box{
@@ -2033,7 +2033,7 @@ article .bar > p{
         width:100%;
         height:100%;
         border-radius: 1rem;
-        border:  0.2rem solid var(--maincolor);
+        border:  0.2rem solid var(--primary);
 
         text-align: center;
         padding:1.8rem 3rem;
@@ -2199,7 +2199,7 @@ article .bar > p{
     
         width:100%;
         height:100%;
-        background-color: var(--maincolor);
+        background-color: var(--primary);
     
         font-family: 'Pretendard', sans-serif; font-weight:700;
         font-size: 2.2rem;
@@ -2223,7 +2223,7 @@ article .bar > p{
     .pg7-sec .pg7-list01 li .merit h5 > span{
         font-family: 'Pretendard', sans-serif; font-weight:700;
         font-size: 4.6rem;
-        color:var(--maincolor)
+        color:var(--primary)
     }
 
     .pg7-sec .pg7-list01 li .merit .pg7-list01-dep2{
@@ -2586,7 +2586,7 @@ article .bar > p{
         font-size: 1.4rem;
     }
     .pg9-sec .contents .right .more a{
-        color:var(--maincolor);
+        color:var(--primary);
     }
     .pg9-sec .contents .right .more::after{
         content: '';
@@ -2598,7 +2598,7 @@ article .bar > p{
         bottom: 0;
         left: 50%;
         transform: translate(-50%,0);
-        background: var(--maincolor);
+        background: var(--primary);
     }
     
 }

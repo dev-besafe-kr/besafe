@@ -77,7 +77,7 @@ button::before{
     left: -5.7rem;
     width: 4rem;
     height: 100%;
-    background-color: var(--maincolor);
+    background-color: var(--primary);
     transform: skew(-30deg);
     transition: all .8s;
 }

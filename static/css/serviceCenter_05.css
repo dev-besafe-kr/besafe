@@ -40,7 +40,7 @@
     display: block;
     width:3rem;
     height:0.6rem;
-    background-color:var(--maincolor);
+    background-color:var(--primary);
 }
 .sec .top .table-wrap .table{
     margin-right:16rem;
@@ -95,7 +95,7 @@
     left:0;
     width:0;
     height:0.1rem;
-    background-color: var(--maincolor);
+    background-color: var(--primary);
 
     transition: all 0.4s ease-in;
 }
@@ -137,7 +137,7 @@ input:active{
 .sec .bottom .form .submit{
     width: fit-content;
     padding:2rem 6rem;
-    background-color: var(--maincolor);
+    background-color: var(--primary);
     border: none;
     border-radius: 1rem;
 
@@ -147,7 +147,7 @@ input:active{
     cursor: pointer;
 }
 .sec .bottom .form .submit:hover{
-    background-color: var(--maincolorHover);
+    background-color: var(--primaryHover);
 }
 
 

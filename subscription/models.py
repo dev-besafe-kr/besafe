@@ -13,7 +13,7 @@ class SubscriptionModelPricing(BaseModel):
     pricing_type = models.CharField(
         verbose_name="부과방식", choices=Type.choices, max_length=8
     )
-    unit = models.IntegerField(verbose_name="금액")
+    amount = models.IntegerField(verbose_name="금액")
     vat = models.BooleanField(verbose_name="VAT")
 
     class Meta:
@@ -22,9 +22,11 @@ class SubscriptionModelPricing(BaseModel):
         verbose_name_plural = "구독모델 결제"
 
     def __str__(self):
-        vat_str = "" if self.vat else "VAT 별도 / "
+        return f"{self.vat_prefix}{SubscriptionModelPricing.Type[self.pricing_type].label} {self.amount:,}원"
 
-        return f"{vat_str}{SubscriptionModelPricing.Type[self.pricing_type].label} {self.unit:,}원"
+    @property
+    def vat_prefix(self):
+        return "" if self.vat else "VAT 별도 / "
 
 
 class SubscriptionModelService(OrderableModel, BaseModel):

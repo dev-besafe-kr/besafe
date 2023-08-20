@@ -59,7 +59,7 @@ button {
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    background-color: var(--maincolor);
+    background-color: var(--primary);
 }
 .detailsBtn > a{
     z-index: 100 !important;
@@ -409,7 +409,7 @@ header.type-m .main-logo img {
 }
 
 .main-slider-sec .main-slider li .text .detailsBtn {
-    background-color: var(--maincolor);
+    background-color: var(--primary);
 }
 
 .main-slider-sec .main-slider li .text .detailsBtn a {
@@ -458,7 +458,7 @@ header.type-m .main-logo img {
     min-width: 92rem;
     height: 15.3rem;
     border-radius: 3rem;
-    background-color: var(--maincolor);
+    background-color: var(--primary);
 
     display: flex;
     justify-content: center;
@@ -654,7 +654,7 @@ header.type-m .main-logo img {
 .pg1-sec .bottom .pg1-list02 li .text-area .detailsBtn {
     margin-top: 9.2rem;
     background-color: #03c75b20;
-    color: var(--maincolor);
+    color: var(--primary);
 }
 
 .pg1-sec .bottom .pg1-list02 li .text-area .detailsBtn .aBtn {
@@ -786,7 +786,7 @@ header.type-m .main-logo img {
     font-family: 'Pretendard', sans-serif;
     font-weight: 700;
     font-size: 2.4rem;
-    color: var(--maincolor);
+    color: var(--primary);
 }
 
 .pg2-sec .pg2-list01 .list01-top .profile .contents p {
@@ -795,7 +795,7 @@ header.type-m .main-logo img {
     font-family: 'Pretendard', sans-serif;
     font-weight: 400;
     font-size: 1.6rem;
-    color: var(--maincolor);
+    color: var(--primary);
 }
 
 .pg2-sec .pg2-list01 .list01-top .service {
@@ -812,7 +812,7 @@ header.type-m .main-logo img {
     width: 1.9rem;
     height: 1.9rem;
     border-radius: 5rem;
-    background-color: var(--maincolor);
+    background-color: var(--primary);
 
     position: relative;
     margin-right: 0.5rem;
@@ -834,7 +834,7 @@ header.type-m .main-logo img {
     font-family: 'Pretendard', sans-serif;
     font-weight: 700;
     font-size: 1.6rem;
-    color: var(--maincolor);
+    color: var(--primary);
 }
 
 
@@ -881,7 +881,7 @@ header.type-m .main-logo img {
     font-family: 'Pretendard', sans-serif;
     font-weight: 300;
     font-size: 1.6rem;
-    color: var(--maincolor);
+    color: var(--primary);
 }
 
 
@@ -925,7 +925,7 @@ header.type-m .main-logo img {
     overflow: hidden;
 
     background-color: rgb(245, 245, 245);
-    background-image: linear-gradient(to right, var(--maincolor), var(--maincolor));
+    background-image: linear-gradient(to right, var(--primary), var(--primary));
     background-repeat: no-repeat;
     background-size: 0 100%;
     transition: background-size .4s ease-in-out;
@@ -1015,7 +1015,7 @@ header.type-m .main-logo img {
 .pg3-sec .pg3-list01 li .detailsBtn {
     width: fit-content;
     margin-top: 1.3rem;
-    background-color: var(--maincolor);
+    background-color: var(--primary);
 }
 
 .pg3-sec .pg3-list01 li .detailsBtn a {
@@ -1135,7 +1135,7 @@ header.type-m .main-logo img {
 }
 
 .pg4-sec .top .left-area .detailsBtn > a {
-    color: var(--maincolor);
+    color: var(--primary);
 }
 
 .pg4-sec .top .left-area .arrow {
@@ -1514,7 +1514,7 @@ header.type-m .main-logo img {
 
     background-color: #0affaf10;
     font-size: 1.6rem;
-    color: var(--maincolor);
+    color: var(--primary);
 }
 
 
@@ -1553,7 +1553,7 @@ header.type-m .main-logo img {
     width: fit-content;
     padding: 1.8rem 2.8rem;
     border-radius: 1rem;
-    background-color: var(--maincolor);
+    background-color: var(--primary);
 
     font-size: 1.8rem;
     color: white;
@@ -1693,7 +1693,7 @@ footer .info-box .info .copy {
     margin-top: 1.8rem;
 
     font-size: 1.3rem;
-    color: var(--maincolor);
+    color: var(--primary);
 }
 
 footer .sns-list {
@@ -1713,7 +1713,7 @@ footer .sns-list li {
     right: 4rem;
     width: 5.2rem;
     height: 5.2rem;
-    background-color: var(--maincolor);
+    background-color: var(--primary);
     text-align: center;
     cursor: pointer;
 }
@@ -2080,7 +2080,7 @@ footer .sns-list li {
 
     .pg1-sec .bottom .pg1-list02 li .text-area .detailsBtn {
         margin-top: 6rem;
-        background-color: var(--maincolor);
+        background-color: var(--primary);
     }
 
     .pg1-sec .bottom .pg1-list02 li .text-area .detailsBtn .aBtn {
@@ -2330,7 +2330,7 @@ footer .sns-list li {
     }
 
     #introModal .modal-content .intro-list01 li:last-child a {
-        color: var(--maincolor);
+        color: var(--primary);
     }
 
     #introModal .modal-content .intro-list01 li h5 {
@@ -2393,7 +2393,7 @@ footer .sns-list li {
     }
 
     #introModal .modal-content .intro-list01 .slick-dots .slick-active {
-        background-color: var(--maincolor);
+        background-color: var(--primary);
     }
 
     #introModal .modal-content .intro-list01 .slick-dots li button {
@@ -2690,7 +2690,7 @@ footer .sns-list li {
 
     .pg1-sec .bottom .pg1-list02 li .text-area .detailsBtn {
         margin-top: 6rem;
-        background-color: var(--maincolor);
+        background-color: var(--primary);
     }
 
     .pg1-sec .bottom .pg1-list02 li .text-area .detailsBtn .aBtn {
@@ -2771,7 +2771,7 @@ footer .sns-list li {
         width: 3rem;
         height: 3rem;
         border-radius: 5rem;
-        background-color: var(--maincolor);
+        background-color: var(--primary);
 
         position: relative;
         margin-right: 0.5rem;
@@ -2786,7 +2786,7 @@ footer .sns-list li {
         font-family: 'Pretendard', sans-serif;
         font-weight: 700;
         font-size: 2.4rem;
-        color: var(--maincolor);
+        color: var(--primary);
     }
 
     .pg2-sec .pg2-list01 .list01-top > .contents p {
@@ -2795,7 +2795,7 @@ footer .sns-list li {
         font-family: 'Pretendard', sans-serif;
         font-weight: 400;
         font-size: 1.4rem;
-        color: var(--maincolor);
+        color: var(--primary);
     }
 
     .pg2-sec .pg2-list01 .list01-bottom {

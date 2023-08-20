@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
                 ('created_at', models.DateTimeField(auto_now_add=True, db_index=True, null=True)),
                 ('updated_at', models.DateTimeField(auto_now=True, db_index=True, null=True)),
                 ('pricing_type', models.CharField(choices=[('MONTHLY', '월'), ('ANNUAL', '년')], max_length=8, verbose_name='부과방식')),
-                ('unit', models.IntegerField(verbose_name='금액')),
+                ('amount', models.IntegerField(verbose_name='금액')),
                 ('vat', models.BooleanField(verbose_name='VAT')),
             ],
             options={

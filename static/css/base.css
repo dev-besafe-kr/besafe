@@ -1,7 +1,7 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable-dynamic-subset.css");
 
 html {
     font-size: 10px;
@@ -12,11 +12,15 @@ body {
 }
 
 :root {
-    --maincolor: #03c75a;
-    --maincolorHover: #00be56;
+    --primary-bg: #e7ede8;
+    --primary: #03c75a;
+    --secondary: #009d46;
+    --accent: #00692e;
+    --primaryHover: #00be56;
     --black: #0e141e;
     --white: #fffefe;
-    --gray: #c9c9c9;
+    --gray: #969696;
+    --dark-gray: #525252;
 }
 
 * {
@@ -24,7 +28,6 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Pretendard', sans-serif;
-    font-weight: 500;
     overflow-x: hidden;
 }
 
@@ -67,7 +70,7 @@ button {
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    background-color: var(--maincolor);
+    background-color: var(--primary);
     z-index: 10 !important;
 }
 
@@ -374,7 +377,7 @@ footer .info-box .info .copy {
     margin-top: 1.8rem;
 
     font-size: 1.3rem;
-    color: var(--maincolor);
+    color: var(--primary);
 }
 
 footer .sns-list {
@@ -394,7 +397,7 @@ footer .sns-list li {
     right: 4rem;
     width: 5.2rem;
     height: 5.2rem;
-    background-color: var(--maincolor);
+    background-color: var(--primary);
     text-align: center;
     cursor: pointer;
 }
