@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BESAFE</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
           rel="stylesheet">
     <link href="/static/css/modal.css" rel="stylesheet">
@@ -18,6 +17,18 @@
     <script src="/static/js/freeModal.js"></script>
     <link rel="shortcut icon" href="/static/manifest/favicon.ico">
     <link rel="manifest" href="/static/manifest/manifest.webmanifest">
+    <title>{% block title %}비세이프: Besafe{% endblock %}</title>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://be-safe.kr">
+    <meta property="og:title" content="비세이프: Besafe">
+    <meta property="og:image" content="/static/images/pg4_logo.png">
+    <meta property="og:description" content="Dreams come true with Besafe">
+    <meta property="og:site_name" content="{% block site_name %}비세이프: Besafe{% endblock %}">
+    <meta property="og:locale" content="ko_KR">
+    <!-- 다음의 태그는 필수는 아니지만, 포함하는 것을 추천함 -->
+    <meta property="og:image:width" content="132">
+    <meta property="og:image:height" content="115">
+
 
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
     <meta http-equiv="Pragma" content="no-cache"/>
