@@ -12,10 +12,6 @@ class Index(TemplateView):
     template_name = "index.html"
 
 
-class ConsultingComplete(TemplateView):
-    template_name = "consultingComplete_07.html"
-
-
 class Introduce(TemplateView):
     template_name = "introduce_02.html"
 

@@ -28,7 +28,6 @@ urlpatterns = [
     path("", views.Index.as_view()),
     path("signin", views.Signin.as_view()),
     path("portfolio", views.Portfolio.as_view()),
-    path("complete", views.ConsultingComplete.as_view()),
     path("introduce", views.Introduce.as_view()),
     path("program", views.Program.as_view()),
     path("service", views.ServiceCenter.as_view()),
