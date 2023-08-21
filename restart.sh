@@ -1,3 +1,3 @@
 git pull
 pkill gunicorn
-gunicorn besafe:application --daemon
+poetry run gunicorn besafe:application --daemon
