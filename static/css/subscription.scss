@@ -1,4 +1,20 @@
+@keyframes opening {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .sec {
+  .top .title {
+    opacity: 0;
+    animation: opening 0.3s forwards ease-in;
+  }
+
   .bottom {
     padding: 2.5em 0 5em 0;
 
@@ -14,6 +30,7 @@
         flex-flow: column nowrap;
         justify-content: space-between;
         gap: 3em;
+
         * {
           font-family: 'Noto Sans KR', sans-serif;
         }
@@ -25,7 +42,16 @@
         border: 1px solid #c9c9c9;
         border-radius: 1em;
 
+        background-color: #fdfdfd;
+        &:hover {
+          border-color: var(--accent);
+          background-color: var(--white);
+        }
+
         padding: 1em;
+
+        opacity: 0;
+        animation: opening 0.3s forwards ease-in-out;
 
         .footer {
           button {
@@ -43,6 +69,7 @@
           .footer button {
             background-color: var(--primary);
           }
+          animation-delay: 0.2s;
         }
 
         &:nth-child(2) {
@@ -51,6 +78,8 @@
           .footer button {
             background-color: var(--secondary);
           }
+
+          animation-delay: 0.4s;
         }
 
         &:nth-child(3) {
@@ -59,6 +88,8 @@
           .footer button {
             background-color: var(--accent);
           }
+
+          animation-delay: 0.6s;
         }
 
         .codename {
