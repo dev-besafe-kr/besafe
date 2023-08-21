@@ -1,0 +1,40 @@
+.sec {
+  .bottom {
+    form {
+      padding: 5em;
+      border: 1px solid #c9c9c9;
+      border-radius: 10px;
+
+      fieldset {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 2em;
+      }
+      label {
+        padding: 0 0.5em;
+        span {
+          font-family: 'Pretendard', sans-serif;
+          font-weight: 700;
+          font-size: 1.8rem;
+          color: var(--primary);
+        }
+
+        input {
+          &[type=text], &[type=password] {
+            width: 100%;
+            height: 6rem;
+            border-radius: 2rem;
+            padding: 0 2rem;
+            margin: 0.3rem;
+            font-family: 'Pretendard', sans-serif;
+            font-weight: 400;
+            font-size: 1.6rem;
+            color: #767676;
+            border: none;
+            background-color: #fafafa;
+          }
+        }
+      }
+    }
+  }
+}

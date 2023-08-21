@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block head %}
+    <link href="/static/css/besafe-ui.css" rel="stylesheet">
+    <link href="/static/css/signin.css" rel="stylesheet">
+    <script src="/static/js/signin.js"></script>
+{% endblock %}
+{% block article %}
+    <section class="sec guide">
+        <div class="top">
+            <div class="title">
+                <h1>로그인</h1>
+                <h3>로그인이 필요한 서비스입니다.</h3>
+            </div>
+        </div>
+        <div class="bottom">
+            <form>
+                <fieldset>
+                    <label>
+                        <span>아이디</span>
+                        <input type="text"/>
+                    </label>
+                    <label>
+                        <span>비밀번호</span>
+                        <input type="password"/>
+                    </label>
+                </fieldset>
+            </form>
+        </div>
+    </section>
+{% endblock %}

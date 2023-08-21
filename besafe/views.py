@@ -40,22 +40,28 @@ class Subscription(TemplateView):
         context_data["SubscriptionModelCodename"] = SubscriptionModel.Codename
         context_data["SubscriptionModelPricingType"] = SubscriptionModelPricing.Type
         context_data["SubscriptionModelServiceType"] = SubscriptionModelService.Type
-        context_data["subscription_models"] = SubscriptionModel.objects.select_related("inherit").prefetch_related(
+        context_data["subscription_models"] = SubscriptionModel.objects.select_related(
+            "inherit"
+        ).prefetch_related(
             "services",
             Prefetch(
                 "services",
                 queryset=SubscriptionModelService.objects.filter(
                     service_type=SubscriptionModelService.Type.MAIN,
                 ),
-                to_attr="main_services"
+                to_attr="main_services",
             ),
             Prefetch(
                 "services",
                 queryset=SubscriptionModelService.objects.filter(
                     service_type=SubscriptionModelService.Type.ETC,
                 ),
-                to_attr="etc_services"
+                to_attr="etc_services",
             ),
         )
 
         return context_data
+
+
+class Signin(TemplateView):
+    template_name = "signin.html"

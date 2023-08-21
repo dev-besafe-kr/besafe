@@ -26,6 +26,7 @@ from inquiry.views import ConsultingFormView, PartnershipFormView
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.Index.as_view()),
+    path("signin", views.Signin.as_view()),
     path("portfolio", views.Portfolio.as_view()),
     path("complete", views.ConsultingComplete.as_view()),
     path("introduce", views.Introduce.as_view()),
