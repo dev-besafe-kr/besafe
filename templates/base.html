@@ -17,19 +17,21 @@
     <script src="/static/js/freeModal.js"></script>
     <link rel="shortcut icon" href="/static/manifest/favicon.ico">
     <link rel="manifest" href="/static/manifest/manifest.webmanifest">
-    <title>비세이프: {% block title %}Besafe{% endblock %}</title>
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://be-safe.kr">
-    <meta property="og:title" content="비세이프: Besafe">
     <meta property="og:image" content="/static/images/pg4_logo.png">
-    <meta property="og:description" content="Dreams come true with Besafe">
-    <meta property="og:site_name" content="{% block site_name %}비세이프: Besafe{% endblock %}">
-    <meta property="og:locale" content="ko_KR">
-    <!-- 다음의 태그는 필수는 아니지만, 포함하는 것을 추천함 -->
     <meta property="og:image:width" content="132">
     <meta property="og:image:height" content="115">
-
-
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:site_name" content="비세이프 | Besafe">
+    <meta property="og:url" content="https://be-safe.kr{{ request.path }}">
+    <meta property="og:type" content="website">
+    {% block seo %}
+        <title>비세이프 | 스타트업의 성장 로드맵 및 특허설계서비스</title>
+        <meta property="description"
+              content="비세이프는 스타트업의 성장 로드맵 제작 및 기술력 자산화를 위한 특허설계서비스를 제공합니다. 창업에서 성장까지의 도움이 필요하신가요? 비세이프와 함께 성공의 길로!">
+        <meta property="keywords" content="비세이프, 스타트업, 성장 로드맵, 특허설계, 기술 자산화, 창업, 기업 성장, 비세이프 살롱, 기업 컨설팅">
+        <meta property="og:title" content="비세이프 | 스타트업의 성장 로드맵 및 특허설계서비스">
+        <meta property="og:description" content="창업에서 성장까지, 비세이프와 함께 성공의 길로!">
+    {% endblock %}
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
     <meta http-equiv="Pragma" content="no-cache"/>
     <meta http-equiv="Expires" content="0"/>
@@ -221,7 +223,7 @@
                     <li><a href="/program">특허설계서비스</a></li>
                     <li><a href="/portfolio">포트폴리오</a></li>
                     <li><a href="/service">제휴문의</a></li>
-{#                    <li><a href="/subscription">계약진행</a></li>#}
+                    {#                    <li><a href="/subscription">계약진행</a></li>#}
                 </ul>
             </nav>
             <button class="freeBtn"><a href="javascript:showModal('freeModal')">무료상담신청</a></button>
@@ -234,7 +236,7 @@
                 <li><a href="/program">특허설계 서비스</a></li>
                 <li><a href="/portfolio">포트폴리오</a></li>
                 <li><a href="/service">제휴문의</a></li>
-{#                <li><a href="/subscription">계약진행</a></li>#}
+                {#                <li><a href="/subscription">계약진행</a></li>#}
             </ul>
             <div class="bottom">
                 <ul class="sns-list">
