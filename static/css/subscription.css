@@ -37,6 +37,10 @@
   gap: 1em;
 }
 .sec .bottom .columns .column {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  gap: 3em;
   font-size: 1.8em;
   width: 33.3333333333%;
   min-height: 100px;
@@ -47,14 +51,30 @@
 .sec .bottom .columns .column * {
   font-family: "Noto Sans KR", sans-serif;
 }
+.sec .bottom .columns .column .footer button {
+  width: 100%;
+  font-size: 1.1em;
+  color: var(--white);
+  border: 0;
+  padding: 0.5em 1em;
+}
 .sec .bottom .columns .column:nth-child(1) {
   color: var(--primary);
+}
+.sec .bottom .columns .column:nth-child(1) .footer button {
+  background-color: var(--primary);
 }
 .sec .bottom .columns .column:nth-child(2) {
   color: var(--secondary);
 }
+.sec .bottom .columns .column:nth-child(2) .footer button {
+  background-color: var(--secondary);
+}
 .sec .bottom .columns .column:nth-child(3) {
   color: var(--accent);
+}
+.sec .bottom .columns .column:nth-child(3) .footer button {
+  background-color: var(--accent);
 }
 .sec .bottom .columns .column .codename {
   margin-bottom: 1em;
@@ -69,6 +89,7 @@
 .sec .bottom .columns .column .name {
   font-size: 1.6em;
   font-weight: 600;
+  margin-bottom: 0.3em;
 }
 @media screen and (max-width: 415px) {
   .sec .bottom .columns .column .name {
@@ -77,7 +98,7 @@
 }
 .sec .bottom .columns .column .pricing {
   text-align: right;
-  margin-bottom: 2em;
+  margin-bottom: 1.5em;
 }
 @media screen and (max-width: 415px) {
   .sec .bottom .columns .column .pricing {

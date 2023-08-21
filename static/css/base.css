@@ -400,6 +400,7 @@ footer .sns-list li {
     background-color: var(--primary);
     text-align: center;
     cursor: pointer;
+    z-index: 10;
 }
 
 .callBtn a {

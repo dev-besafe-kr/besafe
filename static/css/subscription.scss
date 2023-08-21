@@ -39,6 +39,10 @@
       gap: 1em;
 
       .column {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        gap: 3em;
         * {
           font-family: 'Noto Sans KR', sans-serif;
         }
@@ -52,16 +56,38 @@
 
         padding: 1em;
 
+        .footer {
+          button {
+            width: 100%;
+            font-size: 1.1em;
+            color: var(--white);
+            border: 0;
+            padding: 0.5em 1em;
+          }
+        }
+
         &:nth-child(1) {
           color: var(--primary);
+
+          .footer button {
+            background-color: var(--primary);
+          }
         }
 
         &:nth-child(2) {
           color: var(--secondary);
+
+          .footer button {
+            background-color: var(--secondary);
+          }
         }
 
         &:nth-child(3) {
           color: var(--accent);
+
+          .footer button {
+            background-color: var(--accent);
+          }
         }
 
         .codename {
@@ -79,6 +105,7 @@
         .name {
           font-size: 1.6em;
           font-weight: 600;
+          margin-bottom: 0.3em;
 
           @media screen and (max-width: 415px) {
             font-size: 2em;
@@ -102,7 +129,7 @@
             font-weight: 600;
           }
 
-          margin-bottom: 2em;
+          margin-bottom: 1.5em;
         }
 
         .main-services {
@@ -153,7 +180,6 @@
             }
           }
         }
-
 
         @media screen and (max-width: 415px) {
           width: 100%;
