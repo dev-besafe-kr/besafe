@@ -29,5 +29,12 @@ section.sec .top .title h3 {
 section.sec .bottom {
   padding: 2.5em 0 5em 0;
 }
+section.sec .bottom button.primary {
+  border-radius: 8px;
+  background-color: var(--primary);
+  color: var(--white);
+  border: 0;
+  padding: 0.5em 1em;
+}
 
 /*# sourceMappingURL=besafe-ui.css.map */
