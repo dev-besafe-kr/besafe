@@ -14,12 +14,6 @@ from django.core.wsgi import get_wsgi_application
 from whitenoise import WhiteNoise
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "besafe.settings.prod")
-
-print("Init wsgi application")
 application = get_wsgi_application()
-
-print("Init WhiteNoise")
 application = WhiteNoise(application, root=settings.BASE_DIR)
-
-print("Add STATIC_ROOT")
 application.add_files(settings.STATIC_ROOT, prefix="")
