@@ -41,5 +41,6 @@ urlpatterns = [
             ]
         ),
     ),
+    path("renew/", include("renew.urls")),
 ]
 urlpatterns += staticfiles_urlpatterns()
