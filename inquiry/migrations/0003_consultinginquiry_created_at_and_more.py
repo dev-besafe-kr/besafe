@@ -36,7 +36,7 @@ class Migration(migrations.Migration):
         ),
         migrations.RunSQL(
             """
-            UPDATE updated_at SET created_at = reg_ts, updated_at = reg_ts WHERE 1=1
+            UPDATE partnership SET created_at = reg_ts, updated_at = reg_ts WHERE 1=1
             """
         ),
     ]
