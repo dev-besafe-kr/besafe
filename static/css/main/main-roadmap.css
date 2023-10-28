@@ -1,0 +1,413 @@
+@import url("https://fonts.cdnfonts.com/css/montserrat");
+@import url("https://fonts.cdnfonts.com/css/nanumsquare-neo");
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media (max-width: 425px) {
+  .container {
+    max-width: 425px;
+  }
+}
+
+.gnb {
+  width: 100%;
+  height: 83px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .gnb {
+    height: 71px;
+  }
+}
+@media (max-width: 425px) {
+  .gnb {
+    height: 61px;
+  }
+}
+.gnb:after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #D9D9D9;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.gnb .container {
+  padding: 0 1em;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+.gnb__logo {
+  height: 26px;
+}
+.gnb__nav {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: end;
+  gap: 4em;
+}
+.gnb__nav__menus {
+  padding: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+  margin: 0;
+}
+@media (max-width: 1080px) {
+  .gnb__nav__menus {
+    gap: 1.8em;
+  }
+}
+@media (max-width: 768px) {
+  .gnb__nav__menus {
+    display: none;
+  }
+}
+.gnb__nav__menu {
+  color: #DEDEDE;
+  font-size: 16px;
+  font-weight: 700;
+}
+.gnb__nav__menu:hover {
+  color: #FFFFFF;
+}
+@media (max-width: 425px) {
+  .gnb button {
+    display: none;
+  }
+}
+.gnb__expand {
+  margin-left: 20px;
+  display: none;
+  width: 2em;
+  height: 2em;
+  background-image: url("/static/images/icons/menu.png");
+  background-size: 2em 2em;
+  background-position: center center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .gnb__expand {
+    display: block;
+  }
+}
+@media (max-width: 425px) {
+  .gnb__expand {
+    display: block;
+  }
+}
+.gnb.expand .gnb__nav {
+  padding: 83px 2em 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  flex-flow: column nowrap;
+  justify-content: start;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .gnb.expand .gnb__nav {
+    padding-top: 71px;
+  }
+}
+@media (max-width: 425px) {
+  .gnb.expand .gnb__nav {
+    padding-top: 61px;
+  }
+  .gnb.expand .gnb__nav button {
+    display: inline-block;
+  }
+}
+.gnb.expand .gnb__nav__menus {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: start;
+  counter-reset: item;
+  padding-top: 2em;
+  gap: 3em;
+}
+.gnb.expand .gnb__nav__menu {
+  counter-increment: item;
+  color: #DEDEDE;
+  font-size: 33px;
+  font-weight: 500;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 1em;
+}
+.gnb.expand .gnb__nav__menu:before {
+  content: "0" counter(item);
+  opacity: 0.5;
+  font-size: 16px;
+}
+@media (max-width: 425px) {
+  .gnb.expand .gnb__nav__menu {
+    font-size: 24px;
+  }
+}
+.gnb.expand .gnb__expand {
+  display: block;
+  width: 100%;
+  background-image: url("/static/images/icons/x.png");
+  background-position: right center;
+}
+
+.roadmap {
+  background-color: #F6F6F6;
+  padding: 120px 1em;
+}
+@media (max-width: 768px) {
+  .roadmap {
+    padding: 90px 1em;
+  }
+}
+@media (max-width: 512px) {
+  .roadmap {
+    padding: 60px 1em;
+  }
+}
+.roadmap__title {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 64px;
+  width: 100%;
+  height: 140px;
+}
+@media (max-width: 768px) {
+  .roadmap__title {
+    height: 120px;
+    margin-bottom: 50px;
+  }
+}
+@media (max-width: 512px) {
+  .roadmap__title {
+    height: 80px;
+    margin-bottom: 30px;
+  }
+}
+.roadmap__title * {
+  height: 100%;
+}
+.roadmap__title__text {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  padding: 1em 20px;
+}
+.roadmap__title__text h1 {
+  font-family: NanumSquare Neo, sans-serif;
+  font-size: 50px;
+  font-weight: 300;
+  letter-spacing: -1.5px;
+  text-align: center;
+  height: auto;
+}
+.roadmap__title__text h1 strong {
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+  .roadmap__title__text h1 {
+    font-size: 34px;
+  }
+}
+@media (max-width: 512px) {
+  .roadmap__title__text h1 {
+    font-size: 20px;
+  }
+}
+.roadmap__title__text h2 {
+  display: inline-block;
+  font-family: Pretendard, sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -0.9px;
+  text-align: center;
+  height: auto;
+}
+@media (max-width: 768px) {
+  .roadmap__title__text h2 {
+    font-size: 26px;
+  }
+}
+@media (max-width: 512px) {
+  .roadmap__title__text h2 {
+    font-size: 16px;
+  }
+}
+.roadmap__contents {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 30px;
+}
+@media (max-width: 768px) {
+  .roadmap__contents {
+    flex-flow: column nowrap;
+    gap: 22px;
+  }
+}
+@media (max-width: 425px) {
+  .roadmap__contents {
+    gap: 20px;
+  }
+}
+.roadmap__contents__nav {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 24px;
+}
+@media (max-width: 768px) {
+  .roadmap__contents__nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+}
+@media (max-width: 512px) {
+  .roadmap__contents__nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+  }
+}
+.roadmap__contents__nav dl {
+  border-radius: 15px;
+  color: white;
+  background-color: rgb(154, 229, 190);
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 8px;
+  margin: 0;
+  padding: 24px 48px;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .roadmap__contents__nav dl {
+    width: 100%;
+    padding: 2vw 3vw;
+    border-radius: 8px;
+  }
+}
+.roadmap__contents__nav dl.active {
+  background-color: rgb(3, 199, 90);
+}
+.roadmap__contents__nav dl dt {
+  font-family: NanumSquare Neo, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.72px;
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .roadmap__contents__nav dl dt {
+    font-size: max(9pt, 2vw);
+    letter-spacing: -0.54px;
+  }
+}
+.roadmap__contents__nav dl dd {
+  margin: 0;
+  font-family: Pretendard, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: -0.6px;
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .roadmap__contents__nav dl dd {
+    font-size: max(8pt, 1.6vw);
+    letter-spacing: -0.54px;
+  }
+}
+.roadmap__contents__banner {
+  width: 100%;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-image: url("/images/Rectangle_3636.png");
+  background-blend-mode: darken;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 20px;
+  padding: 54px 85px;
+  color: white;
+}
+.roadmap__contents__banner.active {
+  display: block;
+}
+.roadmap__contents__banner h1 {
+  font-family: NanumSquare Neo, sans-serif;
+  font-size: 35px;
+  font-weight: 400;
+  letter-spacing: -1.05px;
+  margin-bottom: 16px;
+}
+.roadmap__contents__banner h1 strong {
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  .roadmap__contents__banner h1 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 425px) {
+  .roadmap__contents__banner h1 {
+    font-size: 20px;
+  }
+}
+.roadmap__contents__banner h3 {
+  font-family: Pretendard, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: -0.48px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 44px;
+}
+@media (max-width: 768px) {
+  .roadmap__contents__banner h3 {
+    font-size: 18px;
+  }
+}
+@media (max-width: 425px) {
+  .roadmap__contents__banner h3 {
+    font-size: 16px;
+  }
+}
+.roadmap__contents__banner button {
+  font-family: Pretendard, sans-serif;
+  background-color: rgb(205, 244, 222);
+  color: rgb(3, 199, 90);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/*# sourceMappingURL=main-roadmap.css.map */
