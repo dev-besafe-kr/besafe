@@ -1,13 +1,6 @@
 @charset "utf-8";
 @import url("https://unpkg.com/pretendard@1.3.8/dist/web/static/pretendard-dynamic-subset.css");
 
-@font-face {
-    font-family: 'NanumSquareNeo';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
 @import 'colors';
 
 html, body {
@@ -36,6 +29,9 @@ a {
   color: inherit;
 }
 
+h1, h2, h3, h4, h5, h6, h7 {
+  margin: 0;
+}
 
 button {
   padding: 14px 18px;
@@ -48,5 +44,9 @@ button {
     color: #FFF;
     font-size: 14px;
     font-weight: 700;
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 }

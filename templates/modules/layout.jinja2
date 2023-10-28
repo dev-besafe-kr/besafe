@@ -1,0 +1,34 @@
+{% macro gnb(selected_menu) %}
+    <header class="gnb">
+        <div class="container">
+            <a href="/"><img class="gnb__logo" src="{% static "images/logo-besafe.svg" %}" alt="비세이프 로고"/></a>
+            <div class="gnb__nav">
+                <ol class="gnb__nav__menus">
+                    <li class="gnb__nav__menu">
+                        <a href="/intro">비세이프 소개</a>
+                    </li>
+                    <li class="gnb__nav__menu">
+                        <a href="/program">특허설계서비스</a>
+                    </li>
+                    <li class="gnb__nav__menu">
+                        <a href="/portfolio">포트폴리오</a>
+                    </li>
+                    <li class="gnb__nav__menu">
+                        <a href="/service">제휴문의</a>
+                    </li>
+                    <li class="gnb__nav__menu">
+                        <a href="/contract">계약 진행</a>
+                    </li>
+                </ol>
+                <button class="primary gnb__nav__button">무료상담신청</button>
+            </div>
+            <div class="gnb__expand"></div>
+        </div>
+    </header>
+    <script>
+        const gnbEl = document.querySelector(".gnb");
+        document.querySelector(".gnb__expand").addEventListener("click", () => {
+            gnbEl.classList.toggle("expand");
+        });
+    </script>
+{% endmacro %}

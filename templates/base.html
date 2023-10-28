@@ -1,3 +1,5 @@
+{% import "modules/layout.jinja2" as layout %}
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -23,40 +25,12 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
     <meta http-equiv="Pragma" content="no-cache"/>
     <meta http-equiv="Expires" content="0"/>
-
-    <link href="{% static "css/layout.css" %}" rel="stylesheet">
     {% block head %}{% endblock %}
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MLJHB3QBCS"></script>
 </head>
 <body>
-{% block header %}
-    <header class="gnb">
-        <div class="container">
-            <img class="gnb__logo" src="{% static "images/logo-besafe.svg" %}" alt="비세이프 로고"/>
-            <div class="gnb__nav">
-                <ul class="gnb__nav__menus">
-                    <li class="gnb__nav__menu">
-                        <a href="/intro">비세이프 소개</a>
-                    </li>
-                    <li class="gnb__nav__menu">
-                        <a href="/program">특허설계서비스</a>
-                    </li>
-                    <li class="gnb__nav__menu">
-                        <a href="/portfolio">포트폴리오</a>
-                    </li>
-                    <li class="gnb__nav__menu">
-                        <a href="/service">제휴문의</a>
-                    </li>
-                    <li class="gnb__nav__menu">
-                        <a href="/contract">계약 진행</a>
-                    </li>
-                </ul>
-                <button class="primary gnb__nav__button">무료상담진행</button>
-            </div>
-        </div>
-    </header>
-{% endblock %}
+{% block header %}{{ layout.gnb() }}{% endblock %}
 {% block body %}{% endblock %}
 <script>
     window.dataLayer = window.dataLayer || [];
