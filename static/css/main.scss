@@ -1,0 +1,15 @@
+@import 'base';
+
+section {
+  &.hero {
+    background-image: url("/static/images/CK_tc01500000433.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    background-color: rgba(0,0,0,0.7);
+    background-blend-mode: darken;
+
+    min-height: 30vh;
+  }
+}

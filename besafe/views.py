@@ -8,24 +8,28 @@ from subscription.models import (
 )
 
 
-class Index(TemplateView):
-    template_name = "index.html"
+class MainPageView(TemplateView):
+    template_name = "main.html"
 
 
-class Introduce(TemplateView):
-    template_name = "introduce_02.html"
+class IntroPageView(TemplateView):
+    template_name = "intro.html"
 
 
-class Portfolio(TemplateView):
-    template_name = "portfolio_04.html"
+class ProgramPageView(TemplateView):
+    template_name = "program.html"
 
 
-class Program(TemplateView):
-    template_name = "program_03.html"
+class ServicePageView(TemplateView):
+    template_name = "service.html"
 
 
-class ServiceCenter(TemplateView):
-    template_name = "serviceCenter_05.html"
+class PortfolioPageView(TemplateView):
+    template_name = "portfolio.html"
+
+
+class ContractPageView(TemplateView):
+    template_name = "contract.html"
 
 
 class Subscription(TemplateView):

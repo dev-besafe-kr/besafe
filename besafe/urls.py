@@ -20,18 +20,24 @@ from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path, include
 
-from besafe import views
 from inquiry.views import ConsultingFormView, PartnershipFormView
+from besafe.views import (
+    MainPageView,
+    IntroPageView,
+    ServicePageView,
+    PortfolioPageView,
+    ContractPageView,
+    ProgramPageView,
+)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", views.Index.as_view()),
-    path("signin", views.Signin.as_view()),
-    path("portfolio", views.Portfolio.as_view()),
-    path("introduce", views.Introduce.as_view()),
-    path("program", views.Program.as_view()),
-    path("service", views.ServiceCenter.as_view()),
-    path("subscription", views.Subscription.as_view()),
+    path("", MainPageView.as_view()),
+    path("intro", IntroPageView.as_view()),
+    path("service", ServicePageView.as_view()),
+    path("portfolio", PortfolioPageView.as_view()),
+    path("program", ProgramPageView.as_view()),
+    path("contract", ContractPageView.as_view()),
     path(
         "api/",
         include(
@@ -41,6 +47,5 @@ urlpatterns = [
             ]
         ),
     ),
-    path("renew/", include("renew.urls")),
 ]
 urlpatterns += staticfiles_urlpatterns()
