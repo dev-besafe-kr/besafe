@@ -1,0 +1,176 @@
+@import '../vars-layout';
+
+@import url('https://fonts.cdnfonts.com/css/montserrat');
+@import url('https://fonts.cdnfonts.com/css/nanumsquare-neo');
+
+.roadmap {
+  background-color: #F6F6F6;
+  padding: 120px 1em;
+
+  @media (max-width: 768px) {
+    padding: 90px 1em;
+  }
+
+  @media (max-width: 512px) {
+    padding: 60px 1em;
+  }
+
+  &__contents {
+    width: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 30px;
+
+    @media (max-width: 768px) {
+      flex-flow: column nowrap;
+      gap: 22px;
+    }
+
+    @media (max-width: 425px) {
+      gap: 20px;
+    }
+
+    &__nav {
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 24px;
+
+      @media (max-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+      }
+
+      @media (max-width: 512px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4px;
+      }
+
+      dl {
+        border-radius: 15px;
+        color: white;
+        background-color: $primary-200;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 8px;
+
+        margin: 0;
+        padding: 24px 48px;
+
+        @media (max-width: 768px) {
+          width: 100%;
+          padding: 2vw 3vw;
+
+          border-radius: 8px;
+        }
+
+        &.active {
+          background-color: $primary;
+        }
+
+        text-align: center;
+
+        dt {
+          font-family: NanumSquare Neo, sans-serif;
+          font-size: 24px;
+          font-weight: 600;
+          letter-spacing: -0.72px;
+
+          white-space: nowrap;
+
+          @media (max-width: 768px) {
+            font-size: max(9pt, 2vw);
+            letter-spacing: -0.54px;
+          }
+        }
+
+        dd {
+          margin: 0;
+
+          font-family: Pretendard, sans-serif;
+          font-size: 18px;
+          font-weight: 300;
+          letter-spacing: -0.6px;
+
+          white-space: nowrap;
+
+          @media (max-width: 768px) {
+            font-size: max(8pt, 1.6vw);
+            letter-spacing: -0.54px;
+          }
+        }
+      }
+    }
+
+    &__banner {
+      width: 100%;
+      display: none;
+
+      background-color: rgba(0, 0, 0, 0.70);
+      background-image: url("/static/images/Rectangle_3636.png");
+      background-blend-mode: darken;
+      background-size: cover;
+      background-position: center center;
+
+      border-radius: 20px;
+      padding: 54px 85px;
+
+      &.active {
+        display: block;
+      }
+
+      color: white;
+
+      h1 {
+        font-family: NanumSquare Neo, sans-serif;
+        font-size: 35px;
+        font-weight: 400;
+        letter-spacing: -1.05px;
+
+        margin-bottom: 16px;
+
+        strong {
+          font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+          font-size: 30px;
+        }
+
+        @media (max-width: 425px) {
+          font-size: 20px;
+        }
+      }
+
+      h3 {
+        font-family: Pretendard, sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 23px;
+        letter-spacing: -0.48px;
+        color: rgba(255, 255, 255, 0.8);
+
+        margin-bottom: 44px;
+
+        @media (max-width: 768px) {
+          font-size: 18px;
+        }
+
+        @media (max-width: 425px) {
+          font-size: 16px;
+        }
+      }
+
+      button {
+        font-family: Pretendard, sans-serif;
+        background-color: $primary-100;
+        color: $primary;
+        font-size: 16px;
+        font-weight: 700;
+      }
+    }
+  }
+}

@@ -1,15 +1,19 @@
 @import url("https://unpkg.com/pretendard@1.3.8/dist/web/static/pretendard-dynamic-subset.css");
+@import 'main/main-hero.css';
+@import url("https://fonts.cdnfonts.com/css/montserrat");
+@import url("https://fonts.cdnfonts.com/css/nanumsquare-neo");
 @import url("https://fonts.cdnfonts.com/css/montserrat");
 @import url("https://fonts.cdnfonts.com/css/nanumsquare-neo");
 html, body {
   margin: 0;
   height: 100%;
+  font-family: "Pretendard", sans-serif;
 }
 
 body * {
   -ms-overflow-style: none;
   scrollbar-width: none;
-  font-family: "Pretendard", sans-serif;
+  font-family: inherit;
   box-sizing: border-box;
 }
 body *::-webkit-scrollbar {
@@ -25,7 +29,7 @@ a {
   color: inherit;
 }
 
-h1, h2, h3, h4, h5, h6, h7 {
+h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
@@ -44,6 +48,243 @@ button:hover {
   cursor: pointer;
 }
 
+.main-title {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 64px;
+  width: 100%;
+  height: 140px;
+}
+@media (max-width: 768px) {
+  .main-title {
+    height: 120px;
+    margin-bottom: 50px;
+  }
+}
+@media (max-width: 512px) {
+  .main-title {
+    height: 80px;
+    margin-bottom: 30px;
+  }
+}
+.main-title * {
+  height: 100%;
+}
+.main-title__text {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  padding: 1em 20px;
+}
+.main-title__text h1 {
+  font-family: NanumSquare Neo, sans-serif;
+  font-size: 50px;
+  font-weight: 300;
+  letter-spacing: -1.5px;
+  text-align: center;
+  height: auto;
+  white-space: nowrap;
+}
+.main-title__text h1 strong {
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+  .main-title__text h1 {
+    font-size: 34px;
+  }
+}
+@media (max-width: 512px) {
+  .main-title__text h1 {
+    font-size: 20px;
+  }
+}
+.main-title__text h2 {
+  display: inline-block;
+  font-family: Pretendard, sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -0.9px;
+  text-align: center;
+  height: auto;
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .main-title__text h2 {
+    font-size: 26px;
+  }
+}
+@media (max-width: 512px) {
+  .main-title__text h2 {
+    font-size: 16px;
+  }
+}
+
+.roadmap {
+  background-color: #F6F6F6;
+  padding: 120px 1em;
+}
+@media (max-width: 768px) {
+  .roadmap {
+    padding: 90px 1em;
+  }
+}
+@media (max-width: 512px) {
+  .roadmap {
+    padding: 60px 1em;
+  }
+}
+.roadmap__contents {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 30px;
+}
+@media (max-width: 768px) {
+  .roadmap__contents {
+    flex-flow: column nowrap;
+    gap: 22px;
+  }
+}
+@media (max-width: 425px) {
+  .roadmap__contents {
+    gap: 20px;
+  }
+}
+.roadmap__contents__nav {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 24px;
+}
+@media (max-width: 768px) {
+  .roadmap__contents__nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+}
+@media (max-width: 512px) {
+  .roadmap__contents__nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+  }
+}
+.roadmap__contents__nav dl {
+  border-radius: 15px;
+  color: white;
+  background-color: rgb(154, 229, 190);
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 8px;
+  margin: 0;
+  padding: 24px 48px;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .roadmap__contents__nav dl {
+    width: 100%;
+    padding: 2vw 3vw;
+    border-radius: 8px;
+  }
+}
+.roadmap__contents__nav dl.active {
+  background-color: rgb(3, 199, 90);
+}
+.roadmap__contents__nav dl dt {
+  font-family: NanumSquare Neo, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.72px;
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .roadmap__contents__nav dl dt {
+    font-size: max(9pt, 2vw);
+    letter-spacing: -0.54px;
+  }
+}
+.roadmap__contents__nav dl dd {
+  margin: 0;
+  font-family: Pretendard, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: -0.6px;
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .roadmap__contents__nav dl dd {
+    font-size: max(8pt, 1.6vw);
+    letter-spacing: -0.54px;
+  }
+}
+.roadmap__contents__banner {
+  width: 100%;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-image: url("/static/images/Rectangle_3636.png");
+  background-blend-mode: darken;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 20px;
+  padding: 54px 85px;
+  color: white;
+}
+.roadmap__contents__banner.active {
+  display: block;
+}
+.roadmap__contents__banner h1 {
+  font-family: NanumSquare Neo, sans-serif;
+  font-size: 35px;
+  font-weight: 400;
+  letter-spacing: -1.05px;
+  margin-bottom: 16px;
+}
+.roadmap__contents__banner h1 strong {
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  .roadmap__contents__banner h1 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 425px) {
+  .roadmap__contents__banner h1 {
+    font-size: 20px;
+  }
+}
+.roadmap__contents__banner h3 {
+  font-family: Pretendard, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: -0.48px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 44px;
+}
+@media (max-width: 768px) {
+  .roadmap__contents__banner h3 {
+    font-size: 18px;
+  }
+}
+@media (max-width: 425px) {
+  .roadmap__contents__banner h3 {
+    font-size: 16px;
+  }
+}
+.roadmap__contents__banner button {
+  font-family: Pretendard, sans-serif;
+  background-color: rgb(205, 244, 222);
+  color: rgb(3, 199, 90);
+  font-size: 16px;
+  font-weight: 700;
+}
+
 .container {
   width: 100%;
   max-width: 1280px;
@@ -51,12 +292,12 @@ button:hover {
 }
 @media (max-width: 768px) {
   .container {
-    max-width: 688px;
+    max-width: 768px;
   }
 }
 @media (max-width: 360px) {
   .container {
-    max-width: 320px;
+    max-width: 425px;
   }
 }
 
@@ -190,7 +431,6 @@ button:hover {
   align-items: start;
   counter-reset: item;
   padding-top: 2em;
-  gap: 3em;
 }
 .gnb.expand .gnb__nav__menu {
   counter-increment: item;
@@ -219,130 +459,24 @@ button:hover {
   background-position: right center;
 }
 
-.hero {
-  padding: 83px 1em 0;
+.consulting {
+  padding: 96px 1em;
+  background-image: url("/static/images/bg-party.png");
   background-size: cover;
   background-position: center center;
-  background-repeat: no-repeat;
-  background-color: rgba(0, 0, 0, 0.7);
-  background-blend-mode: darken;
 }
 @media (max-width: 768px) {
-  .hero {
-    padding-top: 71px;
+  .consulting {
+    padding: 46px 1em;
   }
 }
-@media (max-width: 360px) {
-  .hero {
-    padding-top: 61px;
+@media (max-width: 512px) {
+  .consulting {
+    padding: 42px 1em;
   }
 }
-.hero__face {
-  padding: 60px 0;
-}
-.hero__face h1 {
-  font-family: "NanumSquare Neo", sans-serif;
-  color: #FFF;
-  font-size: 60px;
-  font-weight: 400;
-  line-height: 77px;
-  letter-spacing: -1.8px;
-  margin-bottom: 32px;
-}
-.hero__face h1 b {
-  font-weight: 500;
-}
-@media (max-width: 768px) {
-  .hero__face h1 {
-    font-size: 44px;
-    line-height: 70px;
-    letter-spacing: -1.65px;
-    margin-bottom: 14px;
-  }
-}
-@media (max-width: 360px) {
-  .hero__face h1 {
-    font-size: 34px;
-    line-height: 42px;
-    letter-spacing: -1.02px;
-  }
-}
-.hero__face h3 {
-  color: rgba(222, 222, 222, 0.7);
-  font-family: Montserrat, sans-serif;
-  font-size: 26px;
-  font-weight: 500;
-  line-height: 40px;
-  letter-spacing: -0.78px;
-  margin-bottom: 73px;
-}
-@media (max-width: 768px) {
-  .hero__face h3 {
-    font-size: 20px;
-    line-height: 30px;
-    letter-spacing: -0.6px;
-    margin-bottom: 50px;
-  }
-}
-@media (max-width: 360px) {
-  .hero__face h3 {
-    font-size: 16px;
-    line-height: 22px;
-    letter-spacing: -0.48px;
-    margin-bottom: 40px;
-  }
-}
-.hero__face button {
+.consulting .main-title__text {
   color: white;
-  background: rgb(3, 199, 90);
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  margin-bottom: 133px;
-}
-.hero__face button:hover {
-  background: rgb(1, 112, 51);
-}
-@media (max-width: 768px) {
-  .hero__face button {
-    margin-bottom: 62px;
-  }
-}
-@media (max-width: 360px) {
-  .hero__face button {
-    margin-bottom: 90px;
-  }
-}
-.hero__face__paging {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  gap: 18px;
-}
-.hero__face__paging li {
-  color: #888;
-  font-weight: 500;
-  font-family: Montserrat, sans-serif;
-  font-size: 26px;
-  line-height: 40px;
-  letter-spacing: -0.78px;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  gap: 18px;
-}
-.hero__face__paging li.active {
-  color: white;
-  font-weight: 700;
-}
-.hero__face__paging li.active:before {
-  content: "";
-  display: block;
-  background-color: white;
-  width: 3em;
-  height: 0.4ex;
 }
 
 /*# sourceMappingURL=main.css.map */

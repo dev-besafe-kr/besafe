@@ -1,11 +1,4 @@
-@import 'colors';
-
-$container-width: 1280px;
-$container-width-t: 688px;
-$container-width-m: 320px;
-$gnb-height: 83px;
-$gnb-height-t: 71px;
-$gnb-height-m: 61px;
+@import 'vars-layout';
 
 .container {
   width: 100%;
@@ -160,7 +153,6 @@ $gnb-height-m: 61px;
 
         counter-reset: item;
         padding-top: 2em;
-        gap: 3em;
       }
 
       &__menu {

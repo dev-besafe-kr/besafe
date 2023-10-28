@@ -1,0 +1,142 @@
+@import '../vars-layout';
+
+@import url('https://fonts.cdnfonts.com/css/montserrat');
+@import url('https://fonts.cdnfonts.com/css/nanumsquare-neo');
+
+.hero {
+  padding: $gnb-height 1em 0;
+  @media (max-width: 768px) {
+    padding-top: $gnb-height-t;
+  }
+
+  @media (max-width: 425px) {
+    padding-top: $gnb-height-m;
+  }
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  background-color: rgba(0, 0, 0, 0.7);
+  background-blend-mode: darken;
+
+  &__face {
+    padding: 60px 0;
+
+    h1 {
+      font-family: "NanumSquare Neo", sans-serif;
+      color: #FFF;
+
+      font-size: 60px;
+      font-weight: 400;
+      line-height: 77px;
+      letter-spacing: -1.8px;
+
+      strong {
+        font-weight: 700;
+      }
+
+      margin-bottom: 32px;
+
+      @media (max-width: 768px) {
+        font-size: 44px;
+        line-height: 70px;
+        letter-spacing: -1.65px;
+
+        margin-bottom: 14px;
+      }
+
+      @media (max-width: 425px) {
+        font-size: 34px;
+        line-height: 42px;
+        letter-spacing: -1.02px;
+      }
+    }
+
+    h3 {
+      color: rgb(222 222 222 / 70%);
+
+      font-family: Montserrat, sans-serif;
+      font-size: 26px;
+      font-weight: 500;
+      line-height: 40px;
+      letter-spacing: -0.78px;
+
+      margin-bottom: 73px;
+
+      @media (max-width: 768px) {
+        font-size: 20px;
+        line-height: 30px;
+        letter-spacing: -0.6px;
+        margin-bottom: 50px;
+      }
+
+      @media (max-width: 425px) {
+        font-size: 16px;
+        line-height: 22px;
+        letter-spacing: -0.48px;
+        margin-bottom: 40px;
+      }
+    }
+
+    button {
+      color: white;
+      background: $primary;
+
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+
+      &:hover {
+        background: $primary-700;
+      }
+
+      margin-bottom: 133px;
+
+      @media (max-width: 768px) {
+        margin-bottom: 62px;
+      }
+
+      @media (max-width: 425px) {
+        margin-bottom: 90px;
+      }
+    }
+
+    &__paging {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      gap: 18px;
+
+      li {
+        color: #888;
+        font-weight: 500;
+
+        font-family: Montserrat, sans-serif;
+        font-size: 26px;
+        line-height: 40px;
+        letter-spacing: -0.78px;
+
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: 18px;
+
+        &.active {
+          &:before {
+            content: "";
+            display: block;
+            background-color: white;
+            width: 3em;
+            height: 0.4ex;
+          }
+
+          color: white;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
