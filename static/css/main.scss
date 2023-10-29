@@ -34,17 +34,25 @@
     color: black;
     padding: 1em 20px;
 
+    @media (max-width: 768px) {
+      padding: 1em 16px;
+    }
+
+    @media (max-width: 512px) {
+      padding: 1em 0;
+    }
+
     h1 {
       font-family: NanumSquare Neo, sans-serif;
       font-size: 50px;
-      font-weight: 300;
+      font-weight: 400;
       letter-spacing: -1.5px;
       text-align: center;
       height: auto;
 
       white-space: nowrap;
 
-      strong {
+      strong, b {
         font-weight: 600;
       }
 
@@ -53,7 +61,7 @@
       }
 
       @media (max-width: 512px) {
-        font-size: 20px;
+        font-size: 16px;
       }
     }
 
@@ -76,12 +84,12 @@
       }
 
       @media (max-width: 512px) {
-        font-size: 16px;
+        font-size: 14px;
       }
     }
   }
 }
 
-@import 'main/main-hero.css';
-@import 'main/main-roadmap';
-@import 'main/main-consulting';
+@import 'main/hero';
+@import 'main/roadmap';
+@import 'main/consulting';

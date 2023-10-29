@@ -9,7 +9,7 @@
     padding-top: $gnb-height-t;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 512px) {
     padding-top: $gnb-height-m;
   }
 
@@ -46,7 +46,7 @@
         margin-bottom: 14px;
       }
 
-      @media (max-width: 425px) {
+      @media (max-width: 512px) {
         font-size: 34px;
         line-height: 42px;
         letter-spacing: -1.02px;
@@ -71,7 +71,7 @@
         margin-bottom: 50px;
       }
 
-      @media (max-width: 425px) {
+      @media (max-width: 512px) {
         font-size: 16px;
         line-height: 22px;
         letter-spacing: -0.48px;
@@ -97,7 +97,7 @@
         margin-bottom: 62px;
       }
 
-      @media (max-width: 425px) {
+      @media (max-width: 512px) {
         margin-bottom: 90px;
       }
     }

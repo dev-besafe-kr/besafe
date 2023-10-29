@@ -1,0 +1,133 @@
+@import '../layout';
+
+@import url('https://fonts.cdnfonts.com/css/montserrat');
+@import url('https://fonts.cdnfonts.com/css/nanumsquare-neo');
+
+.consulting {
+  background-image: url("/static/images/bg-party.png");
+  background-size: cover;
+  background-position: center center;
+
+  .container {
+    padding: 0 1em;
+    padding-top: 96px;
+    @media (max-width: 768px) {
+      padding-top: 46px;
+    }
+
+    @media (max-width: 512px) {
+      padding-top: 42px;
+    }
+  }
+
+  .main-title {
+    margin-bottom: 54px;
+    @media (max-width: 768px) {
+      margin-bottom: 34px;
+    }
+
+    @media (max-width: 512px) {
+      margin-bottom: 26px;
+    }
+
+    &__text {
+      color: white;
+    }
+  }
+
+  &__panel {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 30px;
+
+    margin-bottom: 54px;
+    @media (max-width: 768px) {
+      margin-bottom: 34px;
+    }
+
+    @media (max-width: 512px) {
+      margin-bottom: 26px;
+    }
+
+    * {
+      width: 20px;
+      height: 20px;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      @media (max-width: 768px) {
+        width: 18px;
+        height: 18px;
+      }
+
+      @media (max-width: 512px) {
+        width: 14px;
+        height: 14px;
+      }
+    }
+
+    &__prev {
+      background-image: url("/static/images/icons/left.png");
+    }
+
+    &__carousel {
+      background-image: url("/static/images/icons/pause.svg");
+    }
+
+    &__next {
+      background-image: url("/static/images/icons/right.svg");
+    }
+  }
+
+  &__card {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 1em;
+    border-radius: 20px;
+    background: #D9D9D9;
+
+    width: 400px;
+    height: 450px;
+
+    @media (max-width: 768px) {
+      width: 195px;
+      height: 219px;
+    }
+
+    @media (max-width: 512px) {
+      width: 320px;
+      height: 350px;
+    }
+    scroll-snap-align: center;
+  }
+
+  &__list {
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    position: relative;
+    top: 225px;
+    margin-top: -225px;
+    margin-bottom: 225px;
+    @media (max-width: 768px) {
+      top: 109px;
+      margin-top: -109px;
+      margin-bottom: 109px;
+    }
+
+    @media (max-width: 512px) {
+      top: 175px;
+      margin-top: -175px;
+      margin-bottom: 175px;
+    }
+  }
+}
