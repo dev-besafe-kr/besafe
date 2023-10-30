@@ -84,21 +84,203 @@
     vertical-align: middle;
     margin-right: 1em;
     border-radius: 20px;
-    background: #D9D9D9;
+    background-color: white;
+    padding: 40px 20px 20px;
+    box-shadow: 17px 17px 17px -7px #0f296b20;
 
     width: 400px;
-    height: 450px;
+    min-height: 450px;
 
     @media (max-width: 768px) {
       width: 195px;
-      height: 219px;
+      min-height: 219px;
     }
 
     @media (max-width: 512px) {
       width: 320px;
-      height: 350px;
+      min-height: 350px;
     }
     scroll-snap-align: center;
+
+    &__top {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      gap: 20px;
+
+      @media (max-width: 768px) {
+        gap: 8px;
+      }
+
+      @media (max-width: 512px) {
+        gap: 16px;
+      }
+    }
+
+    &__img {
+      width: 100px;
+      height: 100px;
+
+      @media (max-width: 768px) {
+        width: 40px;
+        height: 40px;
+      }
+
+      @media (max-width: 512px) {
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+    &__name {
+      width: 100%;
+      font-family: Pretendard, sans-serif;
+
+      .div {
+        font-weight: 300;
+        font-size: 16px;
+
+        @media (max-width: 768px) {
+          font-size: 11px;
+        }
+
+        @media (max-width: 512px) {
+          font-size: 14px;
+        }
+      }
+
+      .name {
+        margin-top: 3px;
+        margin-bottom: 5px;
+        font-weight: 700;
+        font-size: 24px;
+        color: #020202;
+        letter-spacing: 8px;
+
+        @media (max-width: 768px) {
+          font-size: 16px;
+          letter-spacing: 0;
+        }
+
+        @media (max-width: 512px) {
+          font-size: 18px;
+        }
+      }
+    }
+
+    &__item {
+      color: $primary;
+      text-align: right;
+      font-family: Pretendard, sans-serif;
+
+      .title {
+        font-weight: 700;
+        font-size: 24px;
+
+        @media (max-width: 768px) {
+          font-size: 11px;
+        }
+
+        @media (max-width: 512px) {
+          font-size: 16px;
+        }
+      }
+
+      .desc {
+        margin-top: 0.3rem;
+        font-family: 'Pretendard', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+
+        @media (max-width: 768px) {
+          font-size: 8px;
+        }
+
+        @media (max-width: 512px) {
+          font-size: 11px;
+        }
+      }
+    }
+
+    &__tag {
+      display: flex;
+      margin-top: 16px;
+      margin-bottom: 16px;
+      width: fit-content;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: #1fc66210;
+      align-items: center;
+
+      font-family: Pretendard, sans-serif;
+      font-size: 16px;
+
+      @media (max-width: 768px) {
+        font-size: 10px;
+      }
+
+        @media (max-width: 512px) {
+          font-size: 14px;
+        }
+
+      .mark {
+        width: 19px;
+        height: 19px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100px;
+        background-color: $primary;
+        margin-right: 5px;
+        font-weight: 700;
+        color: #fafafa;
+      }
+
+      .title {
+        font-weight: 700;
+        color: $primary;
+      }
+    }
+
+    &__bottom {
+      font-family: Pretendard, sans-serif;
+
+      h1 {
+        padding-left: 8px;
+        font-weight: 700;
+        font-size: 24px;
+        color: #020202;
+        margin-bottom: 16px;
+
+        @media (max-width: 768px) {
+          font-size: 11px;
+        }
+
+        @media (max-width: 512px) {
+          font-size: 20px;
+        }
+      }
+
+      p {
+        width: 100%;
+        border-radius: 10px;
+        padding: 20px;
+        background-color: #f8f8f8;
+        font-weight: 400;
+        font-size: 16px;
+        color: #767676;
+        line-height: 24px;
+        white-space: normal;
+
+        @media (max-width: 768px) {
+          font-size: 8px;
+        }
+
+        @media (max-width: 512px) {
+          font-size: 11px;
+        }
+      }
+    }
   }
 
   &__list {
@@ -116,12 +298,13 @@
 
     position: relative;
     top: 225px;
+    padding-bottom: 30px;
     margin-top: -225px;
-    margin-bottom: 225px;
+    margin-bottom: 235px;
     @media (max-width: 768px) {
       top: 109px;
       margin-top: -109px;
-      margin-bottom: 109px;
+      margin-bottom: 119px;
     }
 
     @media (max-width: 512px) {

@@ -1,4 +1,4 @@
-@import '../layout';
+@import '../vars-layout';
 
 @import url('https://fonts.cdnfonts.com/css/montserrat');
 @import url('https://fonts.cdnfonts.com/css/nanumsquare-neo');
@@ -6,13 +6,13 @@
 .news {
   &__head {
     padding: 0 1em;
-    padding-top: 133px;
+    padding-top: 103px;
     @media (max-width: 768px) {
-      padding-top: 56px;
+      padding-top: 26px;
     }
 
     @media (max-width: 512px) {
-      padding-top: 54px;
+      padding-top: 24px;
     }
 
     .main-title {
@@ -138,6 +138,7 @@
 
     &__contents {
       padding: 44px 0;
+
       &__name {
         color: #888;
         font-family: NanumSquare Neo, sans-serif;
@@ -153,15 +154,27 @@
         font-size: 15px;
         font-weight: 700;
         letter-spacing: -0.45px;
+
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        line-clamp: 1;
+        -webkit-box-orient: vertical;
       }
 
       &__description {
-        padding: 18px 0;
+        margin: 18px 0;
         color: #0E141E;
 
         font-family: Pretendard, sans-serif;
         font-size: 14px;
         font-weight: 400;
+
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
       }
 
       button {
