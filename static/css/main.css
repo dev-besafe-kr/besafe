@@ -9,6 +9,10 @@
 @import url("https://fonts.cdnfonts.com/css/nanumsquare-neo");
 @import url("https://fonts.cdnfonts.com/css/montserrat");
 @import url("https://fonts.cdnfonts.com/css/nanumsquare-neo");
+@import url("https://fonts.cdnfonts.com/css/montserrat");
+@import url("https://fonts.cdnfonts.com/css/nanumsquare-neo");
+@import url("https://fonts.cdnfonts.com/css/montserrat");
+@import url("https://fonts.cdnfonts.com/css/nanumsquare-neo");
 html, body {
   margin: 0;
   height: 100%;
@@ -1418,6 +1422,180 @@ button:hover {
 }
 .salon__list li .interview-wrap:hover .logo {
   transform: scale(1.1, 1.1);
+}
+
+.customers {
+  padding: 103px 1em;
+}
+@media (max-width: 768px) {
+  .customers {
+    padding: 26px 1em;
+  }
+}
+@media (max-width: 512px) {
+  .customers {
+    padding: 24px 1em;
+  }
+}
+.customers .main-title {
+  justify-content: start;
+  height: auto;
+  margin-bottom: 100px;
+}
+.customers .main-title__text {
+  align-items: start;
+}
+.customers .main-title__text * {
+  text-align: left;
+}
+.customers .main-title__text h1 {
+  margin-bottom: 30px;
+}
+@media (max-width: 768px) {
+  .customers .main-title {
+    margin-bottom: 60px;
+  }
+}
+@media (max-width: 512px) {
+  .customers .main-title {
+    margin-bottom: 30px;
+  }
+}
+.customers__banners {
+  overflow: hidden;
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.customers__banners ul {
+  white-space: nowrap;
+}
+.customers__banners ul:nth-of-type(1) {
+  animation: marquee 20s linear infinite;
+}
+.customers__banners ul:nth-of-type(2) {
+  animation: marquee 20s linear reverse;
+  animation-iteration-count: infinite;
+}
+.customers__banners ul li {
+  vertical-align: middle;
+  display: inline-flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background: white;
+  box-shadow: -2px 3px 8px 0px rgba(0, 0, 0, 0.14);
+  margin-right: 16px;
+  flex-shrink: 1;
+  width: 400px;
+  height: 200px;
+}
+@media (max-width: 768px) {
+  .customers__banners ul li {
+    width: 258px;
+    height: 124px;
+  }
+}
+@media (max-width: 512px) {
+  .customers__banners ul li {
+    width: 154px;
+    height: 96px;
+  }
+}
+.customers__banners ul li img {
+  width: 30%;
+}
+
+.outtro {
+  background-color: rgba(0, 0, 0, 0.8);
+  background-image: url("/static/images/bg-pg6.png");
+  background-blend-mode: darken;
+  background-size: cover;
+  background-position: center center;
+}
+.outtro .container {
+  padding: 170px 1em;
+}
+@media (max-width: 768px) {
+  .outtro .container {
+    padding: 112px 1em;
+  }
+}
+@media (max-width: 512px) {
+  .outtro .container {
+    padding: 68px 1em;
+  }
+}
+.outtro .container .frame {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  text-align: center;
+}
+.outtro .container .frame h1 {
+  color: #FFF;
+  font-family: NanumSquare Neo, sans-serif;
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 77px;
+  letter-spacing: -1.92px;
+}
+@media (max-width: 768px) {
+  .outtro .container .frame h1 {
+    font-size: 40px;
+    line-height: 50px;
+    letter-spacing: -1.2px;
+  }
+}
+@media (max-width: 512px) {
+  .outtro .container .frame h1 {
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 34px;
+    letter-spacing: -0.78px;
+  }
+}
+.outtro .container .frame p {
+  color: #DEDEDE;
+  font-family: Montserrat, sans-serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: -0.78px;
+  opacity: 0.85;
+  margin: 50px 0;
+}
+@media (max-width: 768px) {
+  .outtro .container .frame p {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: -0.6px;
+    margin: 30px 0;
+  }
+}
+@media (max-width: 512px) {
+  .outtro .container .frame p {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: -0.45px;
+    margin: 26px 0;
+  }
+}
+.outtro .container .frame button {
+  background-color: rgb(3, 199, 90);
+  color: #FFF;
+  font-family: Pretendard, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 /*# sourceMappingURL=main.css.map */
