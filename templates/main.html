@@ -3,6 +3,8 @@
 
 {% block head %}
     <link href="{% static "css/main.css" %}" rel="stylesheet">
+    <script defer type="text/javascript"
+        src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=6hjg4fhdj6"></script>
 {% endblock %}
 
 {% block body %}
@@ -12,5 +14,6 @@
     {% include "main/news.html" %}
     {% include "main/salon.html" %}
     {% include "main/customer.html" %}
+    {% include "main/map.html" %}
     {% include "main/outtro.html" %}
 {% endblock %}
