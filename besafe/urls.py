@@ -23,20 +23,21 @@ from django.urls import path, include
 from inquiry.views import ConsultingFormView, PartnershipFormView
 from besafe.views import (
     MainPageView,
-    IntroPageView,
+    IntroServicePageView,
     ServicePageView,
     PortfolioPageView,
     ContractPageView,
-    ProgramPageView,
+    IntroBizPageView, ProgramPageView,
 )
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", MainPageView.as_view()),
-    path("intro", IntroPageView.as_view()),
+    path("intro-service", IntroServicePageView.as_view()),
+    path("intro-biz", IntroBizPageView.as_view()),
+    path("program", ProgramPageView.as_view()),
     path("service", ServicePageView.as_view()),
     path("portfolio", PortfolioPageView.as_view()),
-    path("program", ProgramPageView.as_view()),
     path("contract", ContractPageView.as_view()),
     path(
         "api/",

@@ -1,24 +1,24 @@
-{% macro gnb(selected_menu) %}
+{% macro gnb(selected) %}
     <header class="gnb">
         <div class="container">
             <a href="/"><img class="gnb__logo" src="{% static "images/logo-besafe.svg" %}" alt="비세이프 로고"/></a>
             <div class="gnb__nav">
                 <ol class="gnb__nav__menus">
-                    <li class="gnb__nav__menu">
-                        <a href="/intro">비세이프 소개</a>
+                    <li class="gnb__nav__menu {% if selected == "intro" %}active{% endif %}">
+                        <a href="/intro-service">비세이프 소개</a>
                     </li>
-                    <li class="gnb__nav__menu">
+                    <li class="gnb__nav__menu {% if selected == "program" %}active{% endif %}">
                         <a href="/program">특허설계서비스</a>
                     </li>
-                    <li class="gnb__nav__menu">
+                    <li class="gnb__nav__menu {% if selected == "portfolio" %}active{% endif %}">
                         <a href="/portfolio">포트폴리오</a>
                     </li>
-                    <li class="gnb__nav__menu">
-                        <a href="/service">제휴문의</a>
-                    </li>
-                    <li class="gnb__nav__menu">
-                        <a href="/contract">계약 진행</a>
-                    </li>
+{#                    <li class="gnb__nav__menu {% if selected == "service" %}active{% endif %}">#}
+{#                        <a href="/service">제휴문의</a>#}
+{#                    </li>#}
+{#                    <li class="gnb__nav__menu">#}
+{#                        <a href="/contract">계약 진행</a>#}
+{#                    </li>#}
                 </ol>
                 <button class="primary gnb__nav__button">무료상담신청</button>
             </div>

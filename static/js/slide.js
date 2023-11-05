@@ -1,18 +1,14 @@
 window.addEventListener('load', function () {
-    document.querySelectorAll(".slide-left").forEach((el) => {
-        let slide = el.parentElement;
-        while (slide.nodeName.toLowerCase() !== 'body') {
-            if (slide.classList.contains("slide")) {
-                break;
-            }
-            slide = slide.parentElement
-        }
-        el.addEventListener('click', () => {
-            const ulEl = slide.querySelector(`.slide-ul[data-slide_id=${el.dataset.slide_id}]`);
+    document.querySelectorAll(".slide").forEach((slide) => {
+        const leftEl = slide.querySelector(".slide-left");
+        const rightEl = slide.querySelector(".slide-right");
+        const stopEl = slide.querySelector(".slide-stop");
+        leftEl && leftEl.addEventListener('click', () => {
+            const ulEl = slide.querySelector(`.slide-ul`);
             const liEl = ulEl.querySelector('li');
             ulEl.scrollTo(ulEl.scrollLeft - liEl.clientWidth, 0);
 
-            const pagingEl = slide.querySelector(`.slide-paging[data-slide_id=${el.dataset.slide_id}]`);
+            const pagingEl = slide.querySelector(`.slide-paging`);
             if (pagingEl == null) return;
 
             const activeEl = pagingEl.querySelector('li.active');
@@ -25,21 +21,12 @@ window.addEventListener('load', function () {
                 prevEl.classList.add("active");
             }
         });
-    });
-    document.querySelectorAll(".slide-right").forEach((el) => {
-        let slide = el.parentElement;
-        while (slide.nodeName.toLowerCase() !== 'body') {
-            if (slide.classList.contains("slide")) {
-                break;
-            }
-            slide = slide.parentElement
-        }
-        el.addEventListener('click', () => {
-            const ulEl = slide.querySelector(`.slide-ul[data-slide_id=${el.dataset.slide_id}]`);
+        rightEl && rightEl.addEventListener('click', () => {
+            const ulEl = slide.querySelector(`.slide-ul`);
             const liEl = ulEl.querySelector('li');
             ulEl.scrollTo(ulEl.scrollLeft + liEl.clientWidth, 0);
 
-            const pagingEl = slide.querySelector(`.slide-paging[data-slide_id=${el.dataset.slide_id}]`);
+            const pagingEl = slide.querySelector(`.slide-paging`);
             if (pagingEl == null) return;
 
             const activeEl = pagingEl.querySelector('li.active');
@@ -52,5 +39,38 @@ window.addEventListener('load', function () {
                 nextEl.classList.add("active");
             }
         });
+        stopEl && stopEl.addEventListener('click', () => {
+            slide.classList.add("stop");
+        });
+
+        setInterval(() => {
+            if (slide.classList.contains("stop")) return;
+            rightEl && rightEl.click();
+        }, 3000);
+    });
+
+    document.querySelectorAll(".shift").forEach(shift => {
+        shift.querySelectorAll(".shift__handle").forEach(el => {
+            el.addEventListener('click', () => {
+                const dataId = el.dataset.shift_id;
+                shift.querySelectorAll(".shift__handle").forEach(nel => {
+                    nel.classList.toggle("active", nel.dataset.shift_id === dataId);
+                });
+                shift.querySelectorAll(".shift__item").forEach(cel => {
+                    cel.classList.toggle("active", cel.dataset.shift_id === dataId);
+                })
+            });
+        });
+        const leftEl = shift.querySelector(".shift__left");
+        const rightEl = shift.querySelector(".shift__right");
+        leftEl && leftEl.addEventListener('click', () => {
+        });
+        rightEl && rightEl.addEventListener('click', () => {
+        });
+
+        setInterval(() => {
+            if (shift.classList.contains("stop")) return;
+            rightEl && rightEl.click();
+        }, 3000);
     });
 });

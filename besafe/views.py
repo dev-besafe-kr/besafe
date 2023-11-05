@@ -12,8 +12,11 @@ class MainPageView(TemplateView):
     template_name = "main.html"
 
 
-class IntroPageView(TemplateView):
-    template_name = "intro.html"
+class IntroServicePageView(TemplateView):
+    template_name = "intro-service.html"
+
+class IntroBizPageView(TemplateView):
+    template_name = "intro-biz.html"
 
 
 class ProgramPageView(TemplateView):

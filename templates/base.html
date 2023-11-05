@@ -1,4 +1,5 @@
 {% import "modules/layout.jinja2" as layout %}
+{% set gnb_selected = gnb_selected or "" %}
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -33,12 +34,13 @@
             crossorigin="anonymous"></script>
 
     <script defer src="{% static "js/slide.js" %}"></script>
+    <script defer src="{% static "js/animation.js" %}"></script>
     {% block head %}{% endblock %}
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MLJHB3QBCS"></script>
 </head>
 <body>
-{% block header %}{{ layout.gnb() }}{% endblock %}
+{% block header %}{{ layout.gnb(gnb_selected) }}{% endblock %}
 {% block body %}{% endblock %}
 <script>
     window.dataLayer = window.dataLayer || [];
@@ -62,9 +64,9 @@
                         대표자 전형진 | 사업자 등록번호 526-87-01439<br/>세종특별자치시 조치원읍 으뜸길 177 1층
                     </p>
                     <div class="div-3">
-                        <div class="text-wrapper">Tel. 1588-8231</div>
-                        <div class="text-wrapper">Fax. 0504-425-6293</div>
-                        <div class="text-wrapper">Mail. besafe.gmail.com</div>
+                        <div>Tel. 1588-8231</div>
+                        <div>Fax. 0504-425-6293</div>
+                        <div>Mail. besafe.gmail.com</div>
                     </div>
                     <p class="p">Copyright(c) Besafe All Right Reserced.</p>
                 </div>

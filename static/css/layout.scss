@@ -1,15 +1,29 @@
 @import 'vars-layout';
 
+.m {
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+  }
+
+  @media (max-width: 512px) {
+    display: block;
+  }
+}
+
 .container {
   width: 100%;
   max-width: $container-width;
+  min-width: 360px;
   margin: 0 auto;
+  overflow: hidden;
+
   @media (max-width: 768px) {
     max-width: $container-width-t;
   }
 
-  @media (max-width: 360px) {
-    max-width: $container-width-m;
+  @media (max-width: 512px) {
+    max-width: 360px;
   }
 }
 
@@ -20,7 +34,7 @@
     height: $gnb-height-t;
   }
 
-  @media (max-width: 360px) {
+  @media (max-width: 512px) {
     height: $gnb-height-m;
   }
   position: absolute;
@@ -89,10 +103,22 @@
       &:hover {
         color: #FFFFFF;
       }
+
+      padding-bottom: 0.3em;
+      border-bottom: 1px solid transparent;
+
+      &.active {
+        color: $primary;
+        border-color: $primary;
+
+        &:hover {
+          color: $primary;
+        }
+      }
     }
   }
 
-  @media (max-width: 360px) {
+  @media (max-width: 512px) {
     button {
       display: none;
     }
@@ -112,7 +138,7 @@
       display: block;
     }
 
-    @media (max-width: 360px) {
+    @media (max-width: 512px) {
       display: block;
     }
 
@@ -128,7 +154,7 @@
         padding-top: $gnb-height-t;
       }
 
-      @media (max-width: 360px) {
+      @media (max-width: 512px) {
         padding-top: $gnb-height-m;
         button {
           display: inline-block;
@@ -173,7 +199,7 @@
           font-size: 16px;
         }
 
-        @media (max-width: 360px) {
+        @media (max-width: 512px) {
           font-size: 24px;
         }
       }
@@ -210,6 +236,12 @@ footer {
       justify-content: space-between;
       position: relative;
 
+      @media (max-width: 512px) {
+        flex-flow: column nowrap;
+        justify-content: start;
+        gap: 16px;
+      }
+
       .group {
         position: relative;
         height: 46px;
@@ -220,6 +252,7 @@ footer {
 
         @media (max-width: 512px) {
           margin-right: 16px;
+          height: 30px;
         }
       }
 
@@ -229,27 +262,27 @@ footer {
         align-items: flex-start;
         gap: 26px;
         position: relative;
+        font-family: Pretendard, sans-serif;
+        font-weight: 500;
+        color: #b0b0b0;
+        font-size: 14px;
+        letter-spacing: 0;
+        line-height: normal;
+
+        @media (max-width: 512px) {
+          color: #545454;
+
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
       }
 
       .text-wrapper {
         margin-top: -1px;
         position: relative;
-        font-family: Pretendard, sans-serif;
-        font-weight: 500;
-        color: #b0b0b0;
-        font-size: 14px;
-        letter-spacing: 0;
-        line-height: normal;
-      }
-
-      .element {
-        position: relative;
-        font-family: Pretendard, sans-serif;
-        font-weight: 500;
-        color: #b0b0b0;
-        font-size: 14px;
-        letter-spacing: 0;
-        line-height: normal;
+        font-weight: 700;
       }
 
       .div-3 {
@@ -271,6 +304,12 @@ footer {
         letter-spacing: 0;
         line-height: normal;
         white-space: nowrap;
+
+        @media (max-width: 512px) {
+          color: rgb(163, 163, 163, 0.4);
+          font-size: 12px;
+          font-weight: 400;
+        }
       }
 
       .img {
@@ -289,6 +328,66 @@ footer {
   }
 }
 
-.slide-left, .slide-right {
+.slide-left, .slide-right, .slide-stop, .shift__handle, .shift__left, .shift__right {
   cursor: pointer;
+}
+
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    position: relative;
+    bottom: -100px;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    position: relative;
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+
+.animation {
+  opacity: 0;
+
+  &.on {
+    &.fade-in {
+      animation: fade-in 1.5s ease-out forwards;
+    }
+
+    &.fade-up {
+      animation: fade-up 1s ease-out forwards;
+    }
+  }
+}
+
+@keyframes move-arrow {
+  0% {
+    opacity: 1;
+    bottom: -1rem;
+  }
+  100% {
+    opacity: 0;
+    bottom: 2rem;
+  }
+}
+
+.arrow-blink {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  animation: move-arrow 0.8s ease-in-out infinite backwards;
 }

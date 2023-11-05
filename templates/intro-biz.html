@@ -1,0 +1,42 @@
+{% set gnb_selected = "intro" %}
+{% extends "base.html" %}
+
+{% block head %}
+    <link href="{% static "css/intro.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <div class="intro biz">
+        <section class="hero">
+            <div class="container">
+                <h1>Dreams come true<br/>with Besafe</h1>
+                <h3>시행착오를 줄이고 사업가들이 안전하게 사업할 수 있도록.</h3>
+            </div>
+        </section>
+        <div class="container">
+            <div class="tabbar">
+                <div class="tabbar__item">
+                    <a href="/intro-service">서비스 소개</a>
+                </div>
+                <div class="tabbar__item active">
+                    <a href="/intro-biz">회사 소개</a></div>
+            </div>
+        </div>
+        <section class="vision container">
+            <h1>Vision & Mission</h1>
+            <img src="{% static "images/intro/venn-diagram.png" %}"/>
+        </section>
+        <section class="history container">
+            <h1>History</h1>
+        </section>
+        <section class="team container">
+            <h1>Team building</h1>
+        </section>
+        <section class="certification container">
+            <h1>Certification</h1>
+        </section>
+        <section class="outro container">
+            <h1>선순환적인 성공 구조, <br/><b>비세이프가 만들어 갑니다</b></h1>
+        </section>
+    </div>
+{% endblock %}

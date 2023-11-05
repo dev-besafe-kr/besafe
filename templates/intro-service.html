@@ -1,0 +1,202 @@
+{% set gnb_selected = "intro" %}
+{% extends "base.html" %}
+
+{% block head %}
+    <link href="{% static "css/intro.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <div class="intro service">
+        <section class="hero">
+            <div class="container">
+                <h1>Dreams come true<br/>with Besafe</h1>
+                <h3>시행착오를 줄이고 사업가들이 안전하게 사업할 수 있도록.</h3>
+            </div>
+        </section>
+        <div class="container">
+            <div class="tabbar">
+                <div class="tabbar__item active">
+                    <a href="/intro-service">서비스 소개</a>
+                </div>
+                <div class="tabbar__item">
+                    <a href="/intro-biz">회사 소개</a></div>
+            </div>
+        </div>
+        <div class="section-group problem container">
+            <div class="section-group__title">Problem</div>
+            <section>
+                <h1 class="animation fade-in">현저하게 낮은<br/><b>대한민국 창업 교육 점수</b></h1>
+                <div class="section-group__img animation fade-up"><img src="{% static "images/intro/728-1.png" %}"/>
+                </div>
+                <sub>자료 출처 : 글로벌 기업가정신 모니터(GEM), 한국보고서</sub>
+            </section>
+            <section>
+                <h1 class="animation fade-in"><b>많은 비율, 적은 생존률</b>의<br/>국내 신생 <b>스타트업</b></h1>
+                <div class="section-group__img animation fade-up"><img src="{% static "images/intro/729-1.png" %}"/>
+                </div>
+                <sub>자료 출처 : 통계청-Eurostat, 2017 주요국 신생기업 생존율 | 중소벤처기업부, 2021 창업기업 생존율</sub>
+            </section>
+        </div>
+        <div class="section-group needs container">
+            <div class="section-group__title">Needs</div>
+            <section>
+                <h1 class="animation fade-in">1회성 강사가 아닌,<br/>지속적인 도움을 제공하는 <br class="m"/><b>비즈니스 파트너</b></h1>
+                <div class="section-group__img animation fade-up">
+                    <div>
+                        <img class="fixer" src="{% static "images/ts-square.png" %}"/>
+                        <div class="wrapper">
+                            <div>
+                                <h3>창업교육 경험자 A씨</h3>
+                                <h4>"현업에서 유의미한 성취를 경험한<br/>실무전문가를 만나고 싶어요"</h4>
+                            </div>
+                            <div><img src="{% static "images/intro/peeps-avatar-alpha-1-1.png" %}"/></div>
+                        </div>
+                    </div>
+                    <div>
+                        <img class="fixer" src="{% static "images/ts-square.png" %}"/>
+                        <div class="wrapper">
+                            <div>
+                                <h3>창업교육 경험자 B씨</h3>
+                                <h4>"창업교육자와의 관계와 소통이<br/>제대로 이뤄졌으면 좋겠어요"</h4>
+                            </div>
+                            <div><img src="{% static "images/intro/peeps-avatar-alpha-2-1.png" %}"/></div>
+                        </div>
+                    </div>
+                    <div>
+                        <img class="fixer" src="{% static "images/ts-square.png" %}"/>
+                        <div class="wrapper">
+                            <div>
+                                <h3>창업교육 경험자 C씨</h3>
+                                <h4>"실제로 같은 직종에서 활동하는<br/>창업 선배들의 멘토링과<br/>열린 공간 속에서 교육을 받기를 원해요"</h4>
+                            </div>
+                            <div><img src="{% static "images/intro/peeps-avatar-alpha-4-1.png" %}"/></div>
+                        </div>
+                    </div>
+                    <div>
+                        <img class="fixer" src="{% static "images/ts-square.png" %}"/>
+                        <div class="wrapper">
+                            <div>
+                                <h3>창업교육 경험자 D씨</h3>
+                                <h4>"멘토링보다 강의 시간이 많아<br/>멘토링은 금방 끝나는 경우가 많아요.<br/>지속적 멘토링으로 <br class="m"/>실질적 도움을
+                                    얻고싶어요"</h4>
+                            </div>
+                            <div><img src="{% static "images/intro/peeps-avatar-alpha-6-1.png" %}"/></div>
+                        </div>
+                    </div>
+                </div>
+                <sub>자료 출처 : 더퍼스트미디어, 2021 창업자인터뷰</sub>
+            </section>
+            <div class="arrow-blink"><img src="{% static "images/icons/arrow-blink.png" %}"/></div>
+            <section class="answer animation fade-in">
+                <h2>
+                    <b>지속적인 1:1 멘토링</b>으로 기업에게 실질적인 도움을 줄 수 있는<br/><b>스타트업 전문 “비즈니스 파트너”가 필요함</b>
+                </h2>
+            </section>
+        </div>
+        <div class="section-group solution container">
+            <div class="section-group__title">Solution</div>
+            <section class="solution__head animation fade-in">
+                <div class="solution__head__wrapper">
+                    <div class="solution__head__keyword">
+                        <div>'스타트업'</div>
+                        <ul>
+                            <li>초기 창업자</li>
+                            <li>예비 창업자</li>
+                        </ul>
+                    </div>
+                    <div class="solution__head__word">대상으로</div>
+                </div>
+                <div class="solution__head__wrapper">
+                    <div class="solution__head__keyword">
+                        <div>'사업에 필요한 모든 노하우'</div>
+                        <ul>
+                            <li>정부지원정책 맞춤형 교육</li>
+                            <li>사업계획 1:1 코칭</li>
+                            <li>세심한 특허 설계</li>
+                            <li>B2B, B2C, B2G 활용방법</li>
+                        </ul>
+                    </div>
+                    <div class="solution__head__word">를</div>
+                </div>
+                <div class="solution__head__wrapper">
+                    <div class="solution__head__keyword">
+                        <div>'가능한 모든 방식'</div>
+                        <ul>
+                            <li>오프라인 맞춤형 멘토링 교육</li>
+                            <li>온라인 비대면 교육</li>
+                            <li>유망 기업 선발, 투자(액셀러레이팅)</li>
+                            <li>초기 사업화 공간 제공(보육실)</li>
+                        </ul>
+                    </div>
+                    <div class="solution__head__word">으로 제공</div>
+                </div>
+            </section>
+            <section class="solution__cards">
+                <h1 class="animation fade-in">창업기업 <b>액셀러레이션</b>으로 <br/><b>든든한 동반자</b>가 되다</h1>
+                <div class="solution__cards__wrapper animation fade-up">
+                    <div class="solution__card">
+                        <h3>초기 스타트업</h3>
+                        <div class="solution__card__img"><img src="{% static "images/intro/solution-2-1.png" %}"/>
+                        </div>
+                        <div class="solution__card__p"><p>사업 아이템은 있지만 사업할 자신이 없는 분<br/>
+                            기술력은 있지만 창업에 대해 잘 모르는 분<br/>
+                            창업했지만 성장전략이 미흡해 사업 성장이 어려운 분</p></div>
+                    </div>
+                    <img src="{% static "images/icons/plus-green.png" %}"/>
+                    <div class="solution__card">
+                        <h3>Accelerator</h3>
+                        <div class="solution__card__img"><img src="{% static "images/intro/solution-2-2.png" %}"/>
+                        </div>
+                        <div class="solution__card__p"><p>창업코칭<br/>
+                            B2C, B2B, B2G 개척 교육<br/>
+                            사업도약 지원<br/>
+                            우수 스타트업 대상 투자</p></div>
+                    </div>
+                    <img src="{% static "images/icons/equal-green.png" %}"/>
+                    <div class="solution__card">
+                        <h3>Goal</h3>
+                        <div class="solution__card__img">
+                            <img src="{% static "images/intro/solution-2-3.png" %}"/>
+                        </div>
+                        <div class="solution__card__p"><p>도약 스타트업</p></div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h1 class="animation fade-in">
+                    <small>성공적인 Scale-up을 도모하다</small>
+                    <b>Start-up 도약 지원 서비스</b>
+                </h1>
+                <div class="solution__services animation fade-up">
+                    <div class="solution__service">
+                        <img src="{% static "images/intro/group-27.png" %}"/>
+                        <p>연구소/공장 유치</p>
+                    </div>
+                    <div class="solution__service">
+                        <img src="{% static "images/intro/group-28.png" %}"/>
+                        <p>국내외<br/>지식재산권 확보</p>
+                    </div>
+                    <div class="solution__service">
+                        <img src="{% static "images/intro/group-29.png" %}"/>
+                        <p>법무/노무/세무<br/>전문가 자문</p>
+                    </div>
+                    <div class="solution__service">
+                        <img src="{% static "images/intro/group-30.png" %}"/>
+                        <p>VC / AC / 공공기관<br/>투자유치</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <section class="contact">
+            <div class="container">
+                <div class="contact__head">
+                <h2>홀로서기를 위한 든든한 가이드</h2>
+                <h1>지금 비세이프와 함께하세요</h1></div>
+                <div class="contact__buttons">
+                    <button>무료 상담 신청하기</button>
+                    <button>사업소개서 다운받기</button>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}
