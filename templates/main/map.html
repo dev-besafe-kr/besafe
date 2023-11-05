@@ -31,8 +31,8 @@
             const mapDiv = document.querySelector('.map__frame');
             mapDiv.style.height = `${mapDiv.clientWidth / 43 * 18}px`;
         };
-        window.onresize = resize;
-        window.onload = function () {
+        window.addEventListener('resize', resize);
+        window.addEventListener('load', function () {
             resize();
             const map = new naver.maps.Map('map', {
                 center: new naver.maps.LatLng(36.599511421322084, 127.29702231605454),
@@ -52,6 +52,6 @@
                 position: new naver.maps.LatLng(36.599511421322084, 127.29702231605454),
                 map: map
             });
-        };
+        });
     </script>
 </section>
