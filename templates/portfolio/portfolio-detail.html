@@ -1,0 +1,33 @@
+{% extends "portfolio/base.html" %}
+{% block portfolio %}
+    <div class="detail container">
+        <div class="detail__head">
+            <h1 class="title">보리보리</h1>
+            <ul class="tags">
+                <li class="tag">홈페이지 UI·UX 디자인</li>
+                <li class="tag">특허설계</li>
+                <li class="tag">사업계획서 구상 및 디자인</li>
+            </ul>
+            <div class="link">
+                <label>사이트 바로가기</label>
+                <a>www.notyourrose.co.kr</a>
+            </div>
+        </div>
+        <div class="detail__body">
+            <div class="contents">
+                <p><img src="{% static "images/portfolio/portfolio-1.png" %}"/></p>
+                <p><img src="{% static "images/portfolio/portfolio-2.png" %}"/></p>
+                <p><img src="{% static "images/portfolio/portfolio-3.png" %}"/></p>
+            </div>
+        </div>
+        <div class="detail__foot">
+            <div class="paging">
+                <div class="nav prev"></div>
+                <div class="nav next"></div>
+            </div>
+            <div class="buttons">
+                <button>목록으로</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}

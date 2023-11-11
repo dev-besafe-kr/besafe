@@ -25,9 +25,9 @@ from besafe.views import (
     MainPageView,
     IntroServicePageView,
     ServicePageView,
-    PortfolioPageView,
+    PortfolioListView,
     ContractPageView,
-    IntroBizPageView, ProgramPageView,
+    IntroBizPageView, ProgramPageView, PortfolioDetailView,
 )
 
 urlpatterns = [
@@ -37,7 +37,10 @@ urlpatterns = [
     path("intro-biz", IntroBizPageView.as_view()),
     path("program", ProgramPageView.as_view()),
     path("service", ServicePageView.as_view()),
-    path("portfolio", PortfolioPageView.as_view()),
+    path("portfolios", include([
+        path("", PortfolioListView.as_view()),
+        path("/<int:pk>", PortfolioDetailView.as_view())
+    ])),
     path("contract", ContractPageView.as_view()),
     path(
         "api/",

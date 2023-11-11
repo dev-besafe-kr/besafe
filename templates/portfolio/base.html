@@ -1,0 +1,18 @@
+{% set gnb_selected = "portfolio" %}
+{% extends "base.html" %}
+
+{% block head %}
+    <link href="{% static "css/portfolio.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <div class="portfolio">
+        <section class="hero">
+            <div class="container">
+                <h1>PORTFOLIO</h1>
+                <h3>비세이프가 만들어온 결과물을 소개합니다.</h3>
+            </div>
+        </section>
+        {% block portfolio %}{% endblock %}
+    </div>
+{% endblock %}
