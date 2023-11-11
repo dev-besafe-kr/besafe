@@ -17,6 +17,7 @@
 @import url("https://fonts.cdnfonts.com/css/nanumsquare-neo");
 html, body {
   margin: 0;
+  min-width: 300px;
   height: 100%;
   font-family: "Pretendard", sans-serif;
 }
@@ -86,7 +87,7 @@ button:hover {
 }
 @media (max-width: 512px) {
   .container {
-    max-width: 360px;
+    max-width: none;
   }
 }
 
@@ -640,11 +641,6 @@ footer .sns {
   height: auto;
   padding: 50px 1em;
   margin-top: -143px;
-}
-@media (max-width: 512px) {
-  .hero__paging {
-    padding: 50px 0;
-  }
 }
 .hero__paging ul {
   margin: 0;
