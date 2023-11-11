@@ -1,2 +1,369 @@
 {% set gnb_selected = "program" %}
 {% extends "base.html" %}
+
+{% block head %}
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <link href="{% static "css/program.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <div class="program">
+        <section class="hero">
+            <div class="container">
+                <div class="hero__contents">
+                    <h3>Besafe Patent Service</h3>
+                    <h1>특허설계 서비스</h1>
+                    <h4>5가지 이유로 특허설계 서비스의 <br/>필요성을 정확히 알아보세요</h4>
+                </div>
+                <img src="{% static "images/program/hero-item.png" %}"/>
+            </div>
+        </section>
+        <section class="question">
+            <h1>어떤 스타트업이 이 글을 읽고 <br/>도움을 받을 수 있을까요?</h1>
+            <ul class="question__cards">
+                <li class="question__card">
+                    <div class="question__card__head">
+                        <h3>사업자가 없는</h3>
+                        <h2>예비창업자</h2>
+                        <div class="arrow-blink"><img src="{% static "images/icons/arrow-blink.png" %}"/></div>
+                    </div>
+                    <div class="question__card__body">
+                        <img src="{% static "images/program/question-1.png" %}"/>
+                        <p>
+                            중요한 첫 시작의<br/>
+                            <strong>방향성</strong>을 잡을 수 있어요</p>
+                    </div>
+                </li>
+                <li class="question__card">
+                    <div class="question__card__head">
+                        <h3>창업 후 3년 이내</h3>
+                        <h2>초기 스타트업</h2>
+                        <div class="arrow-blink"><img src="{% static "images/icons/arrow-blink.png" %}"/></div>
+                    </div>
+                    <div class="question__card__body">
+                        <img src="{% static "images/program/question-2.png" %}"/>
+                        <p>
+                            시작 후 막막했던<br/>
+                            <strong>자금전략</strong>을 갖출 수 있어요</p>
+                    </div>
+                </li>
+                <li class="question__card">
+                    <div class="question__card__head">
+                        <h3>창업 후 3년 이상</h3>
+                        <h2>도약 스타트업</h2>
+                        <div class="arrow-blink"><img src="{% static "images/icons/arrow-blink.png" %}"/></div>
+                    </div>
+                    <div class="question__card__body">
+                        <img src="{% static "images/program/question-3.png" %}"/>
+                        <p>
+                            정체된 매출과 회사성장을<br/>
+                            <strong>J curve로 전환</strong>할 수 있어요</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <section class="question-hr">
+            <div class="container">
+                <i>🧐</i>
+                <h1><b>1만명 이상</b>이 <b>특허설계 서비스</b>를<br/>선택한 이유! 자세히 알아볼까요?</h1>
+            </div>
+        </section>
+        <section class="reason one">
+            <div class="container">
+                <div class="numbering"><b>01</b>/05</div>
+                <h1 class="animation">이유1. 사전 보증으로 최대 1억원 자금조달</h1>
+                <p>초기 스타트업들에게 자본금은 빠르고 전문적으로 성장할 수 있는
+                    촉매제 역할을 합니다. <strong>특허설계 서비스</strong>로 간편하게
+                    <strong>최대 1억원 자금조달</strong>을 받을 수 있습니다</p>
+                <div class="bubble">비세이프 특허설계서비스로 <b>최대 1억원</b> 자금조달 받는 과정</div>
+                <div class="banners">
+                    <div class="banner">
+                        <img src="{% static "images/program/pg3_image01.png" %}"/>
+                        <div class="banner__wrapper">
+                            <div class="banner__title">기술평가</div>
+                            <ul>
+                                <li>기술성 / 시장성 / 사업성 평가</li>
+                                <li>보증지원 가능금액 결정</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="banner">
+                        <img src="{% static "images/program/pg3_image02.png" %}"/>
+                        <div class="banner__wrapper">
+                            <div class="banner__title">멘토링</div>
+                            <ul>
+                                <li>창업정보 제공</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="banner">
+                        <img src="{% static "images/program/pg3_image03.png" %}"/>
+                        <div class="banner__wrapper">
+                            <div class="banner__title">창업</div>
+                            <ul>
+                                <li>사업자등록 및 사업개시</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="banner">
+                        <img src="{% static "images/program/pg3_image04.png" %}"/>
+                        <div class="banner__wrapper">
+                            <div class="banner__title">보증심사</div>
+                            <ul>
+                                <li>사업장 현장조사</li>
+                                <li>기술사업계획 / 업종 변동 여부 확인</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="banner">
+                        <img src="{% static "images/program/pg3_image05.png" %}"/>
+                        <div class="banner__wrapper">
+                            <div class="banner__title">보증취급</div>
+                            <ul>
+                                <li>보증서 발급 및 대출 취급</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="banner">
+                        <img src="{% static "images/program/pg3_image06.png" %}"/>
+                        <div class="banner__wrapper">
+                            <div class="banner__title">기술평가</div>
+                            <ul>
+                                <li>기술성 / 시장성 / 사업성 평가</li>
+                                <li>보증지원 가능금액 결정</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="reason two">
+            <div class="container">
+                <div class="numbering"><b>02</b>/05</div>
+                <h1 class="animation">이유2. 특허권을 통해 저금리 자금 조달</h1>
+                <div class="bubble">특허권 설계 vs 시중은행 / 대부업체 금리 비교</div>
+                <div class="box">
+                    <div class="patents">
+                        <div class="patent">
+                            <div class="title">특허권 설계</div>
+                            <div class="body">
+                                <img src="{% static "images/program/reason2-1.png" %}"/>
+                                <div class="percent">1.98%</div>
+                            </div>
+                        </div>
+                        <div class="patent">
+                            <div class="title">금융사</div>
+                            <div class="body">
+                                <img src="{% static "images/program/reason2-2.png" %}"/>
+                                <div class="percent">10%</div>
+                            </div>
+                        </div>
+                        <div class="patent">
+                            <div class="title">대부업체</div>
+                            <div class="body">
+                                <img src="{% static "images/program/reason2-3.png" %}"/>
+                                <div class="percent">20%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h1>특허권설계로 금리고민은 이제 그만!</h1>
+                    <p><b>특허권 설계</b>는 평균 금리가 1.98%로 시중은행이나 대부업체보다 <b>현저히 낮은 금리</b>를 제공하고 있습니다. 높은 금리로 부담을 느끼고 있으시다면
+                        <strong>특허권설계 서비스</strong>로
+                        보다 <strong>안전하고 간편한 자본금 마련</strong>을 하실 수 있습니다.</p>
+                </div>
+            </div>
+        </section>
+        <section class="reason three">
+            <div class="container">
+                <div class="numbering"><b>03</b>/05</div>
+                <h1 class="animation">이유3. 일반사업자와의 명백한 차이</h1>
+                <p>
+                    일반사업자들과 특허컨설팅 사업자와는 명백한 차이가 있습니다.<br/>
+                    <strong>가지급금부터 특허인증</strong>까지, 비세이프와 함께<br/>
+                    든든한 기업성장을 시작해보세요!
+                </p>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>항목</th>
+                        <th>일반사업자</th>
+                        <th>특허컨설팅 사업자</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>자본금증자</td>
+                        <td>주주들의 현금출자</td>
+                        <td>특허권을 활용해 자본금 증자</td>
+                    </tr>
+                    <tr>
+                        <td>가지급금</td>
+                        <td>대표이사 현금 상환</td>
+                        <td>특허 기술가치 평가를 통한 상계처리</td>
+                    </tr>
+                    <tr>
+                        <td>미처분 이익금</td>
+                        <td>주주배당 및 상여소득처리</td>
+                        <td>대표자 특허권 활용으로 잉여금 처리</td>
+                    </tr>
+                    <tr>
+                        <td>자금조달</td>
+                        <td>시중 은행 고리 저한도 대출</td>
+                        <td>정책자금 처리 고한도 대출</td>
+                    </tr>
+                    <tr>
+                        <td>정책자금</td>
+                        <td>제한적인 정책자금</td>
+                        <td>중소기업 창업자금, 특허 보증금 등 다양한 정책자금</td>
+                    </tr>
+                    <tr>
+                        <td>인증</td>
+                        <td>연구소, 벤처인증 불가</td>
+                        <td>연구소, 벤처, 이노비즈 등 다수 인증 가능</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="reason four">
+            <div class="wrapper"></div>
+            <div class="container">
+                <div class="numbering"><b>04</b>/05</div>
+                <h1 class="animation">이유4. 세금 절세 효과</h1>
+                <p>
+                    <strong>특허 설계만으로도 절세효과</strong>를 낼 수 있습니다. <br/>골머리 아픈 세금문제, 이제는 더이상 혼자 고민하지 마세요.
+                </p>
+                <ol>n
+                    <li>양도세 해결</li>
+                    <li class="arrow-blink"><img src="{% static "images/icons/arrow-blink.png" %}"/></li>
+                    <li>증여세 해결</li>
+                    <li class="arrow-blink"><img src="{% static "images/icons/arrow-blink.png" %}"/></li>
+                    <li>상속세 해결</li>
+                    <li class="arrow-blink"><img src="{% static "images/icons/arrow-blink.png" %}"/></li>
+                    <li>소득세 해결</li>
+                    <li class="arrow-blink"><img src="{% static "images/icons/arrow-blink.png" %}"/></li>
+                    <li>법인세 해결</li>
+                </ol>
+            </div>
+        </section>
+        <section class="reason five">
+            <div class="container">
+                <div class="numbering"><b>05</b>/05</div>
+                <h1 class="animation">이유5. 정부 지원사업 설계와 기업인증에 활용</h1>
+                <div class="merit">
+                    <h2>MERIT A.</h2>
+                    <p>비세이프가 제공하는 특허설계 서비스는 <b>정부 지원사업에 가점이 부여되는 실용적인 메리트</b>를 제공합니다.</p>
+                    <p><b>예비 창업 패키지 지원사업부터 창업 선도대학까지</b>, 특허 설계 서비스로 플러스알파를 꼭 챙겨가세요!</p>
+                    <ul>
+                        <li><span>예비 창업 패키지 지원사업</span></li>
+                        <li><span>예비 창업 입주 기업 지원사업</span></li>
+                        <li><span>초기창업패키지</span></li>
+                        <li><span>창업선도대학</span></li>
+                        <li><span>청년창업사관학교</span></li>
+                    </ul>
+                </div>
+                <div class="merit">
+                    <h2>MERIT B.</h2>
+                    <p>비세이프가 제공하는 특허설계 서비스는 다양한 <b>기업 인증에 활용할 수 있는 또 하나의 메리트</b>를 제공합니다.</p>
+                    <p><b>벤처 인증부터 메인비즈 인증까지</b>, 특허설계 서비스로 다양한 기업인증에 활용해보세요!</p>
+                    <ul>
+                        <li><span>벤처 인증</span></li>
+                        <li><span>기업 부설 연구소 인증</span></li>
+                        <li><span>이노비즈 인증</span></li>
+                        <li><span>메인비즈 인증</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="different">
+            <div class="think">
+                <div class="think__bubble">
+                    <img src="{% static "images/program/thinking-face.png" %}"/>
+                    <div class="bubble">비세이프는 무엇이 다른가요?</div>
+                </div>
+                <h1>120건</h1>
+                <h2>국내 최단기간 최대 빌드업</h2>
+                <h3>기획, 디자인, 마케팅, 투자 <b>올인원</b></h3>
+                <ul>
+                    <li>
+                        <img src="{% static "images/program/reason-6-1.png" %}"/>
+                        <h4>텍스 세이빙</h4>
+                        <p>기존 세금 평균 70% <br/>추가 절세 컨설팅</p>
+                    </li>
+                    <li>
+                        <img src="{% static "images/program/reason-6-2.png" %}"/>
+                        <h4>전문가</h4>
+                        <p>세무, 법무, 노무 등 <br/>각 분야 전문가 프리미엄</p>
+                    </li>
+                    <li>
+                        <img src="{% static "images/program/reason-6-3.png" %}"/>
+                        <h4>법인설립</h4>
+                        <p>무료 법인 설립 및 프리미엄 <br/>정관 최신 법인 양식 제공</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="review">
+            <div class="review__title">
+                <h3>비세이프와 함께한</h3>
+                <h1>CEO들의 리뷰</h1>
+            </div>
+            <ul class="container">
+                <li>
+                    <img src="{% static "images/program/reason-7-1.png" %}"/>
+                    <div>
+                        <h2>보리보리 이미영 대표님</h2>
+                        <p>제2금융권을 이용한 기대출이 많아<br/>자금융통이 어렵다고 생각했는데<br/><b>특허 설계로 자금융통이 가능하였습니다!</b></p>
+                    </div>
+                </li>
+                <li>
+                    <img src="{% static "images/program/reason-7-2.png" %}"/>
+                    <div>
+                        <h2>플립이블 서동준 대표님</h2>
+                        <p>스타트업을 운영하면서 특허설계가 필요해 <br/>신청했습니다. <b>자본금 증자와 가지급금 문제</b>를 <br/>동시에 도와주셔서 잘 해결했습니다.</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="{% static "images/program/reason-7-3.png" %}"/>
+                    <div>
+                        <h2>노브레이너 고지원 대표님</h2>
+                        <p><b>꼼꼼한 설계덕에 결과가 좋아 아주 만족합니다!</b><br/>원격으로 신청 도와주셔서 감사합니다.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <section class="contact">
+            <div class="container">
+                <div class="contact__head">
+                    <h2>홀로서기를 위한 든든한 가이드</h2>
+                    <h1>지금 비세이프와 함께하세요</h1></div>
+                <div class="contact__buttons">
+                    <button>무료 상담 신청하기</button>
+                    <button>사업소개서 다운받기</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script defer>
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.reason > .container > h1').forEach(el => {
+                el.animationQueue = el.animationQueue || [];
+                const text = Array.prototype.filter
+                    .call(el.childNodes, (child) => child.nodeType === Node.TEXT_NODE)
+                    .map((child) => child.textContent)
+                    .join('');
+
+                const typingAnimation = () => {
+                    const newEl = document.createElement("span");
+
+                    el.innerHTML = "";
+
+                    el.append(newEl);
+                    new Typed(newEl, {strings: [text], typeSpeed: 80});
+                };
+
+                el.animationQueue.push(typingAnimation);
+            });
+        })
+    </script>
+{% endblock %}

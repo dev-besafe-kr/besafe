@@ -184,7 +184,6 @@
 
       &__menu {
         counter-increment: item;
-        color: #DEDEDE;
         font-size: 33px;
         font-weight: 500;
 
@@ -192,6 +191,7 @@
         flex-flow: row nowrap;
         align-items: center;
         gap: 1em;
+        border: 0;
 
         &:before {
           content: "0" counter(item);
@@ -360,7 +360,13 @@ footer {
 
 
 .animation {
-  opacity: 0;
+  &.fade-in {
+    opacity: 0;
+  }
+
+  &.fade-up {
+    opacity: 0;
+  }
 
   &.on {
     &.fade-in {
@@ -389,5 +395,8 @@ footer {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
-  animation: move-arrow 0.8s ease-in-out infinite backwards;
+
+  img {
+    animation: move-arrow 0.8s ease-in-out infinite backwards;
+  }
 }

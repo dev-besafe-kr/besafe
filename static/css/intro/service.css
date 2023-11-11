@@ -562,7 +562,7 @@
 }
 .intro .contact {
   background-color: rgba(0, 0, 0, 0.7);
-  background-image: url("/static/images/intro/image-6.png");
+  background-image: url("/images/image-6.png");
   background-position: center center;
   background-size: cover;
   background-blend-mode: darken;
