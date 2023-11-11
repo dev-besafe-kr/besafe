@@ -328,8 +328,24 @@ footer {
   }
 }
 
-.slide-left, .slide-right, .slide-stop, .shift__handle, .shift__left, .shift__right {
-  cursor: pointer;
+.slide {
+  &-left, &-right, &-stop, &__handle, &__left, &__right {
+    cursor: pointer;
+  }
+
+  &__ul {
+    white-space: nowrap;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    li {
+      display: inline-block;
+      scroll-snap-align: center;
+    }
+  }
 }
 
 

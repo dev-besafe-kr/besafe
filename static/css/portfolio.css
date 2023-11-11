@@ -352,8 +352,20 @@ footer .sns {
   min-width: 6em;
 }
 
-.slide-left, .slide-right, .slide-stop, .shift__handle, .shift__left, .shift__right {
+.slide-left, .slide-right, .slide-stop, .slide__handle, .slide__left, .slide__right {
   cursor: pointer;
+}
+.slide__ul {
+  white-space: nowrap;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.slide__ul li {
+  display: inline-block;
+  scroll-snap-align: center;
 }
 
 @keyframes fade-in {
