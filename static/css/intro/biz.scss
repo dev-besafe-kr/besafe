@@ -167,10 +167,11 @@
 
         ul {
           padding: 0;
+          scroll-snap-type: x mandatory;
         }
 
         .teammate {
-          scroll-snap-align: start;
+          scroll-snap-align: center;
           display: inline-block;
           position: relative;
 
@@ -364,6 +365,11 @@
         .wrapper {
           width: 100%;
           overflow: hidden;
+          @media (max-width: 512px) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
         }
 
         .circle {

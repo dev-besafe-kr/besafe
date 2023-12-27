@@ -34,10 +34,12 @@
             crossorigin="anonymous"></script>
 
     <script defer src="{% static "js/slide.js" %}"></script>
-    <script defer src="{% static "js/animation.js" %}"></script>
+    <script defer src="{% static "js/base.js" %}"></script>
     {% block head %}{% endblock %}
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MLJHB3QBCS"></script>
+    <link href="{% static "css/layout.css" %}" rel="stylesheet">
+    <link href="{% static "css/modal.css" %}" rel="stylesheet">
 </head>
 <body>
 {% block header %}{{ layout.gnb(gnb_selected) }}{% endblock %}
@@ -78,5 +80,146 @@
         </div>
     </div>
 </footer>
+<dialog id="freeModal" class="modal" data-current-step>
+    <div class="modal__head">
+        <div class="close"></div>
+    </div>
+    <form action="/api/consulting" method="POST" class="modal__body">
+        {% csrf_token %}
+        <div class="inner">
+            <div class="title">
+                <h3>무료상담신청</h3>
+                <p>비세이프가 제공하는 최적의 솔루션</p>
+                <span>대표님은 어떤 퍼즐이 비어있으신가요?</span>
+            </div>
+            <div class="steps shift shift--form">
+                <div class="step shift__item">
+                    <div class="bar">
+                        <img loading="lazy" src="{% static "images/free_06/navBar01.png" %}" alt="">
+                        <label><span>1step </span> / 3step</label>
+                    </div>
+                    <div class="contents">
+                        <h5><strong>* </strong>어떤 파트에 어려움이 있으신가요?</h5>
+                        <div class="part">
+                            <h6>자금유치 파트</h6>
+                            <fieldset>
+                                <input type="checkbox" id="part01_01" name="part01" value="정부지원">
+                                <label for="part01_01">정부지원</label>
+                                <input type="checkbox" id="part01_02" name="part01" value="투자유치">
+                                <label for="part01_02">투자유치</label>
+                                <input type="checkbox" id="part01_03" name="part01" value="융자">
+                                <label for="part01_03">융자</label>
+                            </fieldset>
+                        </div>
+                        <div class="part">
+                            <h6>브랜딩/마케팅 파트</h6>
+                            <fieldset>
+                                <input type="checkbox" id="part02_01" name="part02" value="마케팅 채널 셋팅">
+                                <label for="part02_01">마케팅 채널 셋팅</label>
+
+                                <input type="checkbox" id="part02_02" name="part02" value="마케팅 종합관리">
+                                <label for="part02_02">마케팅 종합관리</label>
+
+                                <input type="checkbox" id="part02_03" name="part02" value="브랜딩 전반솔루션">
+                                <label for="part02_03">브랜딩 전반솔루션</label>
+                            </fieldset>
+                        </div>
+                        <div class="part">
+                            <h6>개발 파트</h6>
+                            <fieldset class="inputs">
+                                <input type="checkbox" id="part03_01" name="part03" value="플랫폼 개발">
+                                <label for="part03_01">플랫폼 개발</label>
+
+                                <input type="checkbox" id="part03_02" name="part03" value="개발 PM">
+                                <label for="part03_02">개발 PM</label>
+
+                                <input type="checkbox" id="part03_03" name="part03" value="홈페이지 개발">
+                                <label for="part03_03">홈페이지 개발</label>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <button type="button" class="primary shift__right">다음</button>
+                    </div>
+                </div>
+                <div class="step shift__item">
+                    <div class="bar">
+                        <img loading="lazy" src="/static/images/free_06/navBar02.png" alt="">
+                        <label><span>2step </span> / 3step</label>
+                    </div>
+                    <div class="contents">
+                        <h5><strong>* </strong>다음 정보를 기재해주세요</h5>
+                        <fieldset>
+                            <label>
+                                <h6>회사명</h6>
+                                <input name="company_name" type="text" placeholder="회사명을 입력해주세요">
+                            </label>
+                            <label>
+                                <h6>이름</h6>
+                                <input name="name" type="text" placeholder="이름을 입력해주세요">
+                            </label>
+                            <label>
+                                <h6>연락처(휴대폰)</h6>
+                                <input name="phone" type="text" placeholder="010-1234-5678">
+                            </label>
+                        </fieldset>
+                    </div>
+                    <div class="btn">
+                        <button type="button" class="shift__left">이전</button>
+                        <button type="button" class="primary shift__right">다음</button>
+                    </div>
+                </div>
+                <div class="step shift__item">
+                    <div class="bar">
+                        <img loading="lazy" src="/static/images/free_06/navBar03.png" alt="">
+                        <label><span>3step </span> / 3step</label>
+                    </div>
+                    <div class="contents">
+                        <h5><strong>* </strong>다음 정보를 입력해주세요</h5>
+                        <fieldset>
+                            <label class="business">
+                                <h6>업종</h6>
+                                <select name="business">
+                                    <option value="제조업">제조업</option>
+                                    <option value="IT/소프트웨어">IT/소프트웨어</option>
+                                    <option value="문화콘텐츠">문화콘텐츠</option>
+                                    <option value="광고/마케팅서비스">광고/마케팅서비스</option>
+                                    <option value="교육서비스">교육서비스</option>
+                                    <option value="여행/관광서비스">여행/관광서비스</option>
+                                    <option value="의료/보건서비스">의료/보건서비스</option>
+                                    <option value="부동산/임대서비스">부동산/임대서비스</option>
+                                    <option value="체육서비스">체육서비스</option>
+                                    <option value="컨설팅서비스">컨설팅서비스</option>
+                                    <option value="도소매업">도소매업</option>
+                                    <option value="농업/어업/임업/광업">농업/어업/임업/광업</option>
+                                    <option value="음식점/주점/기타자영업">음식점/주점/기타자영업</option>
+                                    <option value="기타업종">기타업종</option>
+                                </select>
+                            </label>
+                            <label class="sales">
+                                <h6>매출</h6>
+                                <select name="sales">
+                                    <option value="1억~5억">1억~5억</option>
+                                    <option value="6억~10억">5억~10억</option>
+                                    <option value="11억~15억">10억~15억</option>
+                                    <option value="16억~20억">16억~20억</option>
+                                    <option value="21억~">21억~</option>
+                                </select>
+                            </label>
+                            <label class="inquiry">
+                                <h6>내용</h6>
+                                <textarea name="inquiry" placeholder="문의 내용을 간략히 입력해주세요"></textarea>
+                            </label>
+                        </fieldset>
+                    </div>
+                    <div class="btn">
+                        <button type="button" class="shift__left">이전</button>
+                        <button type="submit" class="primary submit">완료</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</dialog>
 </body>
 </html>

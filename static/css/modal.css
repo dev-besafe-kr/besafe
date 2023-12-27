@@ -1,0 +1,149 @@
+.modal {
+  border: 0;
+  padding: 0;
+}
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.modal__head {
+  width: 100%;
+}
+.modal__body {
+  width: 100%;
+  overflow: hidden;
+}
+.modal__body .inner {
+  width: 100%;
+}
+.modal#freeModal {
+  width: 100%;
+  max-width: 40em;
+  height: fit-content;
+  background-color: white;
+}
+.modal#freeModal .title {
+  padding: 2.6em 2.6em 1.8em;
+}
+.modal#freeModal .title h3 {
+  font-size: 2.6em;
+  margin-bottom: 0.6em;
+}
+.modal#freeModal .title p {
+  font-size: 1.5em;
+  color: var(--primary);
+  font-weight: 600;
+  margin: 0 0 0.5em;
+}
+.modal#freeModal .steps {
+  width: 100%;
+}
+.modal#freeModal .steps .step {
+  background-color: white;
+  width: 100%;
+}
+.modal#freeModal .steps .step .bar {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 1em;
+  background-color: var(--primary);
+  padding: 1em 2.6em;
+}
+.modal#freeModal .steps .step .bar img {
+  flex-shrink: 0;
+}
+.modal#freeModal .steps .step .bar label {
+  font-weight: 600;
+  color: #0a8740;
+}
+.modal#freeModal .steps .step .bar label span {
+  color: white;
+}
+.modal#freeModal .steps .step .contents {
+  font-family: "Pretendard", sans-serif;
+  padding: 2.6em;
+}
+.modal#freeModal .steps .step .contents h5 {
+  font-size: 1.4em;
+}
+.modal#freeModal .steps .step .contents h5 strong {
+  color: #ff3333;
+}
+.modal#freeModal .steps .step .contents h6 {
+  display: block;
+  color: var(--primary);
+  font-size: 1.1em;
+  margin-bottom: 0.5em;
+}
+.modal#freeModal .steps .step .contents fieldset {
+  position: relative;
+  border: 0;
+  padding: 2em 0;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2em;
+}
+.modal#freeModal .steps .step .contents fieldset input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+}
+.modal#freeModal .steps .step .contents fieldset input[type=checkbox] + label {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 1ex;
+  font-weight: 500;
+}
+.modal#freeModal .steps .step .contents fieldset input[type=checkbox] + label:before {
+  content: " ";
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  background-color: #f5f5f5;
+}
+.modal#freeModal .steps .step .contents fieldset input[type=checkbox]:checked + label:before {
+  background-color: var(--primary);
+  background-image: url(/static/images/free_06/check.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+}
+.modal#freeModal .steps .step .contents fieldset select, .modal#freeModal .steps .step .contents fieldset textarea, .modal#freeModal .steps .step .contents fieldset input[type=text] {
+  width: 100%;
+  font-size: 1.1em;
+  border-radius: 16px;
+  padding: 1em 2em;
+  font-weight: 400;
+  color: #767676;
+  border: none;
+  background-color: #fafafa;
+  resize: vertical;
+}
+.modal#freeModal .steps .step .contents .part {
+  padding: 1.5em 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+.modal#freeModal .steps .step .contents .part h6 {
+  margin-bottom: 1em;
+}
+.modal#freeModal .steps .step .contents .part fieldset {
+  padding: 0;
+  flex-flow: row nowrap;
+  gap: 2em;
+}
+.modal#freeModal .steps .step .btn {
+  width: 100%;
+  padding: 1em 2em;
+  box-shadow: 1em 0 1em 0.3em rgba(15, 41, 107, 0.1450980392);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: end;
+  gap: 1ex;
+}
+.modal#freeModal .steps .step .btn button {
+  font-size: 1.3em;
+  padding-left: 3em;
+  padding-right: 3em;
+}
+
+/*# sourceMappingURL=modal.css.map */
