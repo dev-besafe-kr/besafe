@@ -539,12 +539,51 @@ footer .sns {
   }
 }
 
+@keyframes prev-deactive {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+@keyframes next-deactive {
+  from {
+    right: 0;
+  }
+  to {
+    right: -100%;
+  }
+}
+@keyframes prev-active {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes next-active {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 0;
+  }
+}
 .hero {
   position: relative;
+  background-color: #3e3e3e;
 }
 .hero__face {
-  display: none;
+  width: 100vw;
   height: 45em;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  opacity: 0;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
   padding: 143px 1em 60px;
   background-size: cover;
   background-position: center center;
@@ -552,8 +591,22 @@ footer .sns {
   background-color: rgba(0, 0, 0, 0.7);
   background-blend-mode: darken;
 }
+.hero__face.prev {
+  animation: prev-deactive 0.5s forwards;
+}
+.hero__face.next {
+  animation: next-deactive 0.5s forwards;
+}
 .hero__face.active {
-  display: block;
+  position: relative;
+  z-index: 0;
+  opacity: 1;
+}
+.hero__face.active.prev {
+  animation: prev-active 0.5s forwards;
+}
+.hero__face.active.next {
+  animation: next-active 0.5s forwards;
 }
 @media (max-width: 768px) {
   .hero__face {
@@ -641,6 +694,8 @@ footer .sns {
   height: auto;
   padding: 50px 1em;
   margin-top: -143px;
+  position: relative;
+  z-index: 1;
 }
 .hero__paging ul {
   margin: 0;

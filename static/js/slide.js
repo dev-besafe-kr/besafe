@@ -1,4 +1,5 @@
 window.addEventListener('load', function () {
+    const animationDelay = 500;
     document.querySelectorAll(".slide").forEach((slide) => {
         const leftEl = slide.querySelector(".slide-left");
         const rightEl = slide.querySelector(".slide-right");
@@ -50,15 +51,63 @@ window.addEventListener('load', function () {
     });
 
     document.querySelectorAll(".shift").forEach(shift => {
+        let isCurrentRevealed = false;
+        shift.querySelectorAll(".shift__handle").forEach(sel => {
+            const isCurrentItem = sel.classList.contains("active");
+            if (isCurrentItem) {
+                isCurrentRevealed = true;
+            } else {
+                sel.classList.remove("prev", "next", "active");
+                sel.classList.add(isCurrentRevealed ? "next" : "prev");
+            }
+        });
+
+        isCurrentRevealed = false;
+        shift.querySelectorAll(".shift__item").forEach(sel => {
+            const isCurrentItem = sel.classList.contains("active");
+            if (isCurrentItem) {
+                isCurrentRevealed = true;
+            } else {
+                sel.classList.remove("prev", "next", "active");
+                sel.classList.add(isCurrentRevealed ? "next" : "prev");
+            }
+        });
         shift.querySelectorAll(".shift__handle").forEach(el => {
             el.addEventListener('click', () => {
                 const dataId = el.dataset.shift_id;
-                shift.querySelectorAll(".shift__handle").forEach(nel => {
-                    nel.classList.toggle("active", nel.dataset.shift_id === dataId);
+                let isCurrentRevealed = false;
+                shift.querySelectorAll(".shift__handle").forEach(sel => {
+                    const isCurrentItem = sel.dataset.shift_id === dataId;
+                    if (isCurrentItem) {
+                        sel.classList.add("active");
+                        isCurrentRevealed = true;
+
+                        const temp = sel;
+                        setTimeout(() => {
+                            temp.classList.remove("prev", "next");
+                        }, animationDelay);
+                    } else {
+                        sel.classList.remove("prev", "next", "active");
+                        sel.classList.add(isCurrentRevealed ? "next" : "prev");
+                    }
                 });
-                shift.querySelectorAll(".shift__item").forEach(cel => {
-                    cel.classList.toggle("active", cel.dataset.shift_id === dataId);
-                })
+
+                isCurrentRevealed = false;
+                shift.querySelectorAll(".shift__item").forEach(sel => {
+                    const isCurrentItem = sel.dataset.shift_id === dataId;
+                    if (isCurrentItem) {
+                        sel.classList.add("active");
+                        isCurrentRevealed = true;
+
+                        const temp = sel;
+                        setTimeout(() => {
+                            temp.classList.remove("prev", "next");
+                        }, animationDelay);
+                    } else {
+                        sel.classList.remove("prev", "next", "active");
+                        sel.classList.add(isCurrentRevealed ? "next" : "prev");
+                    }
+                });
             });
         });
         const leftEl = shift.querySelector(".shift__left");
