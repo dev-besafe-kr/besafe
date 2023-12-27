@@ -84,15 +84,15 @@
     <div class="modal__head">
         <div class="close"></div>
     </div>
-    <form action="/api/consulting" method="POST" class="modal__body">
-        {% csrf_token %}
+    <div class="modal__body">
         <div class="inner">
             <div class="title">
                 <h3>무료상담신청</h3>
                 <p>비세이프가 제공하는 최적의 솔루션</p>
                 <span>대표님은 어떤 퍼즐이 비어있으신가요?</span>
             </div>
-            <div class="steps shift shift--form">
+            <form class="steps shift shift--form" action="/api/consulting" method="POST">
+                {% csrf_token %}
                 <div class="step shift__item">
                     <div class="bar">
                         <img loading="lazy" src="{% static "images/free_06/navBar01.png" %}" alt="">
@@ -102,7 +102,7 @@
                         <h5><strong>* </strong>어떤 파트에 어려움이 있으신가요?</h5>
                         <div class="part">
                             <h6>자금유치 파트</h6>
-                            <fieldset>
+                            <fieldset required>
                                 <input type="checkbox" id="part01_01" name="part01" value="정부지원">
                                 <label for="part01_01">정부지원</label>
                                 <input type="checkbox" id="part01_02" name="part01" value="투자유치">
@@ -113,7 +113,7 @@
                         </div>
                         <div class="part">
                             <h6>브랜딩/마케팅 파트</h6>
-                            <fieldset>
+                            <fieldset required>
                                 <input type="checkbox" id="part02_01" name="part02" value="마케팅 채널 셋팅">
                                 <label for="part02_01">마케팅 채널 셋팅</label>
 
@@ -126,7 +126,7 @@
                         </div>
                         <div class="part">
                             <h6>개발 파트</h6>
-                            <fieldset class="inputs">
+                            <fieldset required>
                                 <input type="checkbox" id="part03_01" name="part03" value="플랫폼 개발">
                                 <label for="part03_01">플랫폼 개발</label>
 
@@ -217,9 +217,9 @@
                         <button type="submit" class="primary submit">완료</button>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
-    </form>
+    </div>
 </dialog>
 </body>
 </html>

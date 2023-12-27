@@ -280,21 +280,28 @@ button:hover {
   background: rgb(0, 105, 46);
 }
 .hero__paging {
-  height: auto;
-  margin-top: -143px;
-  padding: 50px 3em;
-  position: absolute;
-  z-index: 0;
-  bottom: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  top: -8em;
+  margin-bottom: -8em;
+  height: 8em;
+  padding: 0 3em;
 }
 @media (max-width: 768px) {
   .hero__paging {
-    padding: 50px 2em;
+    padding: 0 2em;
+    top: -5em;
+    margin-bottom: -5em;
+    height: 5em;
   }
 }
 @media (max-width: 512px) {
   .hero__paging {
-    padding: 50px 1em;
+    padding: 0 1em;
+    top: -3em;
+    margin-bottom: -3em;
+    height: 3em;
   }
 }
 .hero__paging ul {

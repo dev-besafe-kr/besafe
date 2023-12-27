@@ -8,6 +8,21 @@
 
   &__head {
     width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: end;
+    align-items: center;
+    height: 6em;
+    margin-bottom: -6em;
+    padding: 0 2em;
+    .close {
+      width: 1.5em;
+      height: 1.5em;
+      background-image: url("/static/images/images_m/modal_close.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      cursor: pointer;
+    }
   }
 
   &__body {

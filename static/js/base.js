@@ -23,7 +23,7 @@ window.addEventListener('load', () => {
                 dialog.close('dismiss');
             }
         });
-
         dialog.querySelectorAll(".close").forEach(el => el.addEventListener("click", () => dialog.close('dismiss')));
+        dialog.addEventListener("close", () => dialog.querySelectorAll("form").forEach(form => form.reset()));
     });
 });

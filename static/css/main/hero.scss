@@ -113,19 +113,27 @@
   }
 
   &__paging {
-    height: auto;
-    margin-top: (-1 * $gnb-height) - 60px;
-    padding: 50px 3em;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    top: -8em;
+    margin-bottom: -8em;
+    height: 8em;
+    padding: 0 3em;
     @media (max-width: 768px) {
-      padding: 50px 2em;
+    padding: 0 2em;
+      top: -5em;
+      margin-bottom: -5em;
+      height: 5em;
     }
 
     @media (max-width: 512px) {
-      padding: 50px 1em;
+    padding: 0 1em;
+      top: -3em;
+      margin-bottom: -3em;
+      height: 3em;
     }
-    position: absolute;
-    z-index: 0;
-    bottom: 0;
 
     ul {
       margin: 0;
