@@ -573,7 +573,7 @@ footer .sns {
 }
 .hero {
   position: relative;
-  background-color: #3e3e3e;
+  background-color: black;
   overflow: hidden;
 }
 .hero__face {
@@ -585,7 +585,7 @@ footer .sns {
   opacity: 0;
   transition-duration: 1s;
   transition-timing-function: ease-out;
-  padding: 143px 1em 60px;
+  padding: 143px 3em 60px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -611,13 +611,13 @@ footer .sns {
 }
 @media (max-width: 768px) {
   .hero__face {
-    padding-top: 131px;
+    padding: 131px 2em 60px;
     height: 40em;
   }
 }
 @media (max-width: 512px) {
   .hero__face {
-    padding-top: 121px;
+    padding: 121px 1em 60px;
     height: 35em;
   }
 }
@@ -693,10 +693,20 @@ footer .sns {
 }
 .hero__paging {
   height: auto;
-  padding: 50px 1em;
   margin-top: -143px;
+  padding: 50px 3em;
   position: relative;
   z-index: 1;
+}
+@media (max-width: 768px) {
+  .hero__paging {
+    padding: 50px 2em;
+  }
+}
+@media (max-width: 512px) {
+  .hero__paging {
+    padding: 50px 1em;
+  }
 }
 .hero__paging ul {
   margin: 0;
@@ -996,6 +1006,7 @@ footer .sns {
   background-color: white;
   padding: 40px 20px 20px;
   box-shadow: 17px 17px 17px -7px rgba(15, 41, 107, 0.1254901961);
+  scroll-snap-align: center;
   width: 400px;
   min-height: 450px;
 }
@@ -1326,9 +1337,12 @@ footer .sns {
   height: 0.2ex;
 }
 .news__cards {
+  width: 100%;
+  padding: 0;
   white-space: nowrap;
+  display: flex;
+  flex-flow: row nowrap;
   overflow-x: scroll;
-  scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -1337,19 +1351,21 @@ footer .sns {
   display: none;
 }
 .news__card {
+  flex: 0 0 33.3333333333%;
+  scroll-snap-align: center;
   white-space: normal;
-  margin-right: 40px;
-  display: inline-block;
-  width: 400px;
+}
+.news__card__inner {
+  padding: 0 1em;
 }
 @media (max-width: 768px) {
   .news__card {
-    width: 320px;
+    flex: 0 0 50%;
   }
 }
 @media (max-width: 512px) {
   .news__card {
-    width: 215px;
+    width: 100%;
   }
 }
 .news__card__img {
@@ -1666,6 +1682,7 @@ footer .sns {
 .salon__list li {
   display: inline-block;
   margin-right: 16px;
+  scroll-snap-align: start;
 }
 .salon__list li .interview-wrap {
   display: block;

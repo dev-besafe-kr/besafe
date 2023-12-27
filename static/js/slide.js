@@ -25,7 +25,7 @@ window.addEventListener('load', function () {
         rightEl && rightEl.addEventListener('click', () => {
             const ulEl = slide.querySelector(`.slide-ul`);
             const liEl = ulEl.querySelector('li');
-            ulEl.scrollTo(ulEl.scrollLeft + liEl.clientWidth, 0);
+            ulEl.scrollTo(ulEl.scrollLeft + liEl.clientWidth + 20, 0);
 
             const pagingEl = slide.querySelector(`.slide-paging`);
             if (pagingEl == null) return;
@@ -44,10 +44,10 @@ window.addEventListener('load', function () {
             slide.classList.add("stop");
         });
 
-        setInterval(() => {
-            if (slide.classList.contains("stop")) return;
-            rightEl && rightEl.click();
-        }, 3000);
+        // setInterval(() => {
+        //     if (slide.classList.contains("stop")) return;
+        //     rightEl && rightEl.click();
+        // }, 3000);
     });
 
     document.querySelectorAll(".shift").forEach(shift => {

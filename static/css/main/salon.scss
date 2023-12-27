@@ -285,6 +285,7 @@
     li {
       display: inline-block;
       margin-right: 16px;
+      scroll-snap-align: start;
 
       .interview-wrap {
         display: block;
