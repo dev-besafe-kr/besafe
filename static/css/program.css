@@ -886,6 +886,9 @@ button:hover {
   width: 40%;
   border-radius: 0 10px 10px 0;
 }
+.program .reason.three table tbody tr:last-of-type td {
+  border-bottom: 0;
+}
 .program .reason.three table tbody td {
   padding: 50px 1em;
   text-align: center;
@@ -912,7 +915,7 @@ button:hover {
 }
 .program .reason.three table tbody td:nth-of-type(3) {
   width: 40%;
-  color: black;
+  color: var(--primary);
   font-weight: 700;
   background-color: #FAFAFA;
 }
@@ -1220,6 +1223,29 @@ button:hover {
     border-right-color: rgb(3, 199, 90);
     top: calc(50% - 5px);
     left: -10px;
+  }
+}
+.program .different .think__contents {
+  overflow: visible;
+}
+.program .different .think__contents ul li {
+  padding: 0 0.5em;
+}
+.program .different .think__contents ul li img {
+  width: 100%;
+  max-width: 10em;
+}
+.program .different .think__contents ul li p {
+  font-size: 1.6em;
+}
+@media (max-width: 768px) {
+  .program .different .think__contents ul li p {
+    font-size: 1.1em;
+  }
+}
+@media (max-width: 512px) {
+  .program .different .think__contents ul li p {
+    font-size: 1em;
   }
 }
 .program .different .think h1, .program .different .think h2, .program .different .think h3 {

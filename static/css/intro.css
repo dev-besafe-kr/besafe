@@ -1125,13 +1125,13 @@ body {
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 43px;
 }
 @media (max-width: 768px) {
   .intro.biz section.certification .certs ul {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 39px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
 }
 @media (max-width: 512px) {

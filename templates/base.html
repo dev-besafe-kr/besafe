@@ -221,5 +221,22 @@
         </div>
     </div>
 </dialog>
+
+{% if messages %}
+    <dialog id="django-messages">
+        <div class="inner">
+            {% for message in messages %}
+                <div class="notification is-
+                    {% if message.tags %}{{ message.tags | replace("error", "danger") }}{% endif %}">
+                    {{ message | safe }}
+                </div>
+            {% endfor %}
+        </div>
+    </dialog>
+    <script>
+        const djangoMessages = document.getElementById("django-messages");
+        djangoMessages.showModal();
+    </script>
+{% endif %}
 </body>
 </html>

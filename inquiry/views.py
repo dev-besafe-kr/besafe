@@ -1,3 +1,5 @@
+from django.contrib import messages
+from django.urls import reverse
 from django.views.generic.edit import CreateView
 
 from inquiry.forms import ConsultingForm, PartnershipForm
@@ -11,7 +13,7 @@ class ConsultingFormView(CreateView):
     form_class = ConsultingForm
 
     def get_success_url(self):
-        return self.request.path
+        return reverse("index")
 
     def get_form_kwargs(self):
         form_kwargs = super().get_form_kwargs()
@@ -22,6 +24,11 @@ class ConsultingFormView(CreateView):
 
             form_kwargs["data"][k] = ",".join(self.request.POST.getlist(k))
         return form_kwargs
+
+    def form_valid(self, form):
+        messages.info(self.request, "상담이 접수되었습니다.")
+        return super().form_valid(form)
+
 
 
 class PartnershipFormView(CreateView):

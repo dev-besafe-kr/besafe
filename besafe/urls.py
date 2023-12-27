@@ -32,7 +32,7 @@ from besafe.views import (
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", MainPageView.as_view()),
+    path("", MainPageView.as_view(), name="index"),
     path("intro-service", IntroServicePageView.as_view()),
     path("intro-biz", IntroBizPageView.as_view()),
     path("program", ProgramPageView.as_view()),
