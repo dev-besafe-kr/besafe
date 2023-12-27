@@ -574,6 +574,7 @@ footer .sns {
 .hero {
   position: relative;
   background-color: #3e3e3e;
+  overflow: hidden;
 }
 .hero__face {
   width: 100vw;

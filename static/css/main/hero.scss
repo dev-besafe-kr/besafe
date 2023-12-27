@@ -45,6 +45,7 @@ $kactive-value: -100%;
 .hero {
   position: relative;
   background-color: #3e3e3e;
+  overflow: hidden;
 
   &__face {
     width: 100vw;
