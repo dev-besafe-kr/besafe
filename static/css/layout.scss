@@ -487,3 +487,49 @@ footer {
     padding: 1em 2em;
   }
 }
+
+.fixed-widget {
+  position: fixed;
+  z-index: 5;
+  right: 1em;
+  bottom: 3em;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5em;
+
+  text-align: center;
+
+  & > * {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    width: 3.3em;
+    height: 3.3em;
+    cursor: pointer;
+
+    color: white;
+
+    img {
+      line-height: 2ex;
+    }
+
+    div {
+      font-size: 0.7em;
+    }
+  }
+
+  .phone {
+    background-color: var(--primary);
+
+    img {
+      width: 40%;
+    }
+  }
+
+  .top {
+    background-color: black;
+    img {
+      width: 30%;}
+  }
+}

@@ -447,4 +447,42 @@ footer .sns {
   padding: 1em 2em;
 }
 
+.fixed-widget {
+  position: fixed;
+  z-index: 5;
+  right: 1em;
+  bottom: 3em;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5em;
+  text-align: center;
+}
+.fixed-widget > * {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  width: 3.3em;
+  height: 3.3em;
+  cursor: pointer;
+  color: white;
+}
+.fixed-widget > * img {
+  line-height: 2ex;
+}
+.fixed-widget > * div {
+  font-size: 0.7em;
+}
+.fixed-widget .phone {
+  background-color: var(--primary);
+}
+.fixed-widget .phone img {
+  width: 40%;
+}
+.fixed-widget .top {
+  background-color: black;
+}
+.fixed-widget .top img {
+  width: 30%;
+}
+
 /*# sourceMappingURL=layout.css.map */

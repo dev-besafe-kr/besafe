@@ -1,4 +1,3 @@
-{% import "modules/layout.jinja2" as layout %}
 {% set gnb_selected = gnb_selected or "" %}
 
 <!DOCTYPE html>
@@ -42,7 +41,58 @@
     <link href="{% static "css/modal.css" %}" rel="stylesheet">
 </head>
 <body>
-{% block header %}{{ layout.gnb(gnb_selected) }}{% endblock %}
+<script>
+    function goTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+<div class="fixed-widget">
+    <div class="phone" onclick="document.getElementById('freeModal').showModal()">
+        <div><img src="{% static "images/icons/fw-phone.png" %}" alt=""/></div>
+        <div>문의하기</div>
+    </div>
+    <div class="top" onclick="goTop()">
+        <div><img src="{% static "images/icons/fw-top.png" %}" alt=""/></div>
+        <div>TOP</div>
+    </div>
+</div>
+{% block header %}
+    <header class="gnb">
+        <div class="container">
+            <a href="/"><img class="gnb__logo" src="{% static "images/logo-besafe.svg" %}" alt="비세이프 로고"/></a>
+            <div class="gnb__nav">
+                <ol class="gnb__nav__menus">
+                    <li class="gnb__nav__menu {% if gnb_selected == "intro" %}active{% endif %}">
+                        <a href="/intro-service">비세이프 소개</a>
+                    </li>
+                    <li class="gnb__nav__menu {% if gnb_selected == "program" %}active{% endif %}">
+                        <a href="/program">특허설계서비스</a>
+                    </li>
+                    <li class="gnb__nav__menu {% if gnb_selected == "portfolio" %}active{% endif %}">
+                        <a href="/portfolios">포트폴리오</a>
+                    </li>
+                    {#                    <li class="gnb__nav__menu {% if gnb_selected == "service" %}active{% endif %}">#}
+                    {#                        <a href="/service">제휴문의</a>#}
+                    {#                    </li>#}
+                    {#                    <li class="gnb__nav__menu">#}
+                    {#                        <a href="/contract">계약 진행</a>#}
+                    {#                    </li>#}
+                </ol>
+                <button class="primary gnb__nav__button" onclick="document.getElementById('freeModal').showModal()">
+                    무료상담신청
+                </button>
+            </div>
+            <div class="gnb__expand"></div>
+        </div>
+    </header>
+    <script>
+        const gnbEl = document.querySelector(".gnb");
+        document.querySelector(".gnb__expand").addEventListener("click", () => {
+            gnbEl.classList.toggle("expand");
+        });
+    </script>
+{% endblock %}
 {% block body %}{% endblock %}
 <script>
     window.dataLayer = window.dataLayer || [];
