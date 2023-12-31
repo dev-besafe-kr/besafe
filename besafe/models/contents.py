@@ -19,7 +19,9 @@ class ContentsHero(OrderableModel, TimestampModel):
     title = models.CharField("제목", max_length=128)
     subtitle = models.CharField("부제목", max_length=128)
 
-    button_url = models.CharField("자세히 보기 URL", max_length=256, null=True, blank=True)
+
+    button_text = models.CharField("버튼 텍스트", max_length=32, default="자세히 보기")
+    button_url = models.CharField("버튼 URL", max_length=256, null=True, blank=True)
 
     class Meta(OrderableModel.Meta):
         db_table = "contents_hero"
