@@ -103,18 +103,6 @@ files = [
 Django = ">=3.2"
 
 [[package]]
-name = "django-soft-delete"
-version = "0.9.21"
-description = "Soft delete models, managers, queryset for Django"
-category = "main"
-optional = false
-python-versions = ">=3.6"
-files = [
-    {file = "django-soft-delete-0.9.21.tar.gz", hash = "sha256:70ef192d1ad8be5ec30ca033783f199d61f2d1e1bd60ad8a7db1e8102552f23b"},
-    {file = "django_soft_delete-0.9.21-py3-none-any.whl", hash = "sha256:32c5cc54f3a1990b13f0f5c66089f712a823363997749abc594112ac2c521a1c"},
-]
-
-[[package]]
 name = "gunicorn"
 version = "19.10.0"
 description = "WSGI HTTP Server for UNIX"
@@ -332,4 +320,4 @@ brotli = ["Brotli"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "a0e418c804128ee46c8ee5b7badc927df8130cdc19a39acf0e941a14d95fc2db"
+content-hash = "edc04e549378faa393f0a93148bfd97fc85435556814bdcc2cafae9789fef373"
