@@ -1,1 +1,1 @@
-from besafe.models.contents import ContentsHero
+from besafe.models.contents import ContentsHero, ContentsNews, ContentsCustomers, ContentsPortfolio, Tag

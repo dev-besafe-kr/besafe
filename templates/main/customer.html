@@ -9,34 +9,15 @@
     </div>
     <div class="customers__banners">
         <ul>
-            <li><img src="{% static "images/logos/1.png" %}"/></li>
-            <li><img src="{% static "images/logos/2.png" %}"/></li>
-            <li><img src="{% static "images/logos/3.png" %}"/></li>
-            <li><img src="{% static "images/logos/4.png" %}"/></li>
-            <li><img src="{% static "images/logos/5.jpeg" %}"/></li>
-            <li><img src="{% static "images/logos/6.png" %}"/></li>
-            <li><img src="{% static "images/logos/7.png" %}"/></li>
-            <li><img src="{% static "images/logos/1.png" %}"/></li>
-            <li><img src="{% static "images/logos/2.png" %}"/></li>
-            <li><img src="{% static "images/logos/3.png" %}"/></li>
-            <li><img src="{% static "images/logos/4.png" %}"/></li>
-            <li><img src="{% static "images/logos/5.jpeg" %}"/></li>
-            <li><img src="{% static "images/logos/6.png" %}"/></li>
-            <li><img src="{% static "images/logos/7.png" %}"/></li>
+            {% for cc in customers_contents %}
+            <li><img src="{{ cc.banner_img.url }}"></li>
+            {% endfor %}
         </ul>
         <ul>
-            <li><img src="{% static "images/logos/8.png" %}"/></li>
-            <li><img src="{% static "images/logos/9.png" %}"/></li>
-            <li><img src="{% static "images/logos/10.jpeg" %}"/></li>
-            <li><img src="{% static "images/logos/11.png" %}"/></li>
-            <li><img src="{% static "images/logos/12.png" %}"/></li>
-            <li><img src="{% static "images/logos/13.png" %}"/></li>
-            <li><img src="{% static "images/logos/8.png" %}"/></li>
-            <li><img src="{% static "images/logos/9.png" %}"/></li>
-            <li><img src="{% static "images/logos/10.jpeg" %}"/></li>
-            <li><img src="{% static "images/logos/11.png" %}"/></li>
-            <li><img src="{% static "images/logos/12.png" %}"/></li>
-            <li><img src="{% static "images/logos/13.png" %}"/></li>
+            {% for cc in customers_contents %}
+            <li><img src="{{ cc.banner_img.url }}"></li>
+            {% endfor %}
         </ul>
     </div>
 </section>
+

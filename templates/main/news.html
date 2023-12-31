@@ -10,69 +10,28 @@
             <div class="news__panel__prev slide-left"></div>
             <div class="news__panel__next slide-right"></div>
             <div class="news__panel__paging slide-paging">
-                <li class="active">1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
+
+                {% for nc in news_contents %}
+                
+                <li class="{% if loop.index == 1 %}active{% endif %}">{{ loop.index }}</li>
+                {% endfor %}
             </div>
         </div>
     </div>
     <ul class="news__cards slide-ul container">
+        {% for nc in news_contents %}
         <li class="news__card">
             <div class="news__card__inner">
-                <img class="news__card__img" src="{% static "images/08c3a5362ad0e19f998a984918fd6d68.png" %}">
+                <img class="news__card__img" src="{{ nc.banner_img.url }}">
                 <div class="news__card__contents">
-                    <div class="news__card__contents__name">노브레이너</div>
-                    <div class="news__card__contents__title">노브레이너, 순수한 대나무 휴지 '비욘드 페이퍼' 출시</div>
-                    <div class="news__card__contents__description">[제주교통복지신문 신혜정 기자] 지속가능한 소재 대나무를 활용한 친환경 생활용품 브랜드
-                        노브레이너가
-                        순수한 대나무만 사용한 프리미엄 휴지 '비욘드페이퍼(Beyond...
-                    </div>
-                    <button>자세히보기</button>
+                    <div class="news__card__contents__name">{{ nc.company | safe }}</div>
+                    <div class="news__card__contents__title">{{ nc.title | safe }}</div>
+                    <div class="news__card__contents__description">{{ nc.subtitle | safe }}</div>
+                    <button class="button" href="{{ nc.button_url }}">{{ nc.button_text | safe }}</button>
                 </div>
             </div>
         </li>
-        <li class="news__card">
-            <div class="news__card__inner">
-                <img class="news__card__img" src="{% static "images/08c3a5362ad0e19f998a984918fd6d68.png" %}">
-                <div class="news__card__contents">
-                    <div class="news__card__contents__name">노브레이너</div>
-                    <div class="news__card__contents__title">노브레이너, 순수한 대나무 휴지 '비욘드 페이퍼' 출시</div>
-                    <div class="news__card__contents__description">[제주교통복지신문 신혜정 기자] 지속가능한 소재 대나무를 활용한 친환경 생활용품 브랜드
-                        노브레이너가
-                        순수한 대나무만 사용한 프리미엄 휴지 '비욘드페이퍼(Beyond...
-                    </div>
-                    <button>자세히보기</button>
-                </div>
-            </div>
-        </li>
-        <li class="news__card">
-            <div class="news__card__inner">
-                <img class="news__card__img" src="{% static "images/08c3a5362ad0e19f998a984918fd6d68.png" %}">
-                <div class="news__card__contents">
-                    <div class="news__card__contents__name">노브레이너</div>
-                    <div class="news__card__contents__title">노브레이너, 순수한 대나무 휴지 '비욘드 페이퍼' 출시</div>
-                    <div class="news__card__contents__description">[제주교통복지신문 신혜정 기자] 지속가능한 소재 대나무를 활용한 친환경 생활용품 브랜드
-                        노브레이너가
-                        순수한 대나무만 사용한 프리미엄 휴지 '비욘드페이퍼(Beyond...
-                    </div>
-                    <button>자세히보기</button>
-                </div>
-            </div>
-        </li>
-        <li class="news__card">
-            <div class="news__card__inner">
-                <img class="news__card__img" src="{% static "images/08c3a5362ad0e19f998a984918fd6d68.png" %}">
-                <div class="news__card__contents">
-                    <div class="news__card__contents__name">노브레이너</div>
-                    <div class="news__card__contents__title">노브레이너, 순수한 대나무 휴지 '비욘드 페이퍼' 출시</div>
-                    <div class="news__card__contents__description">[제주교통복지신문 신혜정 기자] 지속가능한 소재 대나무를 활용한 친환경 생활용품 브랜드
-                        노브레이너가
-                        순수한 대나무만 사용한 프리미엄 휴지 '비욘드페이퍼(Beyond...
-                    </div>
-                    <button>자세히보기</button>
-                </div>
-            </div>
-        </li>
+        {% endfor %}
     </ul>
 </section>
+
