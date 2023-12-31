@@ -24,10 +24,10 @@
             <div class="news__card__inner">
                 <img class="news__card__img" src="{{ nc.banner_img.url }}">
                 <div class="news__card__contents">
-                    <div class="news__card__contents__name">{{ nc.company | safe }}</div>
-                    <div class="news__card__contents__title">{{ nc.title | safe }}</div>
-                    <div class="news__card__contents__description">{{ nc.subtitle | safe }}</div>
-                    <button class="button" href="{{ nc.button_url }}">{{ nc.button_text | safe }}</button>
+                    <div class="news__card__contents__name">{{ nc.company }}</div>
+                    <div class="news__card__contents__title">{{ nc.title }}</div>
+                    <div class="news__card__contents__description">{{ nc.subtitle }}</div>
+                    <button class="button" href="{{ nc.button_url }}">{{ nc.button_text }}</button>
                 </div>
             </div>
         </li>

@@ -7,8 +7,8 @@
                 <div class="img square"
                 style="background-image: url('{{ pc.banner_img.url }}');"></div>
                 <a class="label" href="/portfolios/{{ pc.ordering }}">
-                    <div class="client">{{ pc.client | safe }}</div>
-                    <div class="biz-name">{{ pc.biz_name | safe }}</div>
+                    <div class="client">{{ pc.client }}</div>
+                    <div class="biz-name">{{ pc.biz_name }}</div>
                 </a>
             </li>
             {% endfor %}

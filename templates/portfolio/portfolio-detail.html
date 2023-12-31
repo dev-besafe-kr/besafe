@@ -1,23 +1,23 @@
 {% extends "portfolio/base.html" %}
 {% block portfolio %}
     <div class="detail container">
-        {% for pc in portfolio_contents %}
         <div class="detail__head">
-            <h1 class="title">{{ pc.biz_name | safe }}</h1>
+            <h1 class="title">{{ portfolio_contents.biz_name }}</h1>
             <ul class="tags">
-                <li class="tag">tag</li>
+                {% for tag in portfolio_contents.tags.all() %}
+                    <li class="tag">{{ tag.title }}</li>
+                {% endfor %}
             </ul>
             <div class="link">
                 <label>사이트 바로가기</label>
-                <a>{{ pc.detail }}</a>
+                <a>{{ portfolio_contents.detail }}</a>
             </div>
         </div>
         <div class="detail__body">
             <div class="contents">
-                <p>{{ pc.content }}</p>
+                <p>{{ portfolio_contents.content }}</p>
             </div>
         </div>
-        {% endfor %}
         <div class="detail__foot">
             <div class="paging">
                 <div class="nav prev" onclick="location.href='/portfolios/{{ request.path[-1] }}'"></div>

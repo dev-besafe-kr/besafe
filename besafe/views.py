@@ -49,9 +49,9 @@ class PortfolioListView(TemplateView):
 class PortfolioDetailView(TemplateView):
     template_name = "portfolio/portfolio-detail.html"
     def get_context_data(self, **kwargs):
+        pk = self.kwargs.get("pk")
         context_data = super().get_context_data(**kwargs)
-        context_data["portfolio_contents"] = ContentsPortfolio.objects.all()
-        context_data["tag"] = Tag.objects.all()
+        context_data["portfolio_contents"] = ContentsPortfolio.objects.get(id=pk)
         return context_data
 
 
