@@ -1,46 +1,25 @@
 <section class="hero shift shift--slide">
-    <div class="hero__face shift__item"
-         style="background-image: url('{% static "images/CK_tc01500000433-1.png" %}');" data-shift_id="1">
-        <div class="container contents">
-            <div class="contents__head">
-                <h1>검증된 <strong>스타트업</strong>과<br/><strong>비세이프</strong>의 만남</h1>
-                <h3>Besafe consulting & investor<br/>Business conference</h3>
-            </div>
-            <div class="contents__foot">
-                <button>자세히 보기</button>
-            </div>
-        </div>
-    </div>
-    <div class="hero__face shift__item" style="background-image: url('{% static "images/CK_tc01500000433-2.png" %}');"
-         data-shift_id="2">
-        <div class="container contents">
-            <div class="contents__head">
-                <h1>비세이프,<br/><strong>든든한 사업 안전망</strong></h1>
-                <h3>You will be safe with Besafe</h3>
-            </div>
-            <div class="contents__foot">
-                <button>자세히 보기</button>
+    {% for hc in hero_contents %}
+        <div class="hero__face shift__item"
+             style="background-image: url('{{ hc.banner_img.url }}');" data-shift_id="{{ loop.index }}">
+            <div class="container contents">
+                <div class="contents__head">
+                    <h1>{{ hc.title | safe }}</h1>
+                    <h3>{{ hc.subtitle | safe }}</h3>
+                </div>
+                <div class="contents__foot">
+                    <a class="button" href="{{ hc.button_url }}">자세히 보기</a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="hero__face shift__item" style="background-image: url('{% static "images/CK_tc01500000433-3.png" %}');"
-         data-shift_id="3">
-        <div class="container contents">
-            <div class="contents__head">
-                <h1>당신을 위한<br/><strong>기업별 맞춤 컨설팅</strong></h1>
-                <h3>Customized consulting <br/>for each company for you</h3>
-            </div>
-            <div class="contents__foot">
-                <button>자세히 보기</button>
-            </div>
-        </div>
-    </div>
+    {% endfor %}
     <div class="hero__paging">
         <div class="container">
             <ul>
-                <li class="shift__handle active" data-shift_id="1">1</li>
-                <li class="shift__handle" data-shift_id="2">2</li>
-                <li class="shift__handle" data-shift_id="3">3</li>
+                {% for hc in hero_contents %}
+                    <li class="shift__handle {% if loop.index == 1 %}active{% endif %}"
+                        data-shift_id="{{ loop.index }}">{{ loop.index }}</li>
+                {% endfor %}
             </ul>
         </div>
     </div>

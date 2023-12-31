@@ -17,6 +17,7 @@ gunicorn = "^19.1.1"
 dj-soft-delete = "^1.0.1"
 django-admin-ordering = "^0.17.0"
 jinja2-django-tags = "^0.5"
+pillow = "^10.1.0"
 
 
 [build-system]

@@ -57,18 +57,19 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-button {
+button, .button {
+  display: inline-block;
   padding: 14px 18px;
   border-radius: 6px;
   border: 0;
 }
-button.primary {
+button.primary, .button.primary {
   background-color: rgb(3, 199, 90);
   color: #FFF;
   font-size: 14px;
   font-weight: 700;
 }
-button:hover {
+button:hover, .button:hover {
   cursor: pointer;
 }
 
@@ -269,14 +270,14 @@ button:hover {
     letter-spacing: -0.48px;
   }
 }
-.hero__face .contents__foot button {
+.hero__face .contents__foot .button {
   color: white;
   background: rgb(3, 199, 90);
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
 }
-.hero__face .contents__foot button:hover {
+.hero__face .contents__foot .button:hover {
   background: rgb(0, 105, 46);
 }
 .hero__paging {

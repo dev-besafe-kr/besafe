@@ -1,6 +1,7 @@
 from django.db.models import Prefetch
 from django.views.generic import TemplateView
 
+from besafe.models.contents import ContentsHero
 from subscription.models import (
     SubscriptionModel,
     SubscriptionModelPricing,
@@ -10,6 +11,12 @@ from subscription.models import (
 
 class MainPageView(TemplateView):
     template_name = "main.html"
+
+    def get_context_data(self, **kwargs):
+        context_data = super().get_context_data(**kwargs)
+        context_data["hero_contents"] = ContentsHero.objects.all()
+
+        return context_data
 
 
 class IntroServicePageView(TemplateView):
