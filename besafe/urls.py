@@ -36,12 +36,12 @@ urlpatterns = [
     path("intro-service", IntroServicePageView.as_view()),
     path("intro-biz", IntroBizPageView.as_view()),
     path("program", ProgramPageView.as_view()),
-    path("service", ServicePageView.as_view()),
+    # path("service", ServicePageView.as_view()),
     path("portfolios", include([
         path("", PortfolioListView.as_view()),
         path("/<int:pk>", PortfolioDetailView.as_view())
     ])),
-    path("contract", ContractPageView.as_view()),
+    # path("contract", ContractPageView.as_view()),
     path(
         "api/",
         include(

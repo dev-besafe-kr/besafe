@@ -1,6 +1,15 @@
 {% set gnb_selected = "program" %}
 {% extends "base.html" %}
 
+{% block seo %}
+    <title>비세이프 특허설계서비스 | 기업의 자금조달과 세금 절약을 위한 전략</title>
+    <meta property="description"
+          content="비세이프의 특허설계서비스는 최대 1억원 자금조달, 1.98%의 낮은 금리, 세금 절세 효과 및 정부 지원사업 설계의 메리트를 제공합니다. 기업의 성장과 안정을 위한 최적의 솔루션을 경험하세요.">
+    <meta property="keywords" content="비세이프, 특허설계, 자금조달, 세금 절세, 정부 지원사업, 벤처 인증, 기업 부설 연구소 인증, 이노비즈 인증">
+    <meta property="og:title" content="비세이프 특허설계서비스 | 기업의 자금조달과 세금 절약을 위한 전략">
+    <meta property="og:description" content="자금조달, 금리 절감, 세금 절약 등 다양한 메리트로 기업의 성장을 지원하는 비세이프의 특허설계서비스를 확인하세요.">
+{% endblock %}
+
 {% block head %}
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <link href="{% static "css/program.css" %}" rel="stylesheet">
