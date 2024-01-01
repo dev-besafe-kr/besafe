@@ -5,7 +5,7 @@ from django.forms import ModelForm
 from besafe.models import ContentsHero, ContentsNews, ContentsCustomer, ContentsPortfolio, Tag, ContentsTeammate, Role
 from tinymce.widgets import TinyMCE
 
-from besafe.models.contents import ContentsConsulting
+from besafe.models.contents import ContentsConsulting, Media
 
 
 @admin.register(ContentsHero)
@@ -52,3 +52,8 @@ class RolesAdmin(OrderableAdmin, admin.ModelAdmin):
 @admin.register(ContentsConsulting)
 class ContentsConsultingAdmin(OrderableAdmin, admin.ModelAdmin):
     pass
+
+@admin.register(Media)
+class MediaAdmin(admin.ModelAdmin):
+    list_display = ["name", "file"]
+    list_display_links = ["name"]

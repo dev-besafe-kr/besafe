@@ -3,6 +3,8 @@ import uuid
 from admin_ordering.models import OrderableModel
 from django.db import models
 from django.db.models import CharField
+from django.db.models.signals import pre_save
+from django.dispatch import receiver
 from django_mysql.models import ListCharField
 
 from besafe.models.base import TimestampModel
@@ -157,3 +159,28 @@ class ContentsConsulting(OrderableModel, TimestampModel):
 
     def __str__(self):
         return f" {self.review_title} by {self.profile_name}"
+
+
+def upload_to_media(instace: "Media", filename: str) -> str:
+    return make_new_path(
+        path_ext=filename,
+        dirname=f"uploads",
+        new_filename=str(uuid.uuid4().hex),
+    )
+class Media(TimestampModel):
+    name = models.CharField("파일명", max_length=256, null=True, blank=True)
+    file = models.FileField("파일", upload_to=upload_to_media)
+
+    class Meta:
+        db_table = "media"
+        verbose_name = "파일"
+        verbose_name_plural = "파일목록"
+
+    def __str__(self):
+        return self.name
+
+
+@receiver(pre_save, sender=Media)
+def fill_service(sender, instance: Media, **kwargs):
+    if not instance.name:
+        instance.name = instance.file.path.split("/").pop()
