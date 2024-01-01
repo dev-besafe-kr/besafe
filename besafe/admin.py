@@ -1,7 +1,7 @@
 from admin_ordering.admin import OrderableAdmin
 from django.contrib import admin
 
-from besafe.models import ContentsHero, ContentsNews, ContentsCustomer, ContentsPortfolio, Tag
+from besafe.models import ContentsHero, ContentsNews, ContentsCustomer, ContentsPortfolio, Tag, ContentsTeammate, Role
 
 
 
@@ -25,4 +25,11 @@ class ContentsPortfolioAdmin(OrderableAdmin, admin.ModelAdmin):
     pass
 @admin.register(Tag)
 class TagAdmin(OrderableAdmin, admin.ModelAdmin):
+    pass
+
+@admin.register(ContentsTeammate)
+class ContentsTeammateAdmin(OrderableAdmin, admin.ModelAdmin):
+    pass
+@admin.register(Role)
+class RolesAdmin(OrderableAdmin, admin.ModelAdmin):
     pass

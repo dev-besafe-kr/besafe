@@ -80,7 +80,7 @@ class Tag(models.Model):
         return self.title
     
 class ContentsPortfolio(OrderableModel, TimestampModel):
-    banner_img = models.ImageField("로고이미지", upload_to=upload_to_portfolio)
+    banner_img = models.ImageField("대표이미지", upload_to=upload_to_portfolio)
     client = models.CharField("클라이언트", max_length=128)
     biz_name = models.CharField("비즈니스명", max_length=128)
     tags = models.ManyToManyField(Tag, verbose_name="태그")
@@ -91,3 +91,28 @@ class ContentsPortfolio(OrderableModel, TimestampModel):
         db_table = "contents_portfolio"
         verbose_name = "콘텐츠 - 포트폴리오"
         verbose_name_plural = "콘텐츠 - 포트폴리오"
+
+
+def upload_to_teammate(instace: "ContentsTeammate", filename: str) -> str:
+    return make_new_path(
+        path_ext=filename,
+        dirname=f"uploads/contents/teammate",
+        new_filename=str(uuid.uuid4().hex),
+    )
+    
+class Role(models.Model):
+    role = models.CharField("역할", max_length=128)
+
+    def __str__(self):
+        return self.role
+    
+class ContentsTeammate(OrderableModel, TimestampModel):
+    banner_img = models.ImageField("이미지", upload_to=upload_to_teammate)
+    position = models.CharField("직책", max_length=128)
+    name = models.CharField("이름", max_length=128)
+    roles = models.ManyToManyField(Role, verbose_name="역할")
+
+    class Meta(OrderableModel.Meta):
+        db_table = "contents_teammate"
+        verbose_name = "콘텐츠 - 비세이프 소개[Teammate]"
+        verbose_name_plural = "콘텐츠 - 비세이프 소개[Teammate]"

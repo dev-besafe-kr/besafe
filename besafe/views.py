@@ -1,7 +1,7 @@
 from django.db.models import Prefetch
 from django.views.generic import TemplateView
 
-from besafe.models.contents import ContentsHero, ContentsNews, ContentsCustomer, ContentsPortfolio, Tag
+from besafe.models.contents import ContentsHero, ContentsNews, ContentsCustomer, ContentsPortfolio, ContentsTeammate
 from subscription.models import (
     SubscriptionModel,
     SubscriptionModelPricing,
@@ -29,6 +29,10 @@ class IntroServicePageView(TemplateView):
 
 class IntroBizPageView(TemplateView):
     template_name = "intro-biz.html"
+    def get_context_data(self, **kwargs):
+        context_data = super().get_context_data(**kwargs)
+        context_data["teammate_contents"] = ContentsTeammate.objects.all()
+        return context_data
 
 
 class ProgramPageView(TemplateView):

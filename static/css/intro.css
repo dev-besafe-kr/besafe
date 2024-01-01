@@ -1046,7 +1046,6 @@ body {
   scroll-snap-align: center;
   display: inline-block;
   position: relative;
-  background-image: url("/static/images/intro/profile-ex.png");
   background-size: cover;
   background-position: center center;
   width: calc(25% - 28px);

@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
                 ('ordering', models.PositiveIntegerField(default=0, verbose_name='ordering')),
                 ('created_at', models.DateTimeField(auto_now_add=True, db_index=True, null=True)),
                 ('updated_at', models.DateTimeField(auto_now=True, db_index=True, null=True)),
-                ('banner_img', models.ImageField(upload_to=besafe.models.contents.upload_to_portfolio, verbose_name='로고이미지')),
+                ('banner_img', models.ImageField(upload_to=besafe.models.contents.upload_to_portfolio, verbose_name='대표이미지')),
                 ('client', models.CharField(max_length=128, verbose_name='클라이언트')),
                 ('biz_name', models.CharField(max_length=128, verbose_name='비즈니스명')),
                 ('detail', models.CharField(max_length=128, verbose_name='사이트 바로가기')),

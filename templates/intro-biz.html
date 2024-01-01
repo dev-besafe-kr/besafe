@@ -79,71 +79,23 @@
             <h1>Team building</h1>
             <div class="teammates slide">
                 <ul class="slide__ul">
-                    <li class="teammate">
+                    {% for tc in teammate_contents %}
+                    <li class="teammate"
+                        style="background-image: url('/media/{{tc.banner_img}}')">
                         <div class="rect">
                             <div class="inner"></div>
                         </div>
                         <div class="label">
-                            <div class="position">대표</div>
-                            <div class="name">전형진</div>
+                            <div class="position">{{tc.position}}</div>
+                            <div class="name">{{tc.name}}</div>
                             <ul class="roles">
-                                <li>기획전략</li>
-                                <li>자금전략</li>
+                                {% for role in tc.roles.all() %}
+                                <li>{{ role.role }}</li><br>
+                                {% endfor %}
                             </ul>
                         </div>
                     </li>
-                    <li class="teammate">
-                        <div class="rect">
-                            <div class="inner"></div>
-                        </div>
-                        <div class="label">
-                            <div class="position">대표</div>
-                            <div class="name">전형진</div>
-                            <ul class="roles">
-                                <li>기획전략</li>
-                                <li>자금전략</li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="teammate">
-                        <div class="rect">
-                            <div class="inner"></div>
-                        </div>
-                        <div class="label">
-                            <div class="position">대표</div>
-                            <div class="name">전형진</div>
-                            <ul class="roles">
-                                <li>기획전략</li>
-                                <li>자금전략</li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="teammate">
-                        <div class="rect">
-                            <div class="inner"></div>
-                        </div>
-                        <div class="label">
-                            <div class="position">대표</div>
-                            <div class="name">전형진</div>
-                            <ul class="roles">
-                                <li>기획전략</li>
-                                <li>자금전략</li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="teammate">
-                        <div class="rect">
-                            <div class="inner"></div>
-                        </div>
-                        <div class="label">
-                            <div class="position">대표</div>
-                            <div class="name">전형진</div>
-                            <ul class="roles">
-                                <li>기획전략</li>
-                                <li>자금전략</li>
-                            </ul>
-                        </div>
-                    </li>
+                    {% endfor %}
                 </ul>
             </div>
         </section>
