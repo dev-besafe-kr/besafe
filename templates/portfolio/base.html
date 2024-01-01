@@ -1,6 +1,15 @@
 {% set gnb_selected = "portfolio" %}
 {% extends "base.html" %}
 
+{% block seo %}
+    <title>비세이프 포트폴리오 | UX & UI, Branding 전문 프로젝트 모음</title>
+    <meta property="description"
+          content="비세이프의 UX & UI, Branding 전문 포트폴리오를 확인하세요. 보리보리, 플라잉, 우주이엔지 등 다양한 프로젝트의 성과를 소개합니다.">
+    <meta property="keywords" content="비세이프, 포트폴리오, UX & UI, Branding, 보리보리, 플라잉, 우주이엔지, 노브레이너, VFU, KW, 바이버, 샤인">
+    <meta property="og:title" content="비세이프 포트폴리오 | UX & UI, Branding 전문 프로젝트 모음">
+    <meta property="og:description" content="보리보리, 플라잉, 우주이엔지 등 다양한 프로젝트의 성과를 통해 비세이프의 전문성을 확인하세요.">
+{% endblock %}
+
 {% block head %}
     <link href="{% static "css/portfolio.css" %}" rel="stylesheet">
 {% endblock %}
