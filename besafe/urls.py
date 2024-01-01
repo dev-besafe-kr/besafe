@@ -27,19 +27,20 @@ from besafe.views import (
     ServicePageView,
     PortfolioListView,
     ContractPageView,
-    IntroBizPageView, ProgramPageView, PortfolioDetailView,
+    IntroBizPageView, ProgramPageView, PortfolioDetailView, upload_image,
 )
 
 urlpatterns = [
+    path('upload_image', upload_image, name="admin-upload-image"),
     path("admin/", admin.site.urls),
     path("", MainPageView.as_view(), name="index"),
     path("intro-service", IntroServicePageView.as_view()),
     path("intro-biz", IntroBizPageView.as_view()),
     path("program", ProgramPageView.as_view()),
     # path("service", ServicePageView.as_view()),
-    path("portfolios", include([
-        path("", PortfolioListView.as_view()),
-        path("/<int:pk>", PortfolioDetailView.as_view())
+    path("portfolios/", include([
+        path("", PortfolioListView.as_view(), name="portfolio-list"),
+        path("<int:pk>", PortfolioDetailView.as_view(), name="portfolio-detail")
     ])),
     # path("contract", ContractPageView.as_view()),
     path(
@@ -51,5 +52,6 @@ urlpatterns = [
             ]
         ),
     ),
+    path("tinymce/", include("tinymce.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += staticfiles_urlpatterns()

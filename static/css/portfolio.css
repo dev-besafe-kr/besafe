@@ -316,6 +316,7 @@ button:hover, .button:hover {
   height: 24px;
   background-image: url("/static/images/portfolio/arrow-green.svg");
   background-size: 100%;
+  position: relative;
 }
 @media (max-width: 768px) {
   .portfolio .list .paging .pages .nav {
@@ -328,6 +329,13 @@ button:hover, .button:hover {
     width: 20px;
     height: 14.12px;
   }
+}
+.portfolio .list .paging .pages .nav a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 .portfolio .list .paging .pages .nav.prev {
   transform: rotateY(180deg);
@@ -493,7 +501,6 @@ button:hover, .button:hover {
   }
 }
 .portfolio .detail__body img {
-  width: 100%;
   max-width: 100%;
 }
 .portfolio .detail__body p {
@@ -516,6 +523,7 @@ button:hover, .button:hover {
   background-image: url("/static/images/portfolio/arrow-green-long.svg");
   background-repeat: no-repeat;
   background-size: 100%;
+  position: relative;
 }
 @media (max-width: 768px) {
   .portfolio .detail__foot .paging .nav {
@@ -528,6 +536,16 @@ button:hover, .button:hover {
     width: 30px;
     height: 14.375px;
   }
+}
+.portfolio .detail__foot .paging .nav a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.portfolio .detail__foot .paging .nav.disabled {
+  filter: grayscale(100%);
 }
 .portfolio .detail__foot .paging .nav.prev {
   transform: rotateY(180deg);

@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "tinymce",
     "admin_ordering",
     "inquiry",
     "subscription",
@@ -73,14 +74,14 @@ TEMPLATES = [
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
+                "besafe.context_processors.processor",
                 "django.contrib.messages.context_processors.messages",
             ],
             "extensions": [
                 "jinja2.ext.do",
+                "jinja2.ext.i18n",
                 "jinja2.ext.loopcontrols",
-                "jdj_tags.extensions.DjangoStatic",
-                "jdj_tags.extensions.DjangoI18n",
-                "jdj_tags.extensions.DjangoCsrf",
+                "jdj_tags.extensions.DjangoCompat",
             ],
         },
     },
@@ -180,3 +181,17 @@ EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
+
+
+TINYMCE_DEFAULT_CONFIG = {
+    "height": "320px",
+    "width": "960px",
+    "automatic_uploads": True,
+    "images_upload_url": "/upload_image",
+    "menubar": "file edit view insert format tools table help",
+    "plugins": "advlist autolink lists link image charmap print preview anchor searchreplace visualblocks code "
+    "fullscreen insertdatetime media table paste code help wordcount spellchecker",
+    "toolbar": "removeformat | bold italic underline strikethrough | image | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor",
+    "custom_undo_redo_levels": 10,
+    "language": "en_US",  # To force a specific language instead of the Django current language.
+}

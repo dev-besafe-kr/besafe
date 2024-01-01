@@ -2,26 +2,35 @@
 {% block portfolio %}
     <section class="list container">
         <ul class="cards">
-            {% for pc in portfolio_contents %}
-            <li class="card">
-                <div class="img square"
-                style="background-image: url('{{ pc.banner_img.url }}');"></div>
-                <a class="label" href="/portfolios/{{ pc.ordering }}">
-                    <div class="client">{{ pc.client }}</div>
-                    <div class="biz-name">{{ pc.biz_name }}</div>
-                </a>
-            </li>
+            {% for obj in object_list %}
+                <li class="card">
+                    <div class="img square"
+                         style="background-image: url('{{ obj.banner_img.url }}');"></div>
+                    <a class="label" href="{% url "portfolio-detail" pk=obj.id %}">
+                        <div class="client">{{ obj.client }}</div>
+                        <div class="biz-name">{{ obj.biz_name }}</div>
+                    </a>
+                </li>
             {% endfor %}
         </ul>
         <div class="paging">
             <ul class="pages">
-                <li class="nav prev"></li>
-                {% for pc in portfolio_contents %}
-                <li class="{% if loop.index == 1 %}page active{% endif %}">{{ loop.index }}</li>
+                {% if page_obj.has_previous() %}
+                    <li class="nav prev">
+                        <a href="?page={{ page_obj.previous_page_number() }}">
+                        </a>
+                    </li>
+                {% endif %}
+                {% for p in page_obj.paginator.page_range %}
+                    <li class="page{% if p == page_obj.number %} active{% endif %}">{{ p }}</li>
                 {% endfor %}
-                <li class="nav next"></li>
+                {% if page_obj.has_next() %}
+                    <li class="nav next">
+                        <a href="?page={{ page_obj.next_page_number() }}">
+                        </a>
+                    </li>
+                {% endif %}
             </ul>
         </div>
     </section>
 {% endblock %}
-

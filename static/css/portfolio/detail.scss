@@ -106,7 +106,6 @@
     }
 
     img {
-      width: 100%;
       max-width: 100%;
     }
 
@@ -140,6 +139,19 @@
         @media (max-width: 512px) {
           width: 30px;
           height: 14.375px;
+        }
+
+        position: relative;
+        a {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+        }
+
+        &.disabled {
+          filter: grayscale(100%);
         }
 
         &.prev {

@@ -92,6 +92,9 @@ class ContentsPortfolio(OrderableModel, TimestampModel):
         verbose_name = "콘텐츠 - 포트폴리오"
         verbose_name_plural = "콘텐츠 - 포트폴리오"
 
+    def __str__(self):
+        return f"{self.biz_name} - {self.client}"
+
 
 def upload_to_teammate(instace: "ContentsTeammate", filename: str) -> str:
     return make_new_path(

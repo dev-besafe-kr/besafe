@@ -39,6 +39,12 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MLJHB3QBCS"></script>
     <link href="{% static "css/layout.css" %}" rel="stylesheet">
     <link href="{% static "css/modal.css" %}" rel="stylesheet">
+
+    <script>
+        function showFreeModal() {
+            document.getElementById('freeModal').showModal();
+        }
+    </script>
 </head>
 <body>
 <script>
@@ -48,7 +54,7 @@
     }
 </script>
 <div class="fixed-widget">
-    <div class="phone" onclick="document.getElementById('freeModal').showModal()">
+    <div class="phone" onclick="showFreeModal()">
         <div><img src="{% static "images/icons/fw-phone.png" %}" alt=""/></div>
         <div>문의하기</div>
     </div>
@@ -79,7 +85,7 @@
                     {#                        <a href="/contract">계약 진행</a>#}
                     {#                    </li>#}
                 </ol>
-                <button class="primary gnb__nav__button" onclick="document.getElementById('freeModal').showModal()">
+                <button class="primary gnb__nav__button" onclick="showFreeModal()">
                     무료상담신청
                 </button>
             </div>

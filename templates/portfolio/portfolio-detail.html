@@ -2,31 +2,30 @@
 {% block portfolio %}
     <div class="detail container">
         <div class="detail__head">
-            <h1 class="title">{{ portfolio_contents.biz_name }}</h1>
+            <h1 class="title">{{ object.biz_name }}</h1>
             <ul class="tags">
-                {% for tag in portfolio_contents.tags.all() %}
+                {% for tag in object.tags.all() %}
                     <li class="tag">{{ tag.title }}</li>
                 {% endfor %}
             </ul>
             <div class="link">
                 <label>사이트 바로가기</label>
-                <a>{{ portfolio_contents.detail }}</a>
+                <a>{{ object.detail }}</a>
             </div>
         </div>
         <div class="detail__body">
             <div class="contents">
-                <p>{{ portfolio_contents.content }}</p>
+                <p>{{ object.content | safe }}</p>
             </div>
         </div>
         <div class="detail__foot">
             <div class="paging">
-                <div class="nav prev" onclick="location.href='/portfolios/{{ request.path[-1] }}'"></div>
-                <div class="nav next" onclick="location.href='/portfolios/{{ request.path[-1] }}'"></div>
+                <a class="nav prev{% if not prev %} disabled{% endif %}" {% if prev %}href="{% url "portfolio-detail" pk=prev.id %}"{% endif %}></a>
+                <a class="nav next{% if not next %} disabled{% endif %}" {% if next %}href="{% url "portfolio-detail" pk=next.id %}"{% endif %}></a>
             </div>
-            <div class="buttons" onclick="location.href='/portfolios'">
-                <button>목록으로</button>
+            <div class="buttons">
+                <a class="button primary" href="{% url "portfolio-list" %}">목록으로</a>
             </div>
         </div>
     </div>
 {% endblock %}
-

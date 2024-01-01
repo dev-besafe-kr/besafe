@@ -7,17 +7,17 @@
             </div>
         </div>
     </div>
-    <div class="customers__banners">
-        <ul>
-            {% for cc in customer_contents %}
-            <li><img src="{{ cc.banner_img.url }}"></li>
+    <div class="customers__banners banner-marquee">
+        {% set banners_counts = ((customer_contents | length) / 2) | int %}
+        <ul class="banners right-to-left">
+            {% for cc in customer_contents[banners_counts:] %}
+                <li class="banner"><img src="{{ cc.banner_img.url }}" alt="{{ cc.company }}"></li>
             {% endfor %}
         </ul>
-        <ul>
-            {% for cc in customer_contents %}
-            <li><img src="{{ cc.banner_img.url }}"></li>
+        <ul class="banners left-to-right">
+            {% for cc in customer_contents[:banners_counts] %}
+                <li class="banner"><img src="{{ cc.banner_img.url }}" alt="{{ cc.company }}"></li>
             {% endfor %}
         </ul>
     </div>
 </section>
-
