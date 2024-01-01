@@ -14,11 +14,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='tag',
             name='title',
-            field=models.CharField(max_length=128, verbose_name='태그 제목'),
-        ),
-        migrations.AlterField(
-            model_name='tag',
-            name='url',
-            field=models.URLField(verbose_name='태그 URL'),
+            field=models.CharField(max_length=128, verbose_name='태그'),
         ),
     ]

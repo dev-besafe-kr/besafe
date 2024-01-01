@@ -50,21 +50,21 @@ class ContentsNews(OrderableModel, TimestampModel):
         verbose_name = "콘텐츠 - 메인[News]"
         verbose_name_plural = "콘텐츠 - 메인[News]"
         
-def upload_to_customers(instace: "ContentsCustomers", filename: str) -> str:
+def upload_to_customer(instace: "ContentsCustomer", filename: str) -> str:
     return make_new_path(
         path_ext=filename,
         dirname=f"uploads/contents/customers",
         new_filename=str(uuid.uuid4().hex),
     )
         
-class ContentsCustomers(OrderableModel, TimestampModel):
-    banner_img = models.ImageField("로고이미지", upload_to=upload_to_customers)
+class ContentsCustomer(OrderableModel, TimestampModel):
+    banner_img = models.ImageField("로고이미지", upload_to=upload_to_customer)
     company = models.CharField("회사명", max_length=128)
 
     class Meta(OrderableModel.Meta):
         db_table = "contents_customers"
-        verbose_name = "콘텐츠 - 메인[Customers]"
-        verbose_name_plural = "콘텐츠 - 메인[Customers]"
+        verbose_name = "콘텐츠 - 메인[Customer]"
+        verbose_name_plural = "콘텐츠 - 메인[Customer]"
         
 def upload_to_portfolio(instace: "ContentsPortfolio", filename: str) -> str:
     return make_new_path(
@@ -74,8 +74,7 @@ def upload_to_portfolio(instace: "ContentsPortfolio", filename: str) -> str:
     )
     
 class Tag(models.Model):
-    title = models.CharField("태그 제목", max_length=128)
-    url = models.URLField("태그 URL")
+    title = models.CharField("태그", max_length=128)
 
     def __str__(self):
         return self.title
