@@ -7,7 +7,8 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import TemplateView, ListView, DetailView
 
-from besafe.models.contents import ContentsHero, ContentsNews, ContentsCustomer, ContentsPortfolio, ContentsTeammate
+from besafe.models.contents import ContentsHero, ContentsNews, ContentsCustomer, ContentsPortfolio, ContentsTeammate, \
+    ContentsConsulting
 from besafe.utils import make_new_path
 from subscription.models import (
     SubscriptionModel,
@@ -23,6 +24,7 @@ class MainPageView(TemplateView):
     def get_context_data(self, **kwargs):
         context_data = super().get_context_data(**kwargs)
         context_data["hero_contents"] = ContentsHero.objects.all()
+        context_data["consulting_contents"] = ContentsConsulting.objects.all()
         context_data["news_contents"] = ContentsNews.objects.all()
         context_data["customer_contents"] = ContentsCustomer.objects.all()
         context_data["portfolio_contents"] = ContentsPortfolio.objects.all()
@@ -53,7 +55,7 @@ class ServicePageView(TemplateView):
 class PortfolioListView(ListView):
     template_name = "portfolio/portfolio-list.html"
     queryset = ContentsPortfolio.objects.all()
-    paginate_by = 1
+    paginate_by = 8
 
 class PortfolioDetailView(DetailView):
     template_name = "portfolio/portfolio-detail.html"

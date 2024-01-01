@@ -1,150 +1,47 @@
-<section class="consulting slide">
-    <div class="container">
-        <div class="main-title">
-            <div class="main-title__ico">
-                <img src="{% static "images/speaker.png" %}"/>
+{% if consulting_contents | length > 0 %}
+    <section class="consulting slide">
+        <div class="container">
+            <div class="main-title">
+                <div class="main-title__ico">
+                    <img src="{% static "images/speaker.png" %}"/>
+                </div>
+                <div class="main-title__text">
+                    <h1>자본금 마련, <strong>BE SAFE하게!</strong></h1>
+                    <h2>비세이프 성공사례 고객님들의 컨설팅 후기</h2>
+                </div>
             </div>
-            <div class="main-title__text">
-                <h1>자본금 마련, <strong>BE SAFE하게!</strong></h1>
-                <h2>비세이프 성공사례 고객님들의 컨설팅 후기</h2>
+            <div class="consulting__panel">
+                <div class="consulting__panel__prev slide-left"></div>
+                <div class="consulting__panel__carousel slide-stop"></div>
+                <div class="consulting__panel__next slide-right"></div>
             </div>
         </div>
-        <div class="consulting__panel">
-            <div class="consulting__panel__prev slide-left"></div>
-            <div class="consulting__panel__carousel slide-stop"></div>
-            <div class="consulting__panel__next slide-right"></div>
-        </div>
-    </div>
-    <ul class="consulting__list slide-ul">
-        <li class="consulting__card">
-            <div class="consulting__card__top">
-                <img class="consulting__card__img" src="{% static "images/profile06.png" %}"/>
-                <div class="consulting__card__name">
-                    <div class="div">서빙스</div>
-                    <div class="name">고지원</div>
-                </div>
-                <div class="consulting__card__item">
-                    <div class="title">기업성장</div>
-                    <div class="desc">홈페이지 제작 및<br/>특허출원 완료</div>
-                </div>
-            </div>
-            <div class="consulting__card__tag">
-                <div class="mark"><span>B</span></div>
-                <div class="title">비세이프 특허설계서비스 이용</div>
-            </div>
-            <div class="consulting__card__bottom">
-                <h1>손쉬운 자금융통, 비세이프와 함께!</h1>
-                <p>
-                    스타트업을 운영하면서 특허설계가 필요해 <br>
-                    신청했습니다. 자본금 증자와 가지급금 문제를 동시에 <br>
-                    도와주셔서 잘 해결했습니다. 스타트업을 하다보면 <br>
-                    자금이 부족하거나 막대한 대출이 걱정...
-                </p>
-            </div>
-        </li>
-        <li class="consulting__card">
-            <div class="consulting__card__top">
-                <img class="consulting__card__img" src="{% static "images/profile06.png" %}"/>
-                <div class="consulting__card__name">
-                    <div class="div">서빙스</div>
-                    <div class="name">고지원</div>
-                </div>
-                <div class="consulting__card__item">
-                    <div class="title">기업성장</div>
-                    <div class="desc">홈페이지 제작 및<br/>특허출원 완료</div>
-                </div>
-            </div>
-            <div class="consulting__card__tag">
-                <div class="mark"><span>B</span></div>
-                <div class="title">비세이프 특허설계서비스 이용</div>
-            </div>
-            <div class="consulting__card__bottom">
-                <h1>손쉬운 자금융통, 비세이프와 함께!</h1>
-                <p>
-                    스타트업을 운영하면서 특허설계가 필요해 <br>
-                    신청했습니다. 자본금 증자와 가지급금 문제를 동시에 <br>
-                    도와주셔서 잘 해결했습니다. 스타트업을 하다보면 <br>
-                    자금이 부족하거나 막대한 대출이 걱정...
-                </p>
-            </div>
-        </li>
-        <li class="consulting__card">
-            <div class="consulting__card__top">
-                <img class="consulting__card__img" src="{% static "images/profile06.png" %}"/>
-                <div class="consulting__card__name">
-                    <div class="div">서빙스</div>
-                    <div class="name">고지원</div>
-                </div>
-                <div class="consulting__card__item">
-                    <div class="title">기업성장</div>
-                    <div class="desc">홈페이지 제작 및<br/>특허출원 완료</div>
-                </div>
-            </div>
-            <div class="consulting__card__tag">
-                <div class="mark"><span>B</span></div>
-                <div class="title">비세이프 특허설계서비스 이용</div>
-            </div>
-            <div class="consulting__card__bottom">
-                <h1>손쉬운 자금융통, 비세이프와 함께!</h1>
-                <p>
-                    스타트업을 운영하면서 특허설계가 필요해 <br>
-                    신청했습니다. 자본금 증자와 가지급금 문제를 동시에 <br>
-                    도와주셔서 잘 해결했습니다. 스타트업을 하다보면 <br>
-                    자금이 부족하거나 막대한 대출이 걱정...
-                </p>
-            </div>
-        </li>
-        <li class="consulting__card">
-            <div class="consulting__card__top">
-                <img class="consulting__card__img" src="{% static "images/profile06.png" %}"/>
-                <div class="consulting__card__name">
-                    <div class="div">서빙스</div>
-                    <div class="name">고지원</div>
-                </div>
-                <div class="consulting__card__item">
-                    <div class="title">기업성장</div>
-                    <div class="desc">홈페이지 제작 및<br/>특허출원 완료</div>
-                </div>
-            </div>
-            <div class="consulting__card__tag">
-                <div class="mark"><span>B</span></div>
-                <div class="title">비세이프 특허설계서비스 이용</div>
-            </div>
-            <div class="consulting__card__bottom">
-                <h1>손쉬운 자금융통, 비세이프와 함께!</h1>
-                <p>
-                    스타트업을 운영하면서 특허설계가 필요해 <br>
-                    신청했습니다. 자본금 증자와 가지급금 문제를 동시에 <br>
-                    도와주셔서 잘 해결했습니다. 스타트업을 하다보면 <br>
-                    자금이 부족하거나 막대한 대출이 걱정...
-                </p>
-            </div>
-        </li>
-        <li class="consulting__card">
-            <div class="consulting__card__top">
-                <img class="consulting__card__img" src="{% static "images/profile06.png" %}"/>
-                <div class="consulting__card__name">
-                    <div class="div">서빙스</div>
-                    <div class="name">고지원</div>
-                </div>
-                <div class="consulting__card__item">
-                    <div class="title">기업성장</div>
-                    <div class="desc">홈페이지 제작 및<br/>특허출원 완료</div>
-                </div>
-            </div>
-            <div class="consulting__card__tag">
-                <div class="mark"><span>B</span></div>
-                <div class="title">비세이프 특허설계서비스 이용</div>
-            </div>
-            <div class="consulting__card__bottom">
-                <h1>손쉬운 자금융통, 비세이프와 함께!</h1>
-                <p>
-                    스타트업을 운영하면서 특허설계가 필요해 <br>
-                    신청했습니다. 자본금 증자와 가지급금 문제를 동시에 <br>
-                    도와주셔서 잘 해결했습니다. 스타트업을 하다보면 <br>
-                    자금이 부족하거나 막대한 대출이 걱정...
-                </p>
-            </div>
-        </li>
-    </ul>
-</section>
+        <ul class="consulting__list slide-ul">
+            {% for cc in consulting_contents %}
+                <li class="consulting__card">
+                    <div class="consulting__card__top">
+                        <img class="consulting__card__img" src="{{ cc.profile_img.url }}"/>
+                        <div class="consulting__card__name">
+                            <div class="div">{{ cc.profile_company }}</div>
+                            <div class="name">{{ cc.profile_name }}</div>
+                        </div>
+                        <div class="consulting__card__item">
+                            <div class="title">{{ cc.consulting_title }}</div>
+                            <div class="desc">{{ cc.consulting_description | safe }}</div>
+                        </div>
+                    </div>
+                    {% for item in cc.consulting_items %}
+                        <div class="consulting__card__tag">
+                            <div class="mark"><span>B</span></div>
+                            <div class="title">{{ item }}</div>
+                        </div>
+                    {% endfor %}
+                    <div class="consulting__card__bottom">
+                        <h1>{{ cc.review_title }}</h1>
+                        <p>{{ cc.review_contents | safe }}</p>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endif %}

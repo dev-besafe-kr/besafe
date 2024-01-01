@@ -2,6 +2,8 @@ import uuid
 
 from admin_ordering.models import OrderableModel
 from django.db import models
+from django.db.models import CharField
+from django_mysql.models import ListCharField
 
 from besafe.models.base import TimestampModel
 from besafe.utils import make_new_path
@@ -119,3 +121,32 @@ class ContentsTeammate(OrderableModel, TimestampModel):
         db_table = "contents_teammate"
         verbose_name = "콘텐츠 - 비세이프 소개[Teammate]"
         verbose_name_plural = "콘텐츠 - 비세이프 소개[Teammate]"
+
+def upload_to_consulting(instace: "ContentsConsulting", filename: str) -> str:
+    return make_new_path(
+        path_ext=filename,
+        dirname=f"uploads/contents/consulting",
+        new_filename=str(uuid.uuid4().hex),
+    )
+
+class ContentsConsulting(OrderableModel, TimestampModel):
+    profile_img = models.ImageField("프로필 이미지", upload_to=upload_to_consulting)
+    profile_company = models.CharField("업체명", max_length=32)
+    profile_name = models.CharField("담당자 이름", max_length=32)
+
+    consulting_title = models.CharField("컨설팅 제목", max_length=32)
+    consulting_description = models.CharField("컨설팅 내용", max_length=128)
+    consulting_items = ListCharField(
+        base_field=CharField(max_length=16),
+        size=6,
+        verbose_name="컨설팅 항목",
+        max_length=(6*17),
+    )
+
+    review_title = models.CharField("리뷰 제목", max_length=32)
+    review_contents = models.CharField("리뷰 제목", max_length=128)
+
+    class Meta(OrderableModel.Meta):
+        db_table = "contents_consulting"
+        verbose_name = "콘텐츠 - 컨설팅[Consulting]"
+        verbose_name_plural = "콘텐츠 - 컨설팅[Consulting]"

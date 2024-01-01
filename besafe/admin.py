@@ -5,6 +5,8 @@ from django.forms import ModelForm
 from besafe.models import ContentsHero, ContentsNews, ContentsCustomer, ContentsPortfolio, Tag, ContentsTeammate, Role
 from tinymce.widgets import TinyMCE
 
+from besafe.models.contents import ContentsConsulting
+
 
 @admin.register(ContentsHero)
 class ContentsHeroAdmin(OrderableAdmin, admin.ModelAdmin):
@@ -46,4 +48,8 @@ class ContentsTeammateAdmin(OrderableAdmin, admin.ModelAdmin):
     pass
 @admin.register(Role)
 class RolesAdmin(OrderableAdmin, admin.ModelAdmin):
+    pass
+
+@admin.register(ContentsConsulting)
+class ContentsConsultingAdmin(OrderableAdmin, admin.ModelAdmin):
     pass

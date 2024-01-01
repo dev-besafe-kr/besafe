@@ -731,6 +731,8 @@ button:hover, .button:hover {
   }
 }
 .consulting__card__item .desc {
+  white-space: pre-wrap;
+  width: 7em;
   margin-top: 0.3rem;
   font-family: "Pretendard", sans-serif;
   font-weight: 400;
