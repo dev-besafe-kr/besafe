@@ -40,38 +40,16 @@
         </div>
         <div class="salon__items__body">
             <ul class="salon__list slide-ul">
+                {% for pc in portfolio_contents %}
                 <li>
-                    <a href="#" class="interview-wrap">
+                    <a href="portfolios" class="interview-wrap">
                         <img class="logo" loading="lazy" src="/static/images/pg4_logo02.png" alt="">
-                        <p>우주이엔지</p>
-                        <img class="interview" loading="lazy" src="/static/images/pg4_interview01.png"
-                             alt="보리보리인터뷰사진">
+                        <p>{{ pc.client }}</p>
+                        <img class="interview" loading="lazy" src="{{ pc.banner_img.url }}"
+                             alt="{{ pc.biz_name }}">
                     </a>
                 </li>
-                <li>
-                    <a href="#" class="interview-wrap">
-                        <img class="logo" loading="lazy" src="/static/images/pg4_logo02.png" alt="">
-                        <p>서빙스(노브레이너)</p>
-                        <img class="interview" loading="lazy" src="/static/images/pg4_interview02.png"
-                             alt="플립이블인터뷰사진">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="interview-wrap">
-                        <img class="logo" loading="lazy" src="/static/images/pg4_logo02.png" alt="">
-                        <p>플라잉재팬</p>
-                        <img class="interview" loading="lazy" src="/static/images/pg4_interview03.png"
-                             alt="플라잉재팬인터뷰사진">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="interview-wrap">
-                        <img class="logo" loading="lazy" src="/static/images/pg4_logo02.png" alt="">
-                        <p>넥스트바이랩</p>
-                        <img class="interview" loading="lazy" src="/static/images/pg4_interview04.png"
-                             alt="노브레이너인터뷰사진">
-                    </a>
-                </li>
+                {% endfor %}
             </ul>
         </div>
     </div>

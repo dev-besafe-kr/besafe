@@ -2,32 +2,31 @@
 {% block portfolio %}
     <div class="detail container">
         <div class="detail__head">
-            <h1 class="title">보리보리</h1>
+            <h1 class="title">{{ portfolio_contents.biz_name }}</h1>
             <ul class="tags">
-                <li class="tag">홈페이지 UI·UX 디자인</li>
-                <li class="tag">특허설계</li>
-                <li class="tag">사업계획서 구상 및 디자인</li>
+                {% for tag in portfolio_contents.tags.all() %}
+                    <li class="tag">{{ tag.title }}</li>
+                {% endfor %}
             </ul>
             <div class="link">
                 <label>사이트 바로가기</label>
-                <a>www.notyourrose.co.kr</a>
+                <a>{{ portfolio_contents.detail }}</a>
             </div>
         </div>
         <div class="detail__body">
             <div class="contents">
-                <p><img src="{% static "images/portfolio/portfolio-1.png" %}"/></p>
-                <p><img src="{% static "images/portfolio/portfolio-2.png" %}"/></p>
-                <p><img src="{% static "images/portfolio/portfolio-3.png" %}"/></p>
+                <p>{{ portfolio_contents.content }}</p>
             </div>
         </div>
         <div class="detail__foot">
             <div class="paging">
-                <div class="nav prev"></div>
-                <div class="nav next"></div>
+                <div class="nav prev" onclick="location.href='/portfolios/{{ request.path[-1] }}'"></div>
+                <div class="nav next" onclick="location.href='/portfolios/{{ request.path[-1] }}'"></div>
             </div>
-            <div class="buttons">
+            <div class="buttons" onclick="location.href='/portfolios'">
                 <button>목록으로</button>
             </div>
         </div>
     </div>
 {% endblock %}
+

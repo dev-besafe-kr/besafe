@@ -1,12 +1,13 @@
 from django.db.models import Prefetch
 from django.views.generic import TemplateView
 
-from besafe.models.contents import ContentsHero
+from besafe.models.contents import ContentsHero, ContentsNews, ContentsCustomer, ContentsPortfolio, ContentsTeammate
 from subscription.models import (
     SubscriptionModel,
     SubscriptionModelPricing,
     SubscriptionModelService,
 )
+
 
 
 class MainPageView(TemplateView):
@@ -15,8 +16,12 @@ class MainPageView(TemplateView):
     def get_context_data(self, **kwargs):
         context_data = super().get_context_data(**kwargs)
         context_data["hero_contents"] = ContentsHero.objects.all()
-
+        context_data["news_contents"] = ContentsNews.objects.all()
+        context_data["customer_contents"] = ContentsCustomer.objects.all()
+        context_data["portfolio_contents"] = ContentsPortfolio.objects.all()
+        
         return context_data
+    
 
 
 class IntroServicePageView(TemplateView):
@@ -24,6 +29,10 @@ class IntroServicePageView(TemplateView):
 
 class IntroBizPageView(TemplateView):
     template_name = "intro-biz.html"
+    def get_context_data(self, **kwargs):
+        context_data = super().get_context_data(**kwargs)
+        context_data["teammate_contents"] = ContentsTeammate.objects.all()
+        return context_data
 
 
 class ProgramPageView(TemplateView):
@@ -36,8 +45,19 @@ class ServicePageView(TemplateView):
 
 class PortfolioListView(TemplateView):
     template_name = "portfolio/portfolio-list.html"
+    
+    def get_context_data(self, **kwargs):
+        context_data = super().get_context_data(**kwargs)
+        context_data["portfolio_contents"] = ContentsPortfolio.objects.all()
+        return context_data
+    
 class PortfolioDetailView(TemplateView):
     template_name = "portfolio/portfolio-detail.html"
+    def get_context_data(self, **kwargs):
+        pk = self.kwargs.get("pk")
+        context_data = super().get_context_data(**kwargs)
+        context_data["portfolio_contents"] = ContentsPortfolio.objects.get(id=pk)
+        return context_data
 
 
 class ContractPageView(TemplateView):

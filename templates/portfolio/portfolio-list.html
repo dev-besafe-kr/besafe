@@ -2,26 +2,26 @@
 {% block portfolio %}
     <section class="list container">
         <ul class="cards">
+            {% for pc in portfolio_contents %}
             <li class="card">
-                <div class="img square"></div>
-                <a class="label" href="/portfolios/1">
-                    <div class="client">Client</div>
-                    <div class="biz-name">데일리앤핏</div>
+                <div class="img square"
+                style="background-image: url('{{ pc.banner_img.url }}');"></div>
+                <a class="label" href="/portfolios/{{ pc.ordering }}">
+                    <div class="client">{{ pc.client }}</div>
+                    <div class="biz-name">{{ pc.biz_name }}</div>
                 </a>
             </li>
+            {% endfor %}
         </ul>
         <div class="paging">
             <ul class="pages">
                 <li class="nav prev"></li>
-                <li class="page active">1</li>
-                <li class="page">2</li>
-                <li class="page">3</li>
-                <li class="page">4</li>
-                <li class="page">5</li>
-                <li class="page">6</li>
-                <li class="page">7</li>
+                {% for pc in portfolio_contents %}
+                <li class="{% if loop.index == 1 %}page active{% endif %}">{{ loop.index }}</li>
+                {% endfor %}
                 <li class="nav next"></li>
             </ul>
         </div>
     </section>
 {% endblock %}
+
