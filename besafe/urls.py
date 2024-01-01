@@ -41,7 +41,6 @@ def admin_media_proxy(request: HttpRequest, path):
 
 urlpatterns = [
     path('upload_image', upload_image, name="admin-upload-image"),
-    re_path('admin/media/(?P<path>.*)', admin_media_proxy),
     path("admin/", admin.site.urls),
     path("", MainPageView.as_view(), name="index"),
     path("intro-service", IntroServicePageView.as_view()),
@@ -64,4 +63,6 @@ urlpatterns = [
     ),
     path("tinymce/", include("tinymce.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += [re_path('admin/media/(?P<path>.*)', admin_media_proxy)]
 urlpatterns += staticfiles_urlpatterns()
