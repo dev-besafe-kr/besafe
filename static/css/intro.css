@@ -1035,26 +1035,26 @@ body {
   }
 }
 .intro.biz section.team .teammates {
-  white-space: nowrap;
-  padding: 0;
+  padding: 0 1em;
+  gap: 1em;
 }
 .intro.biz section.team .teammates ul {
   padding: 0;
   scroll-snap-type: x mandatory;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1em;
+  overscroll-behavior-x: none;
 }
 .intro.biz section.team .teammates .teammate {
+  flex-shrink: 0;
   scroll-snap-align: center;
-  display: inline-block;
   position: relative;
-  background-size: cover;
-  background-position: center center;
-  width: calc(25% - 28px);
-  margin-right: 28px;
+  width: 25%;
 }
 @media (max-width: 768px) {
   .intro.biz section.team .teammates .teammate {
-    width: calc(50% - 20px);
-    margin-right: 20px;
+    width: 50%;
   }
 }
 @media (max-width: 512px) {
@@ -1065,6 +1065,9 @@ body {
 .intro.biz section.team .teammates .teammate .rect {
   width: 100%;
   position: relative;
+  background-size: cover;
+  background-position: center center;
+  filter: grayscale(100%);
 }
 .intro.biz section.team .teammates .teammate .rect:after {
   content: "";
@@ -1117,6 +1120,9 @@ body {
   font-weight: 400;
   letter-spacing: -0.72px;
   text-align: left;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.1ex;
 }
 .intro.biz section.certification .certs {
   padding: 0 1em;

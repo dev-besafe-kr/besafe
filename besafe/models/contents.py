@@ -42,7 +42,7 @@ class ContentsNews(OrderableModel, TimestampModel):
     banner_img = models.ImageField("배너이미지", upload_to=upload_to_news)
     company = models.CharField("회사", max_length=128)
     title = models.CharField("제목", max_length=128)
-    subtitle = models.CharField("부제목", max_length=128)
+    subtitle = models.CharField("부제목", max_length=512)
     
     button_text = models.CharField("버튼 텍스트", max_length=32, default="자세히 보기")
     button_url = models.CharField("버튼 URL", max_length=256, null=True, blank=True)
@@ -82,7 +82,8 @@ class Tag(models.Model):
         return self.title
     
 class ContentsPortfolio(OrderableModel, TimestampModel):
-    banner_img = models.ImageField("대표이미지", upload_to=upload_to_portfolio)
+    banner_img = models.ImageField("배너 이미지", upload_to=upload_to_portfolio)
+    thumbnail_img = models.ImageField("대표 이미지", upload_to=upload_to_portfolio, null=True)
     client = models.CharField("클라이언트", max_length=128)
     biz_name = models.CharField("비즈니스명", max_length=128)
     tags = models.ManyToManyField(Tag, verbose_name="태그")
@@ -122,6 +123,9 @@ class ContentsTeammate(OrderableModel, TimestampModel):
         verbose_name = "콘텐츠 - 비세이프 소개[Teammate]"
         verbose_name_plural = "콘텐츠 - 비세이프 소개[Teammate]"
 
+    def __str__(self):
+        return self.name
+
 def upload_to_consulting(instace: "ContentsConsulting", filename: str) -> str:
     return make_new_path(
         path_ext=filename,
@@ -150,3 +154,6 @@ class ContentsConsulting(OrderableModel, TimestampModel):
         db_table = "contents_consulting"
         verbose_name = "콘텐츠 - 컨설팅[Consulting]"
         verbose_name_plural = "콘텐츠 - 컨설팅[Consulting]"
+
+    def __str__(self):
+        return f" {self.review_title} by {self.profile_name}"

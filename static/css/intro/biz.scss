@@ -162,25 +162,25 @@
 
     &.team {
       .teammates {
-        white-space: nowrap;
-        padding: 0;
+        padding: 0 1em;
+        gap: 1em;
 
         ul {
           padding: 0;
           scroll-snap-type: x mandatory;
+          display: flex;
+          flex-flow: row nowrap;
+          gap: 1em;
+          overscroll-behavior-x: none;
         }
 
         .teammate {
+          flex-shrink: 0;
           scroll-snap-align: center;
-          display: inline-block;
           position: relative;
-          background-size: cover;
-          background-position: center center;
-          width: calc(100% / 4 - 28px);
-          margin-right: 28px;
+          width: 25%;
           @media (max-width: 768px) {
-            width: calc(100% / 2 - 20px);
-            margin-right: 20px;
+            width: 50%;
           }
           @media (max-width: 512px) {
             width: 100%;
@@ -189,6 +189,9 @@
           .rect {
             width: 100%;
             position: relative;
+            background-size: cover;
+            background-position: center center;
+            filter: grayscale(100%);
 
             &:after {
               content: "";
@@ -212,7 +215,6 @@
 
             color: #FFF;
             font-family: Pretendard, sans-serif;
-
             background-color: rgb(3, 199, 90, 0.3);
             display: flex;
             flex-flow: column nowrap;
@@ -251,6 +253,13 @@
               font-weight: 400;
               letter-spacing: -0.72px;
               text-align: left;
+              display: flex;
+              flex-flow: column nowrap;
+              gap: 0.1ex;
+
+              li {
+
+              }
             }
           }
         }

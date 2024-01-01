@@ -18,16 +18,13 @@ class ContentsNewsAdmin(OrderableAdmin, admin.ModelAdmin):
 class ContentsCustomerAdmin(OrderableAdmin, admin.ModelAdmin):
     pass
 
-class TagInline(admin.TabularInline):
-    model = ContentsPortfolio.tags.through
-    extra = 1
-
 class ContentsPortfolioForm(ModelForm):
     class Meta:
         model = ContentsPortfolio
         fields = [
             "banner_img",
             "client",
+            "thumbnail_img",
             "biz_name",
             "tags",
             "detail",
@@ -37,7 +34,9 @@ class ContentsPortfolioForm(ModelForm):
 @admin.register(ContentsPortfolio)
 class ContentsPortfolioAdmin(OrderableAdmin, admin.ModelAdmin):
     form = ContentsPortfolioForm
-    inlines = [TagInline]
+
+    def get_queryset(self, request):
+        return super().get_queryset(request).prefetch_related("tags")
 
 @admin.register(Tag)
 class TagAdmin(OrderableAdmin, admin.ModelAdmin):

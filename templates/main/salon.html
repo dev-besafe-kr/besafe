@@ -42,11 +42,13 @@
             <ul class="salon__list slide-ul">
                 {% for pc in portfolio_contents %}
                 <li>
-                    <a href="portfolios" class="interview-wrap">
+                    <a href="{% url "portfolio-detail" pk=pc.id %}" class="interview-wrap">
                         <img class="logo" loading="lazy" src="/static/images/pg4_logo02.png" alt="">
                         <p>{{ pc.client }}</p>
-                        <img class="interview" loading="lazy" src="{{ pc.banner_img.url }}"
-                             alt="{{ pc.biz_name }}">
+                        <div class="rect">
+                            <div class="inner"></div>
+                        </div>
+                        <div class="banner" style="background-image: url('{{ pc.banner_img.url }}')"></div>
                     </a>
                 </li>
                 {% endfor %}

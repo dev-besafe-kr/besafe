@@ -89,21 +89,21 @@
             <div class="teammates slide">
                 <ul class="slide__ul">
                     {% for tc in teammate_contents %}
-                    <li class="teammate"
-                        style="background-image: url('/media/{{tc.banner_img}}')">
-                        <div class="rect">
-                            <div class="inner"></div>
-                        </div>
-                        <div class="label">
-                            <div class="position">{{tc.position}}</div>
-                            <div class="name">{{tc.name}}</div>
-                            <ul class="roles">
-                                {% for role in tc.roles.all() %}
-                                <li>{{ role.role }}</li><br>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </li>
+                        <li class="teammate">
+                            <div class="rect"
+                                 style="background-image: url('/media/{{ tc.banner_img }}')">
+                                <div class="inner"></div>
+                            </div>
+                            <div class="label">
+                                <div class="position">{{ tc.position }}</div>
+                                <div class="name">{{ tc.name }}</div>
+                                <ul class="roles">
+                                    {% for role in tc.roles.all() %}
+                                        <li>{{ role.role }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </li>
                     {% endfor %}
                 </ul>
             </div>

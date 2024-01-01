@@ -7,30 +7,32 @@
                     <div class="img square"
                          style="background-image: url('{{ obj.banner_img.url }}');"></div>
                     <a class="label" href="{% url "portfolio-detail" pk=obj.id %}">
-                        <div class="client">{{ obj.client }}</div>
-                        <div class="biz-name">{{ obj.biz_name }}</div>
+                        <div class="client">Client</div>
+                        <div class="biz-name">{{ obj.client }}</div>
                     </a>
                 </li>
             {% endfor %}
         </ul>
-        <div class="paging">
-            <ul class="pages">
-                {% if page_obj.has_previous() %}
-                    <li class="nav prev">
-                        <a href="?page={{ page_obj.previous_page_number() }}">
-                        </a>
-                    </li>
-                {% endif %}
-                {% for p in page_obj.paginator.page_range %}
-                    <li class="page{% if p == page_obj.number %} active{% endif %}">{{ p }}</li>
-                {% endfor %}
-                {% if page_obj.has_next() %}
-                    <li class="nav next">
-                        <a href="?page={{ page_obj.next_page_number() }}">
-                        </a>
-                    </li>
-                {% endif %}
-            </ul>
-        </div>
+        {% if page_obj.has_previous() or page_obj.has_next() %}
+            <div class="paging">
+                <ul class="pages">
+                    {% if page_obj.has_previous() %}
+                        <li class="nav prev">
+                            <a href="?page={{ page_obj.previous_page_number() }}">
+                            </a>
+                        </li>
+                    {% endif %}
+                    {% for p in page_obj.paginator.page_range %}
+                        <li class="page{% if p == page_obj.number %} active{% endif %}">{{ p }}</li>
+                    {% endfor %}
+                    {% if page_obj.has_next() %}
+                        <li class="nav next">
+                            <a href="?page={{ page_obj.next_page_number() }}">
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        {% endif %}
     </section>
 {% endblock %}

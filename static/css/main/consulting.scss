@@ -290,6 +290,7 @@
     overflow-x: scroll;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
+    overscroll-behavior-x: none;
     -ms-overflow-style: none;
     scrollbar-width: none;
 

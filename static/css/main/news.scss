@@ -113,6 +113,7 @@
     flex-flow: row nowrap;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
+    overscroll-behavior-x: none;
     -ms-overflow-style: none;
     scrollbar-width: none;
 
