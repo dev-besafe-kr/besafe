@@ -1,9 +1,10 @@
+import os
 import uuid
 
 from admin_ordering.models import OrderableModel
 from django.db import models
 from django.db.models import CharField
-from django.db.models.signals import pre_save
+from django.db.models.signals import pre_save, post_delete
 from django.dispatch import receiver
 from django_mysql.models import ListCharField
 
@@ -184,3 +185,10 @@ class Media(TimestampModel):
 def fill_service(sender, instance: Media, **kwargs):
     if not instance.name:
         instance.name = instance.file.path.split("/").pop()
+
+@receiver(post_delete, sender=Media)
+def fill_service(sender, instance: Media, **kwargs):
+    try:
+        os.remove(instance.file.path)
+    except Exception:
+        pass
