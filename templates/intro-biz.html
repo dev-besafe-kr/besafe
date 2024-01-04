@@ -18,7 +18,6 @@
                 const previous = e.currentTarget.ShiftInstance.currentShiftHandle.previousElementSibling;
                 const current = e.currentTarget.ShiftInstance.currentShiftHandle;
                 const next = e.currentTarget.ShiftInstance.currentShiftHandle.nextElementSibling;
-                console.log("?");
                 if (!previous || !current || !next) return;
 
                 e.currentTarget.querySelectorAll(".year").forEach(el => el.style.display = "none");
