@@ -12,6 +12,24 @@
 
 {% block head %}
     <link href="{% static "css/intro.css" %}" rel="stylesheet">
+    <script>
+        window.addEventListener("load", () => {
+            const onShift = (e) => {
+                const previous = e.currentTarget.ShiftInstance.currentShiftHandle.previousElementSibling;
+                const current = e.currentTarget.ShiftInstance.currentShiftHandle;
+                const next = e.currentTarget.ShiftInstance.currentShiftHandle.nextElementSibling;
+                console.log("?");
+                if (!previous || !current || !next) return;
+
+                e.currentTarget.querySelectorAll(".year").forEach(el => el.style.display = "none");
+                e.currentTarget.ShiftInstance.currentShiftHandle.previousElementSibling.style.display = "";
+                e.currentTarget.ShiftInstance.currentShiftHandle.style.display = "";
+                e.currentTarget.ShiftInstance.currentShiftHandle.nextElementSibling.style.display = "";
+            };
+            document.querySelector(".timeline.shift").addEventListener("shift", onShift);
+            document.querySelector(".timeline.shift").addEventListener("load", onShift);
+        });
+    </script>
 {% endblock %}
 
 {% block body %}
@@ -41,13 +59,16 @@
                 <div class="timeline__paging">
                     <div class="nav prev shift__left"></div>
                     <ul class="years">
+                        <li class="year shift__handle" data-shift_id="2019">2019</li>
+                        <li class="year shift__handle" data-shift_id="2020">2020</li>
+                        <li class="year shift__handle" data-shift_id="2021">2021</li>
                         <li class="year shift__handle" data-shift_id="2022">2022</li>
                         <li class="year shift__handle active" data-shift_id="2023">2023</li>
                         <li class="year shift__handle" data-shift_id="2024">2024</li>
                     </ul>
                     <div class="nav next shift__right"></div>
                 </div>
-                <ul class="timeline__contents shift__item active" data-shift_id="2019">
+                <ul class="timeline__contents shift__item" data-shift_id="2019">
                     <li>5월 주식회사 라이트형제 설립 (경기도 성남시)</li>
                     <li>7월 성남산업진흥원 'IP Private Banking Service' 수행</li>
                     <li>8월 연구개발전담부서 설립 (가천대학교)</li>
@@ -74,7 +95,7 @@
                     <li>6월 초기창업자 보육 서비스 시작</li>
                     <li>10월 자본금 증자 (1억원)</li>
                 </ul>
-                <ul class="timeline__contents shift__item" data-shift_id="2023">
+                <ul class="timeline__contents shift__item active" data-shift_id="2023">
                     <li>3월 중소벤처기업부 액셀러레이터 지정</li>
                     <li>4월 액셀러레이팅 투자 진행</li>
                     <li>6월 누적 투자 금액 5,000만원 돌파 (6개 기업)</li>
@@ -86,8 +107,9 @@
         </section>
         <section class="team container">
             <h1>Team building</h1>
-            <div class="teammates slide">
-                <ul class="slide__ul">
+            <div class="teammates slide stop">
+                <div class="nav prev slide-left"></div>
+                <ul class="slide-ul">
                     {% for tc in teammate_contents %}
                         <li class="teammate">
                             <div class="rect"
@@ -106,6 +128,7 @@
                         </li>
                     {% endfor %}
                 </ul>
+                <div class="nav next slide-right"></div>
             </div>
         </section>
         <section class="certification container">

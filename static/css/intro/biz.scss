@@ -67,6 +67,7 @@
             background-image: url("/static/images/intro/arrow-white.svg");
             background-repeat: no-repeat;
             background-size: 100%;
+            cursor: pointer;
 
             &.next {
               transform: rotateX(180deg);
@@ -163,15 +164,55 @@
     &.team {
       .teammates {
         padding: 0 1em;
-        gap: 1em;
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 18px;
+        align-items: center;
+        @media (max-width: 512px) {
+          gap: 0;
+          .nav {
+            position: relative;
+            z-index: 1;
+          }
+          ul {
+            position: relative;
+            z-index: 0;
+            margin-left: -8px;
+            margin-right: -8px;
+          }
+        }
+
+        .nav {
+          width: 24px;
+          height: 37px;
+          background-image: url("/static/images/intro/arrow-white.svg");
+          background-repeat: no-repeat;
+          background-size: 100%;
+          cursor: pointer;
+
+          &.prev {
+            transform: rotate(-90deg);
+          }
+
+          &.next {
+            transform: rotate(90deg);
+          }
+        }
+
+        &__wrapper {
+          width: 100%;
+          overflow: hidden;
+        }
 
         ul {
+          width: 100%;
           padding: 0;
           scroll-snap-type: x mandatory;
           display: flex;
           flex-flow: row nowrap;
           gap: 1em;
           overscroll-behavior-x: none;
+          overflow: hidden;
         }
 
         .teammate {
@@ -225,6 +266,10 @@
 
             transition-duration: 0.3s;
             opacity: 0;
+            @media (max-width: 768px) {
+              opacity: 1;
+              background-color: transparent;
+            }
 
             &:hover {
               opacity: 1;

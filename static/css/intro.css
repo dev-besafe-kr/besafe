@@ -948,6 +948,7 @@ body {
   background-image: url("/static/images/intro/arrow-white.svg");
   background-repeat: no-repeat;
   background-size: 100%;
+  cursor: pointer;
 }
 .intro.biz section.history .timeline__paging .nav.next {
   transform: rotateX(180deg);
@@ -1036,15 +1037,53 @@ body {
 }
 .intro.biz section.team .teammates {
   padding: 0 1em;
-  gap: 1em;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 18px;
+  align-items: center;
+}
+@media (max-width: 512px) {
+  .intro.biz section.team .teammates {
+    gap: 0;
+  }
+  .intro.biz section.team .teammates .nav {
+    position: relative;
+    z-index: 1;
+  }
+  .intro.biz section.team .teammates ul {
+    position: relative;
+    z-index: 0;
+    margin-left: -8px;
+    margin-right: -8px;
+  }
+}
+.intro.biz section.team .teammates .nav {
+  width: 24px;
+  height: 37px;
+  background-image: url("/static/images/intro/arrow-white.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+}
+.intro.biz section.team .teammates .nav.prev {
+  transform: rotate(-90deg);
+}
+.intro.biz section.team .teammates .nav.next {
+  transform: rotate(90deg);
+}
+.intro.biz section.team .teammates__wrapper {
+  width: 100%;
+  overflow: hidden;
 }
 .intro.biz section.team .teammates ul {
+  width: 100%;
   padding: 0;
   scroll-snap-type: x mandatory;
   display: flex;
   flex-flow: row nowrap;
   gap: 1em;
   overscroll-behavior-x: none;
+  overflow: hidden;
 }
 .intro.biz section.team .teammates .teammate {
   flex-shrink: 0;
@@ -1095,6 +1134,12 @@ body {
   padding: 27px;
   transition-duration: 0.3s;
   opacity: 0;
+}
+@media (max-width: 768px) {
+  .intro.biz section.team .teammates .teammate .label {
+    opacity: 1;
+    background-color: transparent;
+  }
 }
 .intro.biz section.team .teammates .teammate .label:hover {
   opacity: 1;

@@ -5,8 +5,10 @@ const initSlides = () => {
         const stopEl = slide.querySelector(".slide-stop");
         const goLeft = () => {
             const ulEl = slide.querySelector(`.slide-ul`);
-            const liEl = ulEl.querySelector('li');
-            ulEl.scrollTo(ulEl.scrollLeft - liEl.clientWidth, 0);
+            if (ulEl) {
+                const liEl = ulEl.querySelector('li');
+                ulEl.scrollTo(ulEl.scrollLeft - liEl.clientWidth, 0, "smooth");
+            }
 
             const pagingEl = slide.querySelector(`.slide-paging`);
             if (pagingEl == null) return;
@@ -23,8 +25,10 @@ const initSlides = () => {
         };
         const goRight = () => {
             const ulEl = slide.querySelector(`.slide-ul`);
-            const liEl = ulEl.querySelector('li');
-            ulEl.scrollTo(ulEl.scrollLeft + liEl.clientWidth + 20, 0);
+            if (ulEl) {
+                const liEl = ulEl.querySelector('li');
+                ulEl.scrollTo(ulEl.scrollLeft + liEl.clientWidth + 20, 0, "smooth");
+            }
 
             const pagingEl = slide.querySelector(`.slide-paging`);
             if (pagingEl == null) return;
@@ -97,7 +101,6 @@ const initShifts = () => {
                 return;
             }
         }
-
         shift.dataset.id = dataId;
         let isCurrentRevealed = false;
         handles.forEach(sel => {
@@ -105,6 +108,7 @@ const initShifts = () => {
             if (isTarget) {
                 sel.classList.add("active");
                 isCurrentRevealed = true;
+                shift.ShiftInstance.currentShiftHandle = sel;
 
                 const temp = sel;
                 setTimeout(() => {
@@ -115,12 +119,14 @@ const initShifts = () => {
                 sel.classList.add(isCurrentRevealed ? "next" : "prev");
             }
         });
+        if (!isCurrentRevealed) shift.ShiftInstance.currentShiftHandle = null;
         isCurrentRevealed = false;
         items.forEach(sel => {
             const isTarget = sel.dataset.shift_id === dataId;
             if (isTarget) {
                 sel.classList.add("active");
                 isCurrentRevealed = true;
+                shift.ShiftInstance.currentShiftItem = sel;
 
                 const temp = sel;
                 setTimeout(() => {
@@ -131,11 +137,21 @@ const initShifts = () => {
                 sel.classList.add(isCurrentRevealed ? "next" : "prev");
             }
         });
+        if (!isCurrentRevealed) shift.ShiftInstance.currentShiftItem = null;
+
+        const event = new CustomEvent("shift");
+        shift.dispatchEvent(event);
     }
     const initShift = shift => {
         let isCurrentRevealed = false;
         const handles = Array.from(shift.querySelectorAll(".shift__handle"));
         const items = Array.from(shift.querySelectorAll(".shift__item"));
+        const localShowShiftItem = (shiftId) => showShiftItem(shift, handles, items, shiftId);
+        shift.ShiftInstance = {
+            showShiftItem: localShowShiftItem,
+            currentShiftHandle: handles.find(el => el.classList.contains("active")),
+            currentShiftItem: items.find(el => el.classList.contains("active")),
+        };
 
         if (shift.classList.contains("shift--form")) {
             shift.addEventListener("submit", e => {
@@ -189,12 +205,13 @@ const initShifts = () => {
 
         const shiftIdMap = items.map(i => i.dataset.shift_id);
         handles.forEach(el => {
-            el.addEventListener('click', () => {
-                showShiftItem(shift, handles, items, el.dataset.shift_id);
-            });
+            el.addEventListener('click', () => localShowShiftItem(el.dataset.shift_id));
         });
-        shift.querySelectorAll(".shift__left").forEach(leftEl => leftEl.addEventListener('click', () => showShiftItem(shift, handles, items, shiftIdMap[shiftIdMap.indexOf(shift.dataset.id) - 1] || shift.dataset.id)))
-        shift.querySelectorAll(".shift__right").forEach(rightEl => rightEl.addEventListener('click', () => showShiftItem(shift, handles, items, shiftIdMap[shiftIdMap.indexOf(shift.dataset.id) + 1] || shift.dataset.id)))
+        shift.querySelectorAll(".shift__left").forEach(leftEl => leftEl.addEventListener('click', () => localShowShiftItem(shiftIdMap[shiftIdMap.indexOf(shift.dataset.id) - 1] || shift.dataset.id)))
+        shift.querySelectorAll(".shift__right").forEach(rightEl => rightEl.addEventListener('click', () => localShowShiftItem(shiftIdMap[shiftIdMap.indexOf(shift.dataset.id) + 1] || shift.dataset.id)))
+
+        const event = new CustomEvent("load");
+        shift.dispatchEvent(event);
     };
     document.querySelectorAll(".shift").forEach(initShift);
 }
