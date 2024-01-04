@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block head %}
-    <link href="{% static "css/intro.css" %}" rel="stylesheet">
+    <link href="{% static "css/intro.css" %}?t={{ now().timestamp() }}" rel="stylesheet">
     <script>
         window.addEventListener("load", () => {
             const onShift = (e) => {
