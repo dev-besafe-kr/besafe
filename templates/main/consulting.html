@@ -1,0 +1,47 @@
+{% if consulting_contents | length > 0 %}
+    <section class="consulting slide">
+        <div class="container">
+            <div class="main-title">
+                <div class="main-title__ico">
+                    <img src="{% static "images/speaker.png" %}"/>
+                </div>
+                <div class="main-title__text">
+                    <h1>자본금 마련, <strong>BE SAFE하게!</strong></h1>
+                    <h2>비세이프 성공사례 고객님들의 컨설팅 후기</h2>
+                </div>
+            </div>
+            <div class="consulting__panel">
+                <div class="consulting__panel__prev slide-left"></div>
+                <div class="consulting__panel__carousel slide-stop"></div>
+                <div class="consulting__panel__next slide-right"></div>
+            </div>
+        </div>
+        <ul class="consulting__list slide-ul">
+            {% for cc in consulting_contents %}
+                <li class="consulting__card">
+                    <div class="consulting__card__top">
+                        <img class="consulting__card__img" src="{{ cc.profile_img.url }}"/>
+                        <div class="consulting__card__name">
+                            <div class="div">{{ cc.profile_company }}</div>
+                            <div class="name">{{ cc.profile_name }}</div>
+                        </div>
+                        <div class="consulting__card__item">
+                            <div class="title">{{ cc.consulting_title }}</div>
+                            <div class="desc">{{ cc.consulting_description | safe }}</div>
+                        </div>
+                    </div>
+                    {% for item in cc.consulting_items %}
+                        <div class="consulting__card__tag">
+                            <div class="mark"><span>B</span></div>
+                            <div class="title">{{ item }}</div>
+                        </div>
+                    {% endfor %}
+                    <div class="consulting__card__bottom">
+                        <h1>{{ cc.review_title }}</h1>
+                        <p>{{ cc.review_contents | safe }}</p>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endif %}

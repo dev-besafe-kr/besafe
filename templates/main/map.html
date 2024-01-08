@@ -1,0 +1,57 @@
+<section class="map">
+    <div class="container">
+        <h1>오시는 길</h1>
+        <div class="map__address">
+            <dl>
+                <dt>Add.</dt>
+                <dd>세종특별자치시 조치원읍 으뜸길 177 1층</dd>
+            </dl>
+            <div class="m-50">
+                <dl>
+                    <dt>Tel.</dt>
+                    <dd>1533-8231</dd>
+                </dl>
+                <dl>
+                    <dt>Fax.</dt>
+                    <dd>0504-425-6293</dd>
+                </dl>
+            </div>
+            <dl>
+                <dt>Mail.</dt>
+                <dd><a href="mailto:besafe.kr@gmail.com" target="_blank"
+                       rel="noopener noreferrer">besafe.kr@gmail.com</a></dd>
+            </dl>
+        </div>
+    </div>
+    <div class="map__frame">
+        <div id="map"></div>
+    </div>
+    <script defer>
+        const resize = () => {
+            const mapDiv = document.querySelector('.map__frame');
+            mapDiv.style.height = `${mapDiv.clientWidth / 43 * 18}px`;
+        };
+        window.addEventListener('resize', resize);
+        window.addEventListener('load', function () {
+            resize();
+            const map = new naver.maps.Map('map', {
+                center: new naver.maps.LatLng(36.599511421322084, 127.29702231605454),
+                zoom: 18, //지도의 초기 줌 레벨
+                minZoom: 8, //지도의 최소 줌 레벨
+                zoomControl: true, //줌 컨트롤의 표시 여부
+                zoomControlOptions: { //줌 컨트롤의 옵션
+                    position: naver.maps.Position.TOP_RIGHT
+                }
+            });
+            new naver.maps.Marker({
+                icon: {
+                    url: "{% static "images/pg8_logo.png" %}",
+                    scaledSize: new naver.maps.Size(60, 60),
+                    origin: new naver.maps.Point(0, 0),
+                },
+                position: new naver.maps.LatLng(36.599511421322084, 127.29702231605454),
+                map: map
+            });
+        });
+    </script>
+</section>

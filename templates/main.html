@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+
+{% block head %}
+    <link href="{% static "css/main.css" %}?t={{ now().timestamp() }}" rel="stylesheet">
+    <script defer type="text/javascript"
+            src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=6hjg4fhdj6"></script>
+    <script defer type="text/javascript" src="{% static "js/main.js" %}"></script>
+{% endblock %}
+
+{% block body %}
+    {% include "main/hero.html" %}
+    <div class="animation fade-up">
+        {% include "main/roadmap.html" %}
+    </div>
+    <div class="animation fade-up">
+        {% include "main/consulting.html" %}
+    </div>
+    <div class="animation fade-up">
+        {% include "main/news.html" %}
+    </div>
+    <div class="animation fade-up">
+        {% include "main/salon.html" %}
+    </div>
+    <div class="animation fade-up">
+        {% include "main/customer.html" %}
+    </div>
+    <div class="animation fade-in">
+        {% include "main/map.html" %}
+    </div>
+    <div class="animation fade-up">
+        {% include "main/outtro.html" %}
+    </div>
+{% endblock %}

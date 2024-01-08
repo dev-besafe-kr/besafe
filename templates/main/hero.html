@@ -1,0 +1,26 @@
+<section class="hero shift shift--slide">
+    {% for hc in hero_contents %}
+        <div class="hero__face shift__item"
+             style="background-image: url('{{ hc.banner_img.url }}');" data-shift_id="{{ loop.index }}">
+            <div class="container contents">
+                <div class="contents__head">
+                    <h1>{{ hc.title | safe }}</h1>
+                    <h3>{{ hc.subtitle | safe }}</h3>
+                </div>
+                <div class="contents__foot">
+                    <a class="button" href="{{ hc.button_url }}" target="{{ hc.button_target }}">{{ hc.button_text }}</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    <div class="hero__paging">
+        <div class="container">
+            <ul>
+                {% for hc in hero_contents %}
+                    <li class="shift__handle {% if loop.index == 1 %}active{% endif %}"
+                        data-shift_id="{{ loop.index }}">{{ loop.index }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>

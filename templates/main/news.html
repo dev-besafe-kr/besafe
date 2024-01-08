@@ -1,0 +1,37 @@
+<section class="news slide">
+    <div class="news__head">
+        <div class="main-title">
+            <div class="main-title__text">
+                <h1><b>고객사 소식</b></h1>
+                <h2>비세이프와 함께한 고객사의 좋은 소식</h2>
+            </div>
+        </div>
+        <div class="news__panel">
+            <div class="news__panel__prev slide-left"></div>
+            <div class="news__panel__next slide-right"></div>
+            <div class="news__panel__paging slide-paging">
+
+                {% for nc in news_contents %}
+                
+                <li class="{% if loop.index == 1 %}active{% endif %}">{{ loop.index }}</li>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <ul class="news__cards slide-ul container">
+        {% for nc in news_contents %}
+        <li class="news__card">
+            <div class="news__card__inner">
+                <img class="news__card__img" src="{{ nc.banner_img.url }}">
+                <div class="news__card__contents">
+                    <div class="news__card__contents__name">{{ nc.company }}</div>
+                    <div class="news__card__contents__title">{{ nc.title }}</div>
+                    <div class="news__card__contents__description">{{ nc.subtitle }}</div>
+                    <button class="button" href="{{ nc.button_url }}">{{ nc.button_text }}</button>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+

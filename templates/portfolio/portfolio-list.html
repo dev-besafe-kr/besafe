@@ -1,0 +1,41 @@
+{% extends "portfolio/base.html" %}
+{% block portfolio %}
+    <section class="list container">
+        <ul class="cards">
+            {% for obj in object_list %}
+                <li class="card">
+                    <a href="{% url "portfolio-detail" pk=obj.id %}">
+                        <div class="img square"
+                             style="background-image: url('{{ obj.banner_img.url }}');"></div>
+                        <label>
+                            <div class="client">Client</div>
+                            <div class="biz-name">{{ obj.client }}</div>
+                        </label>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+        {% if page_obj.has_previous() or page_obj.has_next() %}
+            <div class="paging">
+                <ul class="pages">
+                    {% if page_obj.has_previous() %}
+                        <li class="nav prev">
+                            <a href="?page={{ page_obj.previous_page_number() }}">
+                            </a>
+                        </li>
+                    {% endif %}
+                    {% for p in page_obj.paginator.page_range %}
+                        <li class="page{% if p == page_obj.number %} active{% endif %}"><a
+                                href="?page={{ p }}">{{ p }}</a></li>
+                    {% endfor %}
+                    {% if page_obj.has_next() %}
+                        <li class="nav next">
+                            <a href="?page={{ page_obj.next_page_number() }}">
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        {% endif %}
+    </section>
+{% endblock %}

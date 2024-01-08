@@ -1,43 +1,29 @@
-$(function(){
-    var check = false;
-    $('.nav-btn').on('click',function(e){
-        if(check==false){
-            $('header.type-m .nav').animate({'opacity':'1','left':'0'},700,'swing');
-            $('.nav-btn .h-btn').addClass('on');
-            check=true;
-        }
-        else{
-            $('header.type-m .nav').animate({'opacity':'0','left':'-150px'},700,'swing');
-            $('.nav-btn .h-btn').removeClass('on');
-            check=false;
-        }
+window.addEventListener('load', () => {
+    const observer = new IntersectionObserver(entries => {
+        // Loop over the entries
+        entries.forEach(entry => {
+            // If the element is visible
+            if (entry.isIntersecting) {
+                // Add the animation class
+                entry.target.classList.add('on');
+                entry.target.animationQueue = entry.target.animationQueue || [];
+
+                entry.target.animationQueue.forEach((animationFunc) => animationFunc());
+            }
+        });
     });
-    
-    $(".topBtn").click(function() { 
-        $('html, body').animate({ scrollTop : 0 // 0 까지 animation 이동합니다. 
-        }, 400); // 속도 400 
-        return false; 
-    }); 
 
-    $(window).scroll( function(){
-        if($(window).scrollTop() > 800){
-            $('.callBtn').fadeIn();
-        }else{
-            $('.callBtn').fadeOut();
-        }
-        if($(window).scrollTop() > 800){
-            $('.topBtn').fadeIn();
-        }else{
-            $('.topBtn').fadeOut();
-        }
-        if($(window).scrollTop() >0){
-            $('header').addClass("on");
-        }
-        else{
-            $('header').removeClass("on");
-        }
-
+    document.querySelectorAll('.animation').forEach(el => {
+        setTimeout(() => observer.observe(el), 500);
     });
-    
 
-})
+    document.querySelectorAll("dialog").forEach(dialog => {
+        dialog.addEventListener('click', ({target: dialog}) => {
+            if (dialog.nodeName === 'DIALOG' && !dialog.getAttributeNames().find(n => n === "lock")) {
+                dialog.close('dismiss');
+            }
+        });
+        dialog.querySelectorAll(".close").forEach(el => el.addEventListener("click", () => dialog.close('dismiss')));
+        dialog.addEventListener("close", () => dialog.querySelectorAll("form").forEach(form => form.reset()));
+    });
+});

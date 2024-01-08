@@ -1,0 +1,39 @@
+{% extends "portfolio/base.html" %}
+{% block portfolio %}
+    <div class="detail container">
+        <div class="detail__head">
+            <h1 class="title">{{ object.biz_name }}</h1>
+            {% if object.tags.all() %}
+                <ul class="tags">
+                    {% for tag in object.tags.all() %}
+                        <li class="tag">{{ tag.title }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            {% if object.detail %}
+                <div class="link">
+                    <label>사이트 바로가기</label>
+                    <a href="{{ object.detail }}" target="_blank">{{ object.detail }}</a>
+                </div>
+            {% endif %}
+        </div>
+        <div class="detail__body">
+            <div class="contents">
+                {% if object.content %}
+                    <p>{{ object.content | safe }}</p>
+                {% endif %}
+            </div>
+        </div>
+        <div class="detail__foot">
+            <div class="paging">
+                <a class="nav prev{% if not prev %} disabled{% endif %}"
+                   {% if prev %}href="{% url "portfolio-detail" pk=prev.id %}"{% endif %}></a>
+                <a class="nav next{% if not next %} disabled{% endif %}"
+                   {% if next %}href="{% url "portfolio-detail" pk=next.id %}"{% endif %}></a>
+            </div>
+            <div class="buttons">
+                <a class="button primary" href="{% url "portfolio-list" %}">목록으로</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

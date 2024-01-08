@@ -1,0 +1,27 @@
+$primary-900: rgb(0, 28, 13);
+$primary-800: rgb(1, 68, 31);
+$primary-700: rgb(0, 105, 46);
+$primary-600: rgb(0, 157, 70);
+$primary: rgb(3, 199, 90);
+$primary-400: rgb(69, 212, 129);
+$primary-300: rgb(109, 219, 162);
+$primary-200: rgb(154, 229, 190);
+$primary-100: rgb(205, 244, 222);
+$primary-50: rgb(232, 255, 241);
+
+$main: $primary;
+$sub: $primary-100;
+
+$border: #D9D9D9;
+
+:root {
+    --primary-bg: #{$primary-50};
+    --primary: #{$primary};
+    --secondary: #{$primary-600};
+    --accent: #{$primary-700};
+    --primaryHover: #{$primary-400};
+    --black: #{$primary-900};
+    --white: #fffefe;
+    --gray: #969696;
+    --dark-gray: #525252;
+}

@@ -1,13 +1,13 @@
 from django.db import models
 from django_mysql.models import ListCharField
 
-from besafe.models import BaseModel
+from besafe.models.base import TimestampModel
 
 
 # Create your models here.
 
 
-class ConsultingInquiry(BaseModel):
+class ConsultingInquiry(TimestampModel):
     part = ListCharField(
         base_field=models.CharField(max_length=10),
         max_length=100,
@@ -54,7 +54,7 @@ class ConsultingInquiry(BaseModel):
         return f"컨설팅 요청 [{self.company_name}]({self.id})"
 
 
-class PartnershipInquiry(BaseModel):
+class PartnershipInquiry(TimestampModel):
     phone = models.CharField(max_length=16, verbose_name="연락처")
     email = models.EmailField(max_length=32, verbose_name="이메일")
     inquiry = models.TextField(verbose_name="제안내용")

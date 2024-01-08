@@ -1,11 +1,12 @@
 from admin_ordering.models import OrderableModel
 from django.db import models
 
-from besafe.models import BaseModel
 from django_soft_delete.models import HasSoftDelete
 
+from besafe.models.base import TimestampModel
 
-class SubscriptionModelPricing(BaseModel):
+
+class SubscriptionModelPricing(TimestampModel):
     class Type(models.TextChoices):
         MONTHLY = "MONTHLY", "월"
         ANNUAL = "ANNUAL", "년"
@@ -29,7 +30,7 @@ class SubscriptionModelPricing(BaseModel):
         return "" if self.vat else "VAT 별도 / "
 
 
-class SubscriptionModelService(OrderableModel, BaseModel):
+class SubscriptionModelService(OrderableModel, TimestampModel):
     class Type(models.TextChoices):
         MAIN = "MAIN", "주요 서비스"
         ETC = "ETC", "기타 부대 업무"
@@ -50,7 +51,7 @@ class SubscriptionModelService(OrderableModel, BaseModel):
         return f"{emoji_str}{self.title}"
 
 
-class SubscriptionModel(HasSoftDelete, OrderableModel, BaseModel):
+class SubscriptionModel(HasSoftDelete, OrderableModel, TimestampModel):
     class Codename(models.TextChoices):
         BASIC = "BASIC", "Basic"
         PREMIUM = "PREMIUM", "Premium"
@@ -84,7 +85,7 @@ class SubscriptionModel(HasSoftDelete, OrderableModel, BaseModel):
         return f"[{self.Codename[self.codename].label}] {self.name}"
 
 
-class Subscription(HasSoftDelete, BaseModel):
+class Subscription(HasSoftDelete, TimestampModel):
     model = models.ForeignKey(
         SubscriptionModel, verbose_name="구독모델", on_delete=models.DO_NOTHING
     )

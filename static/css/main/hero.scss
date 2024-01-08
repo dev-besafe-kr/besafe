@@ -1,0 +1,182 @@
+@import '../vars-layout';
+
+@import url('https://fonts.cdnfonts.com/css/montserrat');
+@import url('https://fonts.cdnfonts.com/css/nanumsquare-neo');
+
+.hero {
+  position: relative;
+  background-color: black;
+  overflow: hidden;
+
+  &__face {
+    width: 100vw;
+    $face-height: 45em;
+    height: $face-height;
+
+    padding: calc($gnb-height + 60px) 3em 60px;
+    @media (max-width: 768px) {
+      padding: calc($gnb-height-t + 60px) 2em 60px;
+      $face-height: 40em;
+      height: $face-height;
+    }
+
+    @media (max-width: 512px) {
+      padding: calc($gnb-height-m + 60px) 1em 60px;
+      $face-height: 35em;
+      height: $face-height;
+    }
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    background-color: rgba(0, 0, 0, 0.7);
+    background-blend-mode: darken;
+
+    .contents {
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+      align-items: start;
+      height: 100%;
+      padding-bottom: $face-height / 9 * 2;
+
+      &__head {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 1em;
+
+        h1 {
+          font-family: "NanumSquare Neo", sans-serif;
+          color: #FFF;
+
+          font-size: 60px;
+          font-weight: 400;
+          line-height: 77px;
+          letter-spacing: -1.8px;
+
+          strong {
+            font-weight: 700;
+          }
+
+          @media (max-width: 768px) {
+            font-size: 44px;
+            line-height: 70px;
+            letter-spacing: -1.65px;
+          }
+
+          @media (max-width: 512px) {
+            font-size: 34px;
+            line-height: 42px;
+            letter-spacing: -1.02px;
+          }
+        }
+
+        h3 {
+          color: rgb(222 222 222 / 70%);
+
+          font-family: Montserrat, sans-serif;
+          font-size: 26px;
+          font-weight: 500;
+          line-height: 40px;
+          letter-spacing: -0.78px;
+
+          @media (max-width: 768px) {
+            font-size: 20px;
+            line-height: 30px;
+            letter-spacing: -0.6px;
+          }
+
+          @media (max-width: 512px) {
+            font-size: 16px;
+            line-height: 22px;
+            letter-spacing: -0.48px;
+          }
+        }
+      }
+
+      &__foot {
+        .button {
+          color: white;
+          background: $primary;
+
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 700;
+
+          &:hover {
+            background: $primary-700;
+          }
+        }
+      }
+    }
+  }
+
+  &__paging {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    top: -8em;
+    margin-bottom: -8em;
+    height: 8em;
+    padding: 0 3em;
+    @media (max-width: 768px) {
+    padding: 0 2em;
+      top: -5em;
+      margin-bottom: -5em;
+      height: 5em;
+    }
+
+    @media (max-width: 512px) {
+    padding: 0 1em;
+      top: -3em;
+      margin-bottom: -3em;
+      height: 3em;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      gap: 18px;
+
+      li {
+        color: #888;
+        font-weight: 500;
+
+        font-family: Montserrat, sans-serif;
+        font-size: 26px;
+        line-height: 40px;
+        letter-spacing: -0.78px;
+
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: 18px;
+
+        cursor: pointer;
+
+        &:hover {
+          color: white;
+
+        }
+
+        &.active {
+          &:before {
+            content: "";
+            display: block;
+            background-color: white;
+            width: 3em;
+            height: 0.4ex;
+          }
+
+          color: white;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}

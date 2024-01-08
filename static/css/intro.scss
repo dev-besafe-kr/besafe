@@ -1,0 +1,232 @@
+@import 'base';
+@import 'vars-layout';
+
+@import url('https://fonts.cdnfonts.com/css/montserrat');
+@import url('https://fonts.cdnfonts.com/css/nanumsquare-neo');
+
+body {
+  background-color: #202020;
+}
+
+.intro {
+  .hero {
+    background-image: url("/static/images/intro/ck-tc01500000433-1.png");
+    background-color: rgba(0, 0, 0, 0.7);
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center center;
+
+    padding: $gnb-height 1em 0;
+    @media (max-width: 768px) {
+      padding-top: $gnb-height-t;
+    }
+
+    @media (max-width: 512px) {
+      padding-top: $gnb-height-m;
+    }
+
+    .container {
+      padding: 94px 1em;
+      @media (max-width: 768px) {
+        padding: 54px 1em;
+      }
+
+      @media (max-width: 512px) {
+        padding: 52px 1em;
+      }
+
+      h1 {
+        color: #FFF;
+        text-align: center;
+        font-family: Montserrat, sans-serif;
+        font-size: 60px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: -1.8px;
+        margin-bottom: 32px;
+        @media (max-width: 768px) {
+          color: #FFF;
+          font-size: 50px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 57px; /* 114% */
+          letter-spacing: -1.5px;
+          margin-bottom: 30px;
+        }
+
+        @media (max-width: 512px) {
+          color: #FFF;
+          font-size: 26px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 28px; /* 107.692% */
+          letter-spacing: -0.78px;
+          margin-bottom: 19px;
+        }
+      }
+
+      h3 {
+        color: rgb(222, 222, 222, 0.7);
+        text-align: center;
+        font-family: Montserrat, sans-serif;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 40px; /* 153.846% */
+        letter-spacing: -0.78px;
+        @media (max-width: 768px) {
+          font-size: 22px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 40px; /* 181.818% */
+          letter-spacing: -0.66px;
+        }
+
+        @media (max-width: 512px) {
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          letter-spacing: -0.56px;
+        }
+      }
+    }
+  }
+
+  .tabbar {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 76px 1em 94px;
+    gap: 32px;
+
+    @media (max-width: 768px) {
+      padding: 60px 0 66px;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    @media (max-width: 512px) {
+      padding: 40px 0;
+      gap: 25px;
+    }
+
+    &__item {
+      color: rgb(222, 222, 222, 0.5);
+      font-family: Pretendard, sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      padding-bottom: 0.3em;
+      font-size: 20px;
+
+      @media (max-width: 512px) {
+        font-size: 16px;
+      }
+
+      &.active {
+        color: $primary;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+
+        border-bottom: 2px solid $primary;
+      }
+    }
+  }
+
+  .section-group {
+    padding: 0 1em;
+
+    &__title {
+      color: rgb(255, 255, 255, 0.5);
+      text-align: left;
+      font-family: Montserrat, sans-serif;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: -0.6px;
+      margin-bottom: 20px;
+      @media (max-width: 768px) {
+        text-align: center;
+      }
+
+      @media (max-width: 512px) {
+        font-size: 14px;
+      }
+    }
+
+    &__img {
+      text-align: right;
+      margin-bottom: 24px;
+      @media (max-width: 768px) {
+        margin-bottom: 50px;
+      }
+
+      @media (max-width: 512px) {
+        margin-bottom: 20px;
+      }
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    section {
+      margin-bottom: 200px;
+      @media (max-width: 768px) {
+        margin-bottom: 80px;
+      }
+
+      @media (max-width: 512px) {
+        margin-bottom: 30px;
+      }
+
+      h1 {
+        color: #FFF;
+        font-family: NanumSquare Neo, sans-serif;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 142.5%;
+        letter-spacing: -1.2px;
+
+        margin-bottom: 30px;
+        @media (max-width: 768px) {
+          text-align: center;
+          margin-bottom: 40px;
+        }
+
+        @media (max-width: 512px) {
+          font-size: 20px;
+          margin-bottom: 20px;
+        }
+
+        b {
+          font-weight: 800;
+        }
+      }
+
+      sub {
+        display: block;
+        text-align: right;
+        color: rgb(255, 255, 255, 0.3);
+        font-family: Pretendard, sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: -0.42px;
+
+        @media (max-width: 512px) {
+          font-size: 12px;
+        }
+      }
+
+    }
+  }
+}
+
+@import 'intro/service';
+@import 'intro/biz';
+
+@import 'contact';

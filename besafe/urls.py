@@ -18,20 +18,40 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.urls import path, include
+from django.http import HttpRequest
+from django.urls import path, include, re_path
+from django.views.decorators.csrf import csrf_exempt
+from proxy.views import proxy_view
 
-from besafe import views
 from inquiry.views import ConsultingFormView, PartnershipFormView
+from besafe.views import (
+    MainPageView,
+    IntroServicePageView,
+    ServicePageView,
+    PortfolioListView,
+    ContractPageView,
+    IntroBizPageView, ProgramPageView, PortfolioDetailView, upload_image,
+)
+
+@csrf_exempt
+def admin_media_proxy(request: HttpRequest, path):
+	extra_requests_args = {}
+	remoteurl = request.build_absolute_uri('/media/' + path)
+	return proxy_view(request, remoteurl, extra_requests_args)
 
 urlpatterns = [
+    path('upload_image', upload_image, name="admin-upload-image"),
     path("admin/", admin.site.urls),
-    path("", views.Index.as_view()),
-    path("signin", views.Signin.as_view()),
-    path("portfolio", views.Portfolio.as_view()),
-    path("introduce", views.Introduce.as_view()),
-    path("program", views.Program.as_view()),
-    path("service", views.ServiceCenter.as_view()),
-    path("subscription", views.Subscription.as_view()),
+    path("", MainPageView.as_view(), name="index"),
+    path("intro-service", IntroServicePageView.as_view()),
+    path("intro-biz", IntroBizPageView.as_view()),
+    path("program", ProgramPageView.as_view(), name="program"),
+    # path("service", ServicePageView.as_view()),
+    path("portfolios/", include([
+        path("", PortfolioListView.as_view(), name="portfolio-list"),
+        path("<int:pk>", PortfolioDetailView.as_view(), name="portfolio-detail")
+    ])),
+    # path("contract", ContractPageView.as_view()),
     path(
         "api/",
         include(
@@ -41,6 +61,8 @@ urlpatterns = [
             ]
         ),
     ),
-    path("renew/", include("renew.urls")),
-]
+    path("tinymce/", include("tinymce.urls")),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += [re_path('admin/media/(?P<path>.*)', admin_media_proxy)]
 urlpatterns += staticfiles_urlpatterns()

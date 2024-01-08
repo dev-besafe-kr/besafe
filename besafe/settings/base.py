@@ -32,10 +32,11 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
 
 # Application definition
+
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -44,9 +45,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-"admin_ordering",
+    "tinymce",
+    "admin_ordering",
     "inquiry",
     "subscription",
+    "besafe"
 ]
 
 MIDDLEWARE = [
@@ -54,9 +57,10 @@ MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.cache.UpdateCacheMiddleware",
     "django.middleware.common.CommonMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
+    # "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
+    "besafe.middleware.DisableCSRFMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
@@ -71,14 +75,14 @@ TEMPLATES = [
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
+                "besafe.context_processors.processor",
                 "django.contrib.messages.context_processors.messages",
             ],
             "extensions": [
                 "jinja2.ext.do",
+                "jinja2.ext.i18n",
                 "jinja2.ext.loopcontrols",
-                "jdj_tags.extensions.DjangoStatic",
-                "jdj_tags.extensions.DjangoI18n",
-                "jdj_tags.extensions.DjangoCsrf",
+                "jdj_tags.extensions.DjangoCompat",
             ],
         },
     },
@@ -146,6 +150,9 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+MEDIA_URL = "media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 STATIC_URL = "static/"
@@ -175,3 +182,17 @@ EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
+
+
+TINYMCE_DEFAULT_CONFIG = {
+    "height": "320px",
+    "width": "960px",
+    "automatic_uploads": True,
+    "images_upload_url": "/upload_image",
+    "menubar": "file edit view insert format tools table help",
+    "plugins": "advlist autolink lists link image charmap print preview anchor searchreplace visualblocks code "
+    "fullscreen insertdatetime media table paste code help wordcount spellchecker",
+    "toolbar": "removeformat | bold italic underline strikethrough | image | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor",
+    "custom_undo_redo_levels": 10,
+    "language": "en_US",  # To force a specific language instead of the Django current language.
+}
