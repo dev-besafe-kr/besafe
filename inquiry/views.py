@@ -26,7 +26,7 @@ class ConsultingFormView(CreateView):
         return form_kwargs
 
     def form_valid(self, form):
-        messages.info(self.request, "상담이 접수되었습니다.")
+        messages.info(self.request, "code:consulting_success")
         return super().form_valid(form)
 
 

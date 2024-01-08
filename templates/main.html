@@ -2,7 +2,7 @@
 
 
 {% block head %}
-    <link href="{% static "css/main.css" %}" rel="stylesheet">
+    <link href="{% static "css/main.css" %}?t={{ now().timestamp() }}" rel="stylesheet">
     <script defer type="text/javascript"
             src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=6hjg4fhdj6"></script>
     <script defer type="text/javascript" src="{% static "js/main.js" %}"></script>

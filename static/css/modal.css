@@ -161,4 +161,27 @@
   padding-right: 3em;
 }
 
+.notification {
+  background-color: white;
+  padding: 2em 3em;
+  text-align: center;
+  border: 0;
+}
+.notification .inner {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  gap: 0.5em;
+}
+.notification__head h1 {
+  font-size: 1.05em;
+  font-weight: 500;
+}
+.notification__body p {
+  font-size: 1em;
+}
+.notification__foot button {
+  width: 100%;
+}
+
 /*# sourceMappingURL=modal.css.map */

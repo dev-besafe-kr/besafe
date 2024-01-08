@@ -37,8 +37,8 @@
     {% block head %}{% endblock %}
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MLJHB3QBCS"></script>
-    <link href="{% static "css/layout.css" %}" rel="stylesheet">
-    <link href="{% static "css/modal.css" %}" rel="stylesheet">
+    <link href="{% static "css/layout.css" %}?t={{ now().timestamp() }}" rel="stylesheet">
+    <link href="{% static "css/modal.css" %}?t={{ now().timestamp() }}" rel="stylesheet">
 
     <script>
         function showFreeModal() {
@@ -131,8 +131,12 @@
             </div>
         </div>
         <div class="sns">
-            <a href="https://www.instagram.com/besafe.kr/" target="_blank"><img class="img" src="{% static "images/instagram.svg" %}" alt="인스타그램"/></a>
-            <a href="https://pf.kakao.com/_xlQaUb" target="_blank"><img class="img" src="{% static "images/channeltalk.svg" %}" alt="채널톡"/></a>
+            <a href="https://www.instagram.com/besafe.kr/" target="_blank"><img class="img"
+                                                                                src="{% static "images/instagram.svg" %}"
+                                                                                alt="인스타그램"/></a>
+            <a href="https://pf.kakao.com/_xlQaUb" target="_blank"><img class="img"
+                                                                        src="{% static "images/channeltalk.svg" %}"
+                                                                        alt="채널톡"/></a>
         </div>
     </div>
 </footer>
@@ -279,13 +283,25 @@
 </dialog>
 
 {% if messages %}
-    <dialog id="django-messages">
+    <dialog class="notification" id="django-messages">
         <div class="inner">
             {% for message in messages %}
-                <div class="notification is-
+                {% if message | trim == "code:consulting_success" %}
+                    <div class="notification__head">
+                        <h1>상담신청이 완료되었습니다.</h1>
+                    </div>
+                    <div class="notification__body">
+                        <p>곧 담당자가 입력하신 핸드폰 번호로<br/>연락을 드릴 예정입니다.</p>
+                    </div>
+                    <div class="notification__foot">
+                        <button class="close primary">닫기</button>
+                    </div>
+                {% else %}
+                    <div class="is-
                     {% if message.tags %}{{ message.tags | replace("error", "danger") }}{% endif %}">
-                    {{ message | safe }}
-                </div>
+                        {{ message | safe }}
+                    </div>
+                {% endif %}
             {% endfor %}
         </div>
     </dialog>

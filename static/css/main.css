@@ -520,7 +520,7 @@ button:hover, .button:hover {
     font-size: 16px;
   }
 }
-.roadmap__contents__banner button {
+.roadmap__contents__banner button, .roadmap__contents__banner .button {
   font-family: Pretendard, sans-serif;
   background-color: rgb(205, 244, 222);
   color: rgb(3, 199, 90);

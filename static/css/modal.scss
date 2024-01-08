@@ -15,6 +15,7 @@
     height: 6em;
     margin-bottom: -6em;
     padding: 0 2em;
+
     .close {
       width: 1.5em;
       height: 1.5em;
@@ -140,6 +141,7 @@
                 background-size: 50%;
               }
             }
+
             select, textarea, input[type=text] {
               width: 100%;
               font-size: 1.1em;
@@ -186,6 +188,39 @@
           }
         }
       }
+    }
+  }
+}
+
+.notification {
+  background-color: white;
+  padding: 2em 3em;
+  text-align: center;
+  border: 0;
+
+  .inner {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    gap: 0.5em;
+  }
+
+  &__head {
+    h1 {
+      font-size: 1.05em;
+      font-weight: 500;
+    }
+  }
+
+  &__body {
+    p {
+      font-size: 1em;
+    }
+  }
+
+  &__foot {
+    button {
+      width: 100%;
     }
   }
 }

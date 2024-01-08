@@ -4,11 +4,13 @@
         <ul class="cards">
             {% for obj in object_list %}
                 <li class="card">
-                    <div class="img square"
-                         style="background-image: url('{{ obj.banner_img.url }}');"></div>
-                    <a class="label" href="{% url "portfolio-detail" pk=obj.id %}">
-                        <div class="client">Client</div>
-                        <div class="biz-name">{{ obj.client }}</div>
+                    <a href="{% url "portfolio-detail" pk=obj.id %}">
+                        <div class="img square"
+                             style="background-image: url('{{ obj.banner_img.url }}');"></div>
+                        <label>
+                            <div class="client">Client</div>
+                            <div class="biz-name">{{ obj.client }}</div>
+                        </label>
                     </a>
                 </li>
             {% endfor %}
@@ -23,7 +25,8 @@
                         </li>
                     {% endif %}
                     {% for p in page_obj.paginator.page_range %}
-                        <li class="page{% if p == page_obj.number %} active{% endif %}">{{ p }}</li>
+                        <li class="page{% if p == page_obj.number %} active{% endif %}"><a
+                                href="?page={{ p }}">{{ p }}</a></li>
                     {% endfor %}
                     {% if page_obj.has_next() %}
                         <li class="nav next">

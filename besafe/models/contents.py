@@ -91,9 +91,9 @@ class ContentsPortfolio(OrderableModel, TimestampModel):
     thumbnail_img = models.ImageField("대표 이미지", upload_to=upload_to_portfolio, null=True)
     client = models.CharField("클라이언트", max_length=128)
     biz_name = models.CharField("비즈니스명", max_length=128)
-    tags = models.ManyToManyField(Tag, verbose_name="태그")
-    detail = models.CharField("사이트 바로가기", max_length=128)
-    content = models.TextField("내용")
+    tags = models.ManyToManyField(Tag, verbose_name="태그", null=True, blank=True)
+    detail = models.CharField("사이트 바로가기", max_length=128, null=True, blank=True)
+    content = models.TextField("내용", null=True, blank=True)
 
     class Meta(OrderableModel.Meta):
         db_table = "contents_portfolio"

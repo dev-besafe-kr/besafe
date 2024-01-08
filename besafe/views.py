@@ -2,6 +2,7 @@ import os
 from uuid import uuid4
 
 from django.conf import settings
+from django.contrib import messages
 from django.db.models import Prefetch
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -55,7 +56,7 @@ class ServicePageView(TemplateView):
 class PortfolioListView(ListView):
     template_name = "portfolio/portfolio-list.html"
     queryset = ContentsPortfolio.objects.all()
-    paginate_by = 8
+    paginate_by = 9
 
 class PortfolioDetailView(DetailView):
     template_name = "portfolio/portfolio-detail.html"

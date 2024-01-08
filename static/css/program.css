@@ -144,28 +144,28 @@ button:hover, .button:hover {
     font-size: 24px;
   }
 }
-.contact button {
+.contact button, .contact .button {
   font-family: Pretendard, sans-serif;
   font-size: 18px;
   padding: 1em;
 }
 @media (max-width: 768px) {
-  .contact button {
+  .contact button, .contact .button {
     font-size: 16px;
   }
 }
 @media (max-width: 512px) {
-  .contact button {
+  .contact button, .contact .button {
     width: 100%;
     margin-bottom: 14px;
   }
 }
-.contact button:nth-of-type(1) {
+.contact button {
   background-color: rgb(3, 199, 90);
   color: white;
   margin-right: 16px;
 }
-.contact button:nth-of-type(2) {
+.contact a {
   background-color: rgb(205, 244, 222);
   color: rgb(3, 199, 90);
 }

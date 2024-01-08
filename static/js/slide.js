@@ -91,12 +91,12 @@ const initShifts = () => {
         const invalidFieldset = Array.from(root.querySelectorAll("fieldset")).filter(fieldset => !checkFieldsetValidity(fieldset));
         return invalidFieldset.length === 0
     }
-    const showShiftItem = (shift, handles, items, dataId) => {
+    const showShiftItem = (shift, handles, items, dataId, validate = true) => {
         const currentItem = items.find(sel => sel.dataset.shift_id === shift.dataset.id);
         const targetItem = items.find(sel => sel.dataset.shift_id === dataId);
 
         if (shift.classList.contains("shift--form")) {
-            if (!checkFieldsetValidityAll(currentItem)) {
+            if (validate && !checkFieldsetValidityAll(currentItem)) {
                 alert("아직 입력하지 않은 정보가 있습니다. 내용을 확인해주세요.");
                 return;
             }
@@ -146,7 +146,7 @@ const initShifts = () => {
         let isCurrentRevealed = false;
         const handles = Array.from(shift.querySelectorAll(".shift__handle"));
         const items = Array.from(shift.querySelectorAll(".shift__item"));
-        const localShowShiftItem = (shiftId) => showShiftItem(shift, handles, items, shiftId);
+        const localShowShiftItem = (shiftId, validate) => showShiftItem(shift, handles, items, shiftId, validate);
         shift.ShiftInstance = {
             showShiftItem: localShowShiftItem,
             currentShiftHandle: handles.find(el => el.classList.contains("active")),
@@ -207,7 +207,7 @@ const initShifts = () => {
         handles.forEach(el => {
             el.addEventListener('click', () => localShowShiftItem(el.dataset.shift_id));
         });
-        shift.querySelectorAll(".shift__left").forEach(leftEl => leftEl.addEventListener('click', () => localShowShiftItem(shiftIdMap[shiftIdMap.indexOf(shift.dataset.id) - 1] || shift.dataset.id)))
+        shift.querySelectorAll(".shift__left").forEach(leftEl => leftEl.addEventListener('click', () => localShowShiftItem(shiftIdMap[shiftIdMap.indexOf(shift.dataset.id) - 1] || shift.dataset.id, false)))
         shift.querySelectorAll(".shift__right").forEach(rightEl => rightEl.addEventListener('click', () => localShowShiftItem(shiftIdMap[shiftIdMap.indexOf(shift.dataset.id) + 1] || shift.dataset.id)))
 
         const event = new CustomEvent("load");

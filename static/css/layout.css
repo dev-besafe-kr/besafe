@@ -443,10 +443,6 @@ footer .sns {
 .shift--slide .shift__item.active.next {
   transform: none;
 }
-.shift .notification {
-  background-color: white;
-  padding: 1em 2em;
-}
 
 .fixed-widget {
   position: fixed;
