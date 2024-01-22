@@ -27,16 +27,19 @@
   flex-flow: column nowrap;
   justify-content: center;
 }
+
 @media (max-width: 768px) {
   .gnb {
     height: 71px;
   }
 }
+
 @media (max-width: 360px) {
   .gnb {
     height: 61px;
   }
 }
+
 .gnb:after {
   content: "";
   width: 100%;
@@ -62,6 +65,7 @@
   justify-content: end;
   gap: 4em;
 }
+
 .gnb__nav__menus {
   padding: 0;
   display: flex;
@@ -71,6 +75,8 @@
   gap: 3em;
   margin: 0;
 }
+
+
 @media (max-width: 1080px) {
   .gnb__nav__menus {
     gap: 1.8em;
