@@ -193,6 +193,18 @@ body {
   /* height: 80%; */
 } 
 
+@media (max-width: 512px) {
+  .contract .main .plans {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    /* height: 100%; */
+    align-items: stretch;
+    padding: 30px;
+    flex-direction: column;
+  }
+}
+
 
 .contract .main .plans .container {
   border : 1px solid #DADADA;
@@ -202,6 +214,9 @@ body {
   justify-content: space-between;
 
 }
+
+
+
 
 
 .contract .main .plans .container .price {

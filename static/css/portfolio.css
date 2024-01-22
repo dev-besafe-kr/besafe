@@ -530,6 +530,7 @@ button:hover, .button:hover {
     height: 19.17px;
   }
 }
+
 @media (max-width: 512px) {
   .portfolio .detail__foot .paging .nav {
     width: 30px;

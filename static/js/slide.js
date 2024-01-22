@@ -3,14 +3,9 @@ const initSlides = () => {
         const leftEl = slide.querySelector(".slide-left");
         const rightEl = slide.querySelector(".slide-right");
         const stopEl = slide.querySelector(".slide-stop");
-        const ulEl = slide.querySelector(`.slide-ul`);
-        const getCurrentSlide = () => {
-            if (ulEl) {
-                const liEl = ulEl.querySelector('li');
-                ulEl.scrollTo(ulEl.scrollLeft - liEl.clientWidth, 0, "smooth");
-            }
-        };
+
         const goLeft = () => {
+            const ulEl = slide.querySelector(`.slide-ul`);
             if (ulEl) {
                 const liEl = ulEl.querySelector('li');
                 ulEl.scrollTo(ulEl.scrollLeft - liEl.clientWidth, 0, "smooth");
