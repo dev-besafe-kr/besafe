@@ -284,6 +284,7 @@ body {
   font-weight: 800;
   line-height: normal;
   letter-spacing: -0.84px;
+  /* margin-bottom: 20px; */
 }
 
 .contract .main .plans .container  .service-item {
@@ -325,9 +326,8 @@ body {
   margin-top: 60px;
   border-radius: 10px;
   background: #03C75A;
-
+  
   color: #FFF;
-
   font-family: Pretendard;
   font-size: 20px;
   font-style: normal;
@@ -430,7 +430,7 @@ body {
 }
 
 .contract .under .under_contents .button_container {
-  display: flex;        /* Flexbox 사용 설정 */
+    display: flex;        /* Flexbox 사용 설정 */
     justify-content: center; /* 수평 정렬 */
     align-items: center; 
   /* width: 100%; */
