@@ -1,2 +1,224 @@
 {% set gnb_selected = "contract" %}
 {% extends "base.html" %}
+
+{% block seo %}
+    <title>비세이프 소개 | 안전하게 사업 진행을 돕는 특허설계 전문기업</title>
+    <meta property="description"
+          content="비세이프는 Dreams come true의 슬로건 아래, 사업가들이 시행착오를 줄이고 안전하게 사업을 진행할 수 있도록 지원합니다. 꿈꾸던 사업을 시작하실 준비가 되셨다면, 비세이프와 함께하세요.">
+    <meta property="keywords" content="비세이프, 특허설계, 사업 안전, 시행착오 줄이기, 사업가 지원, (주)라이트형제, 세종특별자치시">
+    <meta property="og:title" content="비세이프 | 안전하게 사업 진행을 돕는 특허설계 전문기업">
+    <meta property="og:description" content="사업가들의 시행착오를 줄이고 안전한 사업 진행을 지원하는 비세이프. 꿈꾸던 사업의 시작을 함께하세요.">
+    
+{% endblock %}
+
+{% block head %}
+    <link href="{% static "css/contract.css" %}" rel="stylesheet">
+    <script>
+        function redirectBasic() {
+            // 새로운 페이지의 URL로 이동
+            window.location.href = "https://34feee36-5966-4b05-990b-8359c6b9b82f.mystore.steppay.kr/products/product_adb1bjaZh";
+        }
+        function redirectPermium() {
+            window.location.href = "https://34feee36-5966-4b05-990b-8359c6b9b82f.mystore.steppay.kr/products/product_js3ZQbAcs";
+        }
+        function redirectWarranty() {
+            window.location.href = "https://34feee36-5966-4b05-990b-8359c6b9b82f.mystore.steppay.kr/products/product_TcXdqfToE";
+        }
+    </script>
+    
+{% endblock %}
+{% block body %}
+    <div class="contract">
+        <section class="hero">
+            
+            <div class="container">
+                <h1>Contract</h1>
+                <h3>기업별 맞춤 컨설팅, 지금 바로 비세이프와 함께하세요.</h3>
+            </div>
+        </section>
+
+        <div class="main">
+            <div class="plans">
+                <div class="container">
+                    <p class="price">Basic Plan</p>
+                    <p class="price-kr">베이직 플랜</p>
+                    <div class="fare-container">
+                        <p class="price-type">
+                            자문료
+                        </p>
+    
+                        <p class="fare">
+                            300만원 / 월
+    
+                        </p>
+    
+                    </div>
+    
+                    <p class="service-list">
+                        주요 서비스
+                    </p>
+                    <div class ="service-item">
+
+                        <img src="/static/images/icons/vector.png">
+                        <p>
+                            정부 유/무상 지원사업 안내 및 자문
+                        </p>
+                    </div>  
+                    <div class ="service-item">
+    
+                        <img src="/static/images/icons/vector.png">
+                        <p>
+                            사업계획서 자문 및 첨삭
+                        </p>
+                        
+                    </div>  
+                    <div class ="service-item">
+    
+                        <img src="/static/images/icons/vector.png">
+                        <p>
+                            세금 및 범률 관련 안내 및 자문
+                        </p>
+                    </div>  
+                    <div class ="service-item">
+    
+                        <img src="/static/images/icons/vector.png">
+                        <p>
+                            법인 / 연구소 설립 자문
+                        </p>
+                    </div>  
+                    <div class ="service-item">
+    
+                        <img src="/static/images/icons/vector.png">
+                        <p>
+                            각종 인증 제도 안내 및 지원
+                        </p>
+                    </div>  
+                    <button class="apply" onclick="redirectBasic()">
+                        서비스 신청
+                    </button>
+                        
+
+                </div>
+                
+
+                <div class="container">
+                    <p class="price">Premium Plan</p>
+                    <p class="price-kr">프리미엄 플랜</p>
+                    <div class="fare-container">
+                        <p class="price-type">
+                            자문료
+                        </p>
+        
+                        <p class="fare">
+                            500만원 / 월
+        
+                        </p>
+        
+                    </div>
+        
+                    <p class="service-list">
+                        주요 서비스
+                    </p>
+                    <p class="plus">
+                        모든 Basic 기능 +
+                    </p>
+                    <div class ="service-item">
+        
+                        <img src="/static/images/icons/vector.png">
+                        <!-- <img src="/static/images/icons/plus-green.png"> -->
+                        <p >
+                            선정된 지원 사업에 대한 사후관리
+                        </p>
+                    </div>  
+                    <div class ="service-item">
+        
+                        <img src="/static/images/icons/vector.png">
+                        <!-- <img src="/static/images/icons/plus-green.png"> -->
+                        <p>
+                            자금 집행 및 결과 보고서 지원
+                        </p>
+                        
+                    </div>  
+                    <div class ="service-item">
+        
+                        <img src="/static/images/icons/vector.png">
+                        <!-- <img src="/static/images/icons/plus-green.png"> -->
+                        <p>
+                           디자인 작업 진행 <br>- IR, 회사소개서, 앱/웹 목업디자인
+                        </p>
+                        
+                    </div>  
+            
+                    <button class="apply" onclick="redirectPermium()">
+                        서비스 신청
+                    </button>
+                    
+                </div>
+
+                <div class="container">
+                    <p class="price">Warranty Plan</p>
+                    <p class="price-kr">프리미엄 플랜</p>
+                    <div class="fare-container">
+                        <p class="price-type">
+                            VAT 별도 | 월
+                        </p>
+        
+                        <p class="fare">
+                            300만원 / 월
+        
+                        </p>
+        
+                    </div>
+        
+                    <p class="service-list">
+                        주요 서비스
+                    </p>
+                    <p class="plus">
+                        모든 Basic 기능 +
+                    </p>
+                    <div class ="service-item">
+        
+                        <img src="/static/images/icons/vector.png">
+                        <!-- <img src="/static/images/icons/plus-green.png"> -->
+                        <p>
+                            1년 납부하신 금액 대비 지원사업<br>지원금이 낮을시 차액금 환분
+                        </p>
+                    </div>  
+                    <div class ="service-item">
+        
+                        <img src="/static/images/icons/vector.png">
+                        <!-- <img src="/static/images/icons/plus-green.png"> -->
+                        <p>
+                            어플리케이션 프로토타입 제작
+                        </p>
+                        
+                    </div>  
+                    
+            
+                    <button class="apply" onclick="redirectWarranty()">
+                        서비스 신청
+                    </button>
+                    
+                </div>
+    
+                </div>
+            </div>
+
+            
+    
+            
+        <section class="under">
+        
+            <div class="under_contents">
+                <h1>어떤 플랜을 할지 고민된다면?</h1>
+                <h3>문의하기 혹은 비세이프 연락처로 연락주세요!<br>비세이프는 언제나 여러분을 기다립니다.</h3>
+                <div class="button_container">
+                    <button class="inquiry" onclick="">
+                        문의하기
+                    </button>
+                </div>
+                
+            </div>
+        </section>
+    </div>
+{% endblock %}
