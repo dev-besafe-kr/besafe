@@ -47,11 +47,15 @@ urlpatterns = [
     path("intro-biz", IntroBizPageView.as_view()),
     path("program", ProgramPageView.as_view(), name="program"),
     # path("service", ServicePageView.as_view()),
+
     path("portfolios/", include([
         path("", PortfolioListView.as_view(), name="portfolio-list"),
         path("<int:pk>", PortfolioDetailView.as_view(), name="portfolio-detail")
     ])),
-    # path("contract", ContractPageView.as_view()),
+    ## 
+    path("contract/", ContractPageView.as_view(), name="contract"),
+
+
     path(
         "api/",
         include(

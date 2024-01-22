@@ -49,6 +49,8 @@ class ProgramPageView(TemplateView):
     template_name = "program.html"
 
 
+
+
 class ServicePageView(TemplateView):
     template_name = "service.html"
 
@@ -72,6 +74,9 @@ class PortfolioDetailView(DetailView):
 
 class ContractPageView(TemplateView):
     template_name = "contract.html"
+
+    
+
 
 
 class Subscription(TemplateView):

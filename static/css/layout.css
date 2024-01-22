@@ -30,6 +30,7 @@
   margin: 0 auto;
   overflow: hidden;
 }
+
 @media (max-width: 768px) {
   .container {
     max-width: 768px;
@@ -76,6 +77,7 @@
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+
 }
 .gnb__logo {
   height: 26px;
@@ -116,10 +118,13 @@
 .gnb__nav__menu:hover {
   color: #FFFFFF;
 }
+
 .gnb__nav__menu.active {
   color: rgb(3, 199, 90);
   border-color: rgb(3, 199, 90);
 }
+
+
 .gnb__nav__menu.active:hover {
   color: rgb(3, 199, 90);
 }

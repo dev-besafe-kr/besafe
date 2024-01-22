@@ -1,0 +1,455 @@
+@charset "UTF-8";
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@import url("https://fonts.cdnfonts.com/css/montserrat");
+@import url("https://fonts.cdnfonts.com/css/nanumsquare-neo");
+
+:root {
+  --primary-bg: rgb(232, 255, 241);
+  --primary: rgb(3, 199, 90);
+  --secondary: rgb(0, 157, 70);
+  --accent: rgb(0, 105, 46);
+  --primaryHover: rgb(69, 212, 129);
+  --black: rgb(0, 28, 13);
+  --white: #fffefe;
+  --gray: #969696;
+  --dark-gray: #525252;
+}
+
+html, body {
+  margin: 0;
+  min-width: 300px;
+  height: 100%;
+  font-family: "Pretendard", sans-serif;
+}
+
+body * {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+body *::-webkit-scrollbar {
+  display: none;
+}
+
+ol, ul, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+button, .button {
+  display: inline-block;
+  padding: 14px 18px;
+  border-radius: 6px;
+  border: 0;
+}
+button.primary, .button.primary {
+  background-color: rgb(3, 199, 90);
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 700;
+}
+button:hover, .button:hover {
+  cursor: pointer;
+}
+
+:root {
+  --primary-bg: rgb(232, 255, 241);
+  --primary: rgb(3, 199, 90);
+  --secondary: rgb(0, 157, 70);
+  --accent: rgb(0, 105, 46);
+  --primaryHover: rgb(69, 212, 129);
+  --black: rgb(0, 28, 13);
+  --white: #fffefe;
+  --gray: #969696;
+  --dark-gray: #525252;
+}
+
+body {
+  background-color: #202020;
+}
+
+.contract .hero {
+  background-image: url("/static/images/contract/nav_bg.png");
+  background-color: rgba(0, 0, 0, 0.7);
+  background-blend-mode: darken;
+  background-size: cover;
+  background-position: center center;
+  padding: 83px 1em 0;
+}
+@media (max-width: 768px) {
+  .contract .hero {
+    padding-top: 71px;
+  }
+}
+@media (max-width: 512px) {
+  .contract .hero {
+    padding-top: 61px;
+  }
+}
+.contract .hero .container {
+  padding: 94px 1em;
+}
+@media (max-width: 768px) {
+  .contract .hero .container {
+    padding: 54px 1em;
+  }
+}
+@media (max-width: 512px) {
+  .contract .hero .container {
+    padding: 52px 1em;
+  }
+}
+.contract .hero .container h1 {
+  color: #FFF;
+  text-align: center;
+  font-family: Montserrat, sans-serif;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -1.8px;
+  margin-bottom: 32px;
+}
+@media (max-width: 768px) {
+  .contract .hero .container h1 {
+  color: #FFF;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 57px; /* 114% */
+    letter-spacing: -1.5px;
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 512px) {
+  .contract .hero .container h1 {
+  color: #FFF;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px; /* 107.692% */
+    letter-spacing: -0.78px;
+    margin-bottom: 19px;
+  }
+}
+.contract .hero .container h3 {
+  color: #DEDEDE;
+  opacity: 0.7;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 40px; /* 153.846% */
+  letter-spacing: -0.78px;
+}
+@media (max-width: 768px) {
+  .contract .hero .container h3 {
+    font-size: 22px;
+    opacity: 0.7;
+    
+    font-style: normal;
+    font-weight: 300;
+    line-height: 40px; /* 181.818% */
+    letter-spacing: -0.66px;
+  }
+}
+@media (max-width: 512px) {
+  .contract .hero .container h3 {
+    opacity: 0.7;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: -0.56px;
+  }
+}
+
+.contract .main {
+  background-color: white;
+  padding: 180px 0px;
+  height: 100%;
+}
+
+.contract .main .plans {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  /* height: 100%; */
+  align-items: stretch;
+  padding: 30px;
+  
+  /* background-color: #03C75A; */
+  /* height: 80%; */
+} 
+
+
+.contract .main .plans .container {
+  border : 1px solid #DADADA;
+  padding: 37px 28px;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+
+.contract .main .plans .container .price {
+  color: #03C75A;
+  /* text-align: center; */
+  font-family: Montserrat;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -1.2px;
+  margin-bottom: 13px;
+}
+
+.contract .main .plans .container .price-kr {
+  /* color: var(--, #03C75A); */
+  color: #03C75A;
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.6px;
+
+}
+
+.contract .main .plans .container .fare-container {
+  margin: 54px 0;
+  padding: 24px 0;
+  border-top: 1px solid #888;
+  border-bottom: 1px solid #888;
+  
+
+}
+
+.contract .main .plans .container .fare-container .fare {
+  color: #03C75A;
+  font-family: "NanumSquare Neo OTF";
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 57px; /* 162.857% */
+  letter-spacing: -1.05px;
+  margin: 0px 0px;  
+
+}
+
+
+
+.contract .main .plans .container .fare-container .price-type {
+  color: #000;
+  opacity: 0.5;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.48px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.contract .main .plans .container .plus {
+  color: #03C75A;
+  font-family: Pretendard;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.72px;
+}
+
+
+
+.contract .main .plans .container .service-list {
+  color: #000;
+  font-family: "NanumSquare Neo OTF";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: -0.84px;
+}
+
+.contract .main .plans .container  .service-item {
+  gap: 20px;
+  display: flex;
+  align-items: start;
+  
+  /* margin-bottom: 30px; */
+  /* padding: 0, 0; */
+}
+
+.contract .main .plans .container .service-item p {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.6px;
+  margin: 0 0 10px 0;
+  
+}
+
+
+.contract .main .plans .container .service-item img {
+  display: flex;
+  margin: 10px 0 0 0;
+
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 31px;
+  width: 18px;
+  height: 13px;
+}
+
+.contract .main .plans .container .apply {
+  width: 100%;
+  height: 70px;
+  margin-top: 60px;
+  border-radius: 10px;
+  background: #03C75A;
+
+  color: #FFF;
+
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.6px;
+  
+}
+
+.contract .main .plans .container .apply:hover {
+  background-color: #008139; /* hover 시 배경색 변경 */
+}
+
+.contract .under {
+  background-image: url("/static/images/contract/bottom_bg.png");
+  background-color: rgba(0, 0, 0, 0.7);
+  background-blend-mode: darken;
+  background-size: cover;
+  background-position: center center;
+  padding: 83px 1em 0;
+  
+}
+
+@media (max-width: 768px) {
+  .contract .under {
+    padding-top: 71px;
+  }
+}
+
+@media (max-width: 512px) {
+  .contract .under {
+    padding-top: 61px;
+  }
+}
+
+.contract .under .under_contents {
+  padding: 94px 1em;
+}
+
+@media (max-width: 768px) {
+  .contract .under .under_contents {
+    padding: 54px 1em;
+  }
+}
+
+@media (max-width: 512px) {
+  .contract .under .under_contents {
+    padding: 52px 1em;
+  }
+}
+
+.contract .under .under_contents h1 {
+  color: #FFF;
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 77px;
+  font-style: normal;
+  text-align: center;
+  font-family: NanumSquare Neo, sans-serif;
+  letter-spacing: -1.92px;
+
+  margin-bottom: 50px;
+}
+
+
+@media (max-width: 768px) {
+  .contract .under .under_contents h1 {
+    color: #FFF;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 57px; /* 114% */
+    letter-spacing: -1.5px;
+    margin-bottom: 50px;
+  }
+}
+@media (max-width: 512px) {
+  .contract .under .under_contents h1 {
+    color: #FFF;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 28px; /* 107.692% */
+    letter-spacing: -0.78px;
+    margin-bottom: 30px;
+  }
+}
+
+.contract .under .under_contents h3 {
+  color: #DEDEDE;
+  opacity: 0.7;
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 40px;
+  font-style: normal;
+  text-align: center;
+  font-family: Montserrat, sans-serif;
+  letter-spacing: -0.78px;
+
+}
+
+.contract .under .under_contents .button_container {
+  display: flex;        /* Flexbox 사용 설정 */
+    justify-content: center; /* 수평 정렬 */
+    align-items: center; 
+  /* width: 100%; */
+  /* height: 100vh; */
+}
+
+.contract .under .under_contents .button_container .inquiry {
+  display: flex;
+  padding: 18px 38px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 50px;
+  background-color: #03C75A;
+  color: white;
+  border: none;
+  height: 100%;
+
+}
+
+
+/*# sourceMappingURL=intro.css.map */

@@ -27,6 +27,7 @@ body * {
   font-family: inherit;
   box-sizing: border-box;
 }
+
 body *::-webkit-scrollbar {
   display: none;
 }
@@ -201,6 +202,7 @@ body {
     font-size: 16px;
   }
 }
+
 .intro .tabbar__item.active {
   color: rgb(3, 199, 90);
   font-style: normal;
@@ -208,6 +210,7 @@ body {
   line-height: normal;
   border-bottom: 2px solid rgb(3, 199, 90);
 }
+
 .intro .section-group {
   padding: 0 1em;
 }
