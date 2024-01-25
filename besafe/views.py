@@ -73,6 +73,9 @@ class PortfolioDetailView(DetailView):
 class ContractPageView(TemplateView):
     template_name = "contract.html"
 
+class WriteContractPageView(TemplateView):
+    template_name = "write-contract.html"
+
 
 class Subscription(TemplateView):
     template_name = "subscription.html"

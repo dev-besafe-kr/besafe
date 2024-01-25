@@ -23,6 +23,7 @@ from django.urls import path, include, re_path
 from django.views.decorators.csrf import csrf_exempt
 from proxy.views import proxy_view
 
+
 from inquiry.views import ConsultingFormView, PartnershipFormView
 from besafe.views import (
     MainPageView,
@@ -31,6 +32,7 @@ from besafe.views import (
     PortfolioListView,
     ContractPageView,
     IntroBizPageView, ProgramPageView, PortfolioDetailView, upload_image,
+    WriteContractPageView,
 )
 
 @csrf_exempt
@@ -52,6 +54,8 @@ urlpatterns = [
         path("<int:pk>", PortfolioDetailView.as_view(), name="portfolio-detail")
     ])),
     path("contract/", ContractPageView.as_view(), name="contract"),
+    path("write-contract/", WriteContractPageView.as_view(), name="write-contract"),
+
     path(
         "api/",
         include(

@@ -1,0 +1,71 @@
+{% set gnb_selected = "write-contract" %}
+{% extends "base.html" %}
+
+{% block seo %}
+    <title>비세이프 소개 | 안전하게 사업 진행을 돕는 특허설계 전문기업</title>
+    <meta property="description"
+          content="비세이프는 Dreams come true의 슬로건 아래, 사업가들이 시행착오를 줄이고 안전하게 사업을 진행할 수 있도록 지원합니다. 꿈꾸던 사업을 시작하실 준비가 되셨다면, 비세이프와 함께하세요.">
+    <meta property="keywords" content="비세이프, 특허설계, 사업 안전, 시행착오 줄이기, 사업가 지원, (주)라이트형제, 세종특별자치시">
+    <meta property="og:title" content="비세이프 | 안전하게 사업 진행을 돕는 특허설계 전문기업">
+    <meta property="og:description" content="사업가들의 시행착오를 줄이고 안전한 사업 진행을 지원하는 비세이프. 꿈꾸던 사업의 시작을 함께하세요.">
+    
+{% endblock %}
+
+{% block head %}
+    <link href="{% static "css/contract.css" %}" rel="stylesheet">
+    <script>
+        function redirectBasic() {
+            // 새로운 페이지의 URL로 이동
+            window.location.href = "https://34feee36-5966-4b05-990b-8359c6b9b82f.mystore.steppay.kr/products/product_adb1bjaZh";
+        }
+        function redirectPermium() {
+            window.location.href = "https://34feee36-5966-4b05-990b-8359c6b9b82f.mystore.steppay.kr/products/product_js3ZQbAcs";
+        }
+        function redirectWarranty() {
+            window.location.href = "https://34feee36-5966-4b05-990b-8359c6b9b82f.mystore.steppay.kr/products/product_TcXdqfToE";
+        }
+
+
+    </script>
+    
+{% endblock %}
+{% block body %}
+    <div class="contract">
+        <section class="hero">
+            
+            <div class="container">
+                <h1>Contract</h1>
+                <h3>기업별 맞춤 컨설팅, 지금 바로 비세이프와 함께하세요.</h3>
+            </div>
+        </section>
+
+        <div class="main">
+            <div class="tabbar-container">
+                <div class="tabbar__item ">
+                    <a href="/contract">결제하기</a>
+                </div>
+                <div class="tabbar__item active">
+                    <a href="/intro-biz">계약서 작성</a>
+                </div>
+            </div>
+    
+        </div>
+
+            
+    
+            
+        <section class="under">
+        
+            <div class="under_contents">
+                <h1>어떤 플랜을 할지 고민된다면?</h1>
+                <h3>문의하기 혹은 비세이프 연락처로 연락주세요!<br>비세이프는 언제나 여러분을 기다립니다.</h3>
+                <div class="button_container">
+                    <button class="inquiry" onclick="showFreeModal()">
+                        문의하기
+                    </button>
+                </div>
+                
+            </div>
+        </section>
+    </div>
+{% endblock %}
