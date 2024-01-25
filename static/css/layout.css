@@ -453,7 +453,7 @@ footer .sns {
   position: fixed;
   z-index: 5;
   right: 1em;
-  bottom: 3em;
+  bottom: 8em;
   display: flex;
   flex-flow: column nowrap;
   gap: 0.5em;
