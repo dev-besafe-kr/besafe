@@ -1,0 +1,215 @@
+{% set gnb_selected = "contract" %}
+{% extends "base.html" %}
+
+{% block seo %}
+    <title>비세이프 소개 | 안전하게 사업 진행을 돕는 특허설계 전문기업</title>
+    <meta property="description"
+          content="비세이프는 Dreams come true의 슬로건 아래, 사업가들이 시행착오를 줄이고 안전하게 사업을 진행할 수 있도록 지원합니다. 꿈꾸던 사업을 시작하실 준비가 되셨다면, 비세이프와 함께하세요.">
+    <meta property="keywords" content="비세이프, 특허설계, 사업 안전, 시행착오 줄이기, 사업가 지원, (주)라이트형제, 세종특별자치시">
+    <meta property="og:title" content="비세이프 | 안전하게 사업 진행을 돕는 특허설계 전문기업">
+    <meta property="og:description" content="사업가들의 시행착오를 줄이고 안전한 사업 진행을 지원하는 비세이프. 꿈꾸던 사업의 시작을 함께하세요.">
+    
+{% endblock %}
+
+{% block head %}
+    <link href="{% static "css/contract.css" %}" rel="stylesheet">    
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <script>
+        function downloadFile() {
+            // 생성된 a 태그에 대한 참조를 생성
+            var a = document.createElement('a');
+            // 다운로드할 파일의 경로
+            a.href = '{% static "pdf/partnership.pdf" %}';
+            // 다운로드될 파일의 이름 (옵션)
+            a.download = "Partnership.pdf";
+            // body에 a 태그를 추가
+            document.body.appendChild(a);
+            // 클릭 이벤트 강제 실행
+            a.click();
+            // a 태그 제거
+            document.body.removeChild(a);
+        }
+
+
+        document.addEventListener("DOMContentLoaded" , function(){
+            const modal = document.querySelector('.modal');
+            const containerModal = document.querySelector('.modal_container');
+
+            const btnOpenModal = document.querySelector('.button1');
+            const btnCloseModal = document.querySelector('#closeIcon');
+            const sendButton = document.querySelector('.send_button');
+            const closeButton = document.querySelector('.close_button');
+
+            // 모달 열기
+            btnOpenModal.addEventListener('click', function() {
+                modal.style.display = 'block';
+                containerModal.style.display = 'block';
+
+            });
+
+            // 모달 닫기
+            btnCloseModal.addEventListener('click', function() {
+                modal.style.display = 'none';
+                containerModal.style.display = 'none';
+                console.log("이름 ");
+                
+
+            })
+
+            sendButton.addEventListener('click', function() {
+                const completeModal = document.querySelector('.complete_modal');
+                const username = document.querySelector('input[name="username"]').value;
+                const userPhone = document.querySelector('input[name="userPhone"]').value;
+                const jsonData = {
+                    "templateId": "t6759393dd1785f161f5b6f8e47c90e92",
+                    "contractName": "파트너십 계약서",
+                    "commonMessage": "",
+                    "mobileFlag": true,
+                    "is_mass":false,
+                    "contractList": [ 
+                        {
+                            "signOrder": false,
+                            "isReview": false,
+                            "contractName": "파트너십 계약서",
+
+                            "receiverList": [
+                                {
+                                    "signOrderNumber": 1,
+                                    "name": username,
+                                    "userPhone": userPhone,
+                                    "userPhoneCode": "+82",
+                                    "lang": "kr",
+                                    "expired_day": 10,
+                                    "message": "파트너십 계약서",
+                                    "redirectUrl": "https://www.naver.com"
+                                }
+                            ]
+                        }
+                    ]
+                } 
+
+            fetch('https://api.glosign.com/v1/template/send', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization' : 'AV7Y07854i4eIxGBtTTXhqkaA'
+                },
+                body: JSON.stringify(jsonData)
+            }
+            );
+
+            containerModal.style.display = 'none';
+
+            completeModal.style.display = 'block';
+            console.log(completeModal.style.display);
+            
+            })
+
+            closeButton.addEventListener('click', function() {
+                const completeModal = document.querySelector('.complete_modal');
+
+                modal.style.display = 'none';
+                completeModal.style.display = 'none';
+            });
+
+        })
+
+    </script>
+
+
+{% endblock %}
+
+{% block body %}
+
+  
+    
+    <div class="contract">
+        <section class="hero">
+            
+            <div class="container">
+                <h1>Contract</h1>
+                <h3>기업별 맞춤 컨설팅, 지금 바로 비세이프와 함께하세요.</h3>
+            </div>
+        </section>
+
+        
+
+        <div class= "modal">
+
+            <div class = "complete_modal">
+                <h5>계약서 요청 완료</h5>
+                <p>입력하신 연락처로 계약서를<br/>보내드렸습니다.</p>
+                <button class="close_button">확인</button>                
+            </div>
+
+            <div class = "modal_container">
+                <div class = "modal_main">
+                    <div class="title">
+                        <h5>정보를 기재해주세요</h5>
+                        <i class="fa-solid fa-xmark" style="font-size: 30px;" id="closeIcon"></i></i>
+                    </div>
+                    <div class ="user_input">
+                        <div class ="text_field">
+                            <h6>이름</h6>
+                            <input type="text" name = "username" placeholder="이름을 입력하세요">
+                        </div>
+                        <div class ="text_field">
+                            <h6>연락처(휴대폰)</h6>
+                            <input type="text" name = "userPhone" placeholder="010-1234-5678">
+                        </div>
+                        
+                    </div>
+
+                </div>
+                <div class = "modal_bottom">
+                    <button class="send_button">확인</button>
+                </div>
+                
+            </div>
+            
+        </div>
+
+        <div class="main">
+            <div class="tabbar">
+                <div class="tabbar__item">
+                    <a href="/contract"> 결제하기 </a>
+                </div>
+                <div class="tabbar__item_active">
+                    <a href="/contract-page">계약서 작성</a>
+                </div>
+
+            </div>
+
+            <div class="contract_page">
+                <div class="contract">
+                    <img class = "img"
+                    src = "{% static "images/Partnership.png" %}">
+                </div>
+
+                <div class="contract_item">
+                    <button class="button1">계약하기</button>
+                    <button class="button2" onclick="downloadFile()">계약서 보기</button>
+                </div>
+            </div>
+
+        </div>
+        
+    
+
+        <section class="under">
+        
+            <div class="under_contents">
+                <h1>어떤 플랜을 할지 고민된다면?</h1>
+                <h3>문의하기 혹은 비세이프 연락처로 연락주세요!<br>비세이프는 언제나 여러분을 기다립니다.</h3>
+                <div class="button_container">
+                    <button class="inquiry" onclick="showFreeModal()">
+                        문의하기
+                    </button>
+                </div>
+                
+            </div>
+        </section>
+    </div>
+{% endblock %}
+
+

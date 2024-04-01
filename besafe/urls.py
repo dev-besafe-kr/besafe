@@ -25,6 +25,7 @@ from proxy.views import proxy_view
 
 from inquiry.views import ConsultingFormView, PartnershipFormView
 from besafe.views import (
+    ContractView,
     MainPageView,
     IntroServicePageView,
     ServicePageView,
@@ -52,6 +53,7 @@ urlpatterns = [
         path("<int:pk>", PortfolioDetailView.as_view(), name="portfolio-detail")
     ])),
     path("contract/", ContractPageView.as_view(), name="contract"),
+    path("contract-page/", ContractView.as_view(), name="contract-page"),
     path(
         "api/",
         include(
