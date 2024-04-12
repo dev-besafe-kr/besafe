@@ -282,8 +282,8 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 70%;
-  height: 50%;
+  width: 550px;
+  height: 380px;
   transform: translate(-50%, -50%);
   padding: 20px;
   background: #ffffff;
@@ -397,9 +397,6 @@ body {
 
 
 }
-
-
-
 
 
 .contract .main .plans .container .price {
