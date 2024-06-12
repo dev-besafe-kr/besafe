@@ -958,7 +958,7 @@ button:hover, .button:hover {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  counter-reset: orderedlist;
+  /* counter-reset: orderedlist; */
   gap: 16px;
   margin-bottom: 150px;
 }
@@ -987,7 +987,7 @@ button:hover, .button:hover {
   font-size: 30px;
   font-weight: 800;
 }
-.program .reason.four .container ol li:not(.arrow-blink):before {
+/* .program .reason.four .container ol li:not(.arrow-blink):before {
   counter-increment: orderedlist;
   content: "Point " counter(orderedlist) ".";
   color: #FFF;
@@ -995,7 +995,7 @@ button:hover, .button:hover {
   font-size: 30px;
   font-weight: 600;
   padding-right: 20px;
-}
+} */
 @media (max-width: 512px) {
   .program .reason.four .container ol li:not(.arrow-blink):before {
     width: 100%;
