@@ -468,6 +468,8 @@ button:hover, .button:hover {
   padding: 54px 85px;
   color: white;
 }
+
+
 @media (max-width: 768px) {
   .roadmap__contents__banner {
     padding: 30px;
@@ -1480,12 +1482,14 @@ button:hover, .button:hover {
   width: 400px;
   height: 200px;
 }
+
 @media (max-width: 768px) {
   .customers__banners .banners .banner {
     width: 258px;
     height: 124px;
   }
 }
+
 @media (max-width: 512px) {
   .customers__banners .banners .banner {
     width: 154px;
