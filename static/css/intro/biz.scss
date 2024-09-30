@@ -195,6 +195,7 @@
           }
 
           &.next {
+
             transform: rotate(-90deg);
           }
         }
@@ -314,6 +315,7 @@
     &.certification {
       .certs {
         padding: 0 1em;
+
         .nav {
           width: 24px;
           height: 37px;
@@ -369,6 +371,7 @@
 
           @media (max-width: 512px) {
             width: 100%;
+
             flex-shrink: 0;
           }
 

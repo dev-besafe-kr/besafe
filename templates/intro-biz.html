@@ -28,7 +28,6 @@
             document.querySelector(".timeline.shift").addEventListener("shift", onShift);
             document.querySelector(".timeline.shift").addEventListener("load", onShift);
 
-
             const prevButton = document.querySelector('.bot.prev');
         const nextButton = document.querySelector('.bot.next');
         const slides = document.querySelectorAll('.slide-ul .cert');
@@ -72,65 +71,65 @@
         ],
         
             
-        [
+        // [
             
-            {
-                src: "{% static 'images/intro/cert/image_3_1.png' %}",
-                text: "도입의사 확약서"
-            },
-            {
-                src: "{% static 'images/intro/cert/image_5_8.png' %}",
-                text: "새로운 이미지 1"
-            },
-            {
-                src: "{% static 'images/intro/cert/image_5_1.png' %}",
-                text: "새로운 이미지 1"
-            },
-            {
-                src: "{% static 'images/intro/cert/image_5_2.png' %}",
-                text: "새로운 이미지 1"
-            },
-            {
-                src: "{% static 'images/intro/cert/image_5_3.png' %}",
-                text: "새로운 이미지 1"
-            },
-            {
-                src: "{% static 'images/intro/cert/image_5_4.png' %}",
-                text: "새로운 이미지 1"
-            },
-            {
-                src: "{% static 'images/intro/cert/image_5_6.png' %}",
-                text: "새로운 이미지 1"
-            },
-            {
-                src: "{% static 'images/intro/cert/image_5_7.png' %}",
-                text: "새로운 이미지 1"
-            }
-        ],
+        //     {
+        //         src: "{% static 'images/intro/cert/image_3_1.png' %}",
+        //         text: "도입의사 확약서"
+        //     },
+        //     {
+        //         src: "{% static 'images/intro/cert/image_5_8.png' %}",
+        //         text: "새로운 이미지 1"
+        //     },
+        //     {
+        //         src: "{% static 'images/intro/cert/image_5_1.png' %}",
+        //         text: "새로운 이미지 1"
+        //     },
+        //     {
+        //         src: "{% static 'images/intro/cert/image_5_2.png' %}",
+        //         text: "새로운 이미지 1"
+        //     },
+        //     {
+        //         src: "{% static 'images/intro/cert/image_5_3.png' %}",
+        //         text: "새로운 이미지 1"
+        //     },
+        //     {
+        //         src: "{% static 'images/intro/cert/image_5_4.png' %}",
+        //         text: "새로운 이미지 1"
+        //     },
+        //     {
+        //         src: "{% static 'images/intro/cert/image_5_6.png' %}",
+        //         text: "새로운 이미지 1"
+        //     },
+        //     {
+        //         src: "{% static 'images/intro/cert/image_5_7.png' %}",
+        //         text: "새로운 이미지 1"
+        //     }
+        // ],
 
-        [
-            {
-                src: "{% static 'images/intro/cert/입교사실확인서.png' %}",
-                text: "새로운 이미지 2"
-            },
-            {
-                src: "{% static 'images/intro/cert/입교사실확인서.png' %}",
-                text: "새로운 이미지 2"
-            },
-            {
-                src: "{% static 'images/intro/cert/입교사실확인서.png' %}",
-                text: "새로운 이미지 2"
-            },
-            {
-                src: "{% static 'images/intro/cert/입교사실확인서.png' %}",
-                text: "새로운 이미지 2"
-            },
+        // [
+        //     {
+        //         src: "{% static 'images/intro/cert/입교사실확인서.png' %}",
+        //         text: "새로운 이미지 2"
+        //     },
+        //     {
+        //         src: "{% static 'images/intro/cert/입교사실확인서.png' %}",
+        //         text: "새로운 이미지 2"
+        //     },
+        //     {
+        //         src: "{% static 'images/intro/cert/입교사실확인서.png' %}",
+        //         text: "새로운 이미지 2"
+        //     },
+        //     {
+        //         src: "{% static 'images/intro/cert/입교사실확인서.png' %}",
+        //         text: "새로운 이미지 2"
+        //     },
 
-            {
-                src: "{% static '' %}",
-                text: ""
-            }
-        ]
+        //     {
+        //         src: "{% static '' %}",
+        //         text: ""
+        //     }
+        // ]
     
     
     ];
@@ -175,7 +174,6 @@
             });
 
     });
-
     </script>
 {% endblock %}
 
@@ -255,7 +253,7 @@
         <section class="team container">
             <h1>Team building</h1>
             <div class="teammates slide stop">
-                <div class="nav prev slide-left"></div>
+            <div class="nav prev slide-left"></div>
                 <ul class="slide-ul">
                     {% for tc in teammate_contents %}
                         <li class="teammate">
@@ -275,48 +273,40 @@
                         </li>
                     {% endfor %}
                 </ul>
-                <div class="nav next slide-right"></div>
+            <div class="nav next slide-right"></div>
             </div>
         </section>
         <section class="certification container">
             <h1>Certification</h1>
-            <div class="certs container slide stop">
-                <div class="bot prev slide-left"></div>
-                <ul class="slide-ul">
+
+            <div class="certs container slide">
+                <ul class="slide__ul">
                     <li class="cert">
-                        <img loading="lazy" src="{% static "images/intro/cert/창업기획자등록증.png" %}"/>
-                        <div class="wrapper">창업기획자 등록증</div>
+                        <img src="{% static "images/intro/cert.png" %}"/>
+                        <div class="wrapper">엑셀러레이터<br/>등록증</div>
                     </li>
                     <li class="cert">
-                        <img loading="lazy" src="{% static "images/intro/cert/중소기업상담회사등록증.png" %}"/>
-                        <div class="wrapper">중소기업상담회사 등록증</div>
+                        <img src="{% static "images/intro/cert.png" %}"/>
                     </li>
                     <li class="cert">
-                        <img loading="lazy" src="{% static "images/intro/cert/보증약정서.png" %}"/>
-                        <div class="wrapper">보증약정서</div>
+                        <img src="{% static "images/intro/cert.png" %}"/>
                     </li>
                     <li class="cert">
-                        <img loading="lazy" src="{% static "images/intro/cert/특허증.png" %}"/>
-                        <div class="wrapper">특허증</div>
+                        <img src="{% static "images/intro/cert.png" %}"/>
                     </li>
                     <li class="cert">
-                        <img loading="lazy" src="{% static "images/intro/cert/벤처기업확인서.png" %}"/>
-                        <div class="wrapper">벤처기업확인서</div>
+                        <img src="{% static "images/intro/cert.png" %}"/>
                     </li>
                     <li class="cert">
-                        <img loading="lazy" src="{% static "images/intro/cert/연구개발전담부서인정서.png" %}"/>
-                        <div class="wrapper">연구개발전담부서 인정서</div>
+                        <img src="{% static "images/intro/cert.png" %}"/>
                     </li>
                     <li class="cert">
-                        <img loading="lazy" src="{% static "images/intro/cert/입교사실확인서.png" %}"/>
-                        <div class="wrapper">청년창업사관학교 입교사실 확인서</div>
+                        <img src="{% static "images/intro/cert.png" %}"/>
                     </li>
                     <li class="cert">
-                        <img loading="lazy" src="{% static "images/intro/cert/직무발명보상우수기업인증서.png" %}"/>
-                        <div class="wrapper">직무발명보상우수기업 인증서</div>
+                        <img src="{% static "images/intro/cert.png" %}"/>
                     </li>
                 </ul>
-                <div class="bot next slide-right"></div>
             </div>
         </section>
         <section class="outro container">
