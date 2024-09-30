@@ -1070,12 +1070,15 @@ body {
   background-size: 100%;
   cursor: pointer;
 }
+
 .intro.biz section.team .teammates .nav.prev {
   transform: rotate(-90deg);
 }
+
 .intro.biz section.team .teammates .nav.next {
   transform: rotate(90deg);
 }
+
 .intro.biz section.team .teammates__wrapper {
   width: 100%;
   overflow: hidden;
@@ -1176,14 +1179,42 @@ body {
 }
 .intro.biz section.certification .certs {
   padding: 0 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* 수평 가운데 정렬 */
+  align-items: center;
+  gap: 1em;
 }
+
+.intro.biz section.certification .certs .bot {
+  width: 21px; /* 버튼의 너비 설정 */
+  height: 37px; /* 버튼의 높이 설정 */
+  background-image: url("/static/images/intro/arrow-white.svg"); /* 화살표 이미지 */
+  background-repeat: no-repeat;
+  background-size: contain; /* 이미지 크기 조정 */
+  cursor: pointer; /* 커서 모양 변경 */
+  
+}
+
+.intro.biz section.certification .certs .bot.prev {
+
+  transform: rotate(-90deg);
+}
+
+.intro.biz section.certification .certs .bot.next {
+  transform: rotate(90deg);
+}
+
 .intro.biz section.certification .certs ul {
+  width: 90%;
   padding: 0;
   margin: 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 43px;
 }
+
+
 @media (max-width: 768px) {
   .intro.biz section.certification .certs ul {
     grid-template-columns: repeat(3, 1fr);
@@ -1201,12 +1232,16 @@ body {
 .intro.biz section.certification .certs .cert img {
   width: 100%;
 }
+
+
+
 @media (max-width: 512px) {
   .intro.biz section.certification .certs .cert {
     width: 100%;
     margin-right: 1em;
   }
 }
+
 .intro.biz section.certification .certs .cert .wrapper {
   position: absolute;
   width: 100%;

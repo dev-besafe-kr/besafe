@@ -27,7 +27,155 @@
             };
             document.querySelector(".timeline.shift").addEventListener("shift", onShift);
             document.querySelector(".timeline.shift").addEventListener("load", onShift);
-        });
+
+
+            const prevButton = document.querySelector('.bot.prev');
+        const nextButton = document.querySelector('.bot.next');
+        const slides = document.querySelectorAll('.slide-ul .cert');
+        let currentIndex = 0;
+
+        // 새로운 이미지 세트
+        const newImages = [
+        [
+            {
+                src: "{% static 'images/intro/cert/창업기획자등록증.png' %}",
+                text: "창업기획자 등록증"
+            },
+            {
+                src: "{% static 'images/intro/cert/중소기업상담회사등록증.png' %}",
+                text: "중소기업상담회사 등록증"
+            },
+            {
+                src: "{% static 'images/intro/cert/보증약정서.png' %}",
+                text: "보증약정서"
+            },
+            {
+                src: "{% static 'images/intro/cert/특허증.png' %}",
+                text: "특허증"
+            },
+            {
+                src: "{% static 'images/intro/cert/벤처기업확인서.png' %}",
+                text: "벤처기업확인서"
+            },
+            {
+                src: "{% static 'images/intro/cert/연구개발전담부서인정서.png' %}",
+                text: "연구개발전담부서 인정서"
+            },
+            {
+                src: "{% static 'images/intro/cert/입교사실확인서.png' %}",
+                text: "청년창업사관학교 입교사실 확인서"
+            },
+            {
+                src: "{% static 'images/intro/cert/직무발명보상우수기업인증서.png' %}",
+                text: "직무발명보상우수기업 인증서"
+            }
+        ],
+        
+            
+        [
+            
+            {
+                src: "{% static 'images/intro/cert/image_3_1.png' %}",
+                text: "도입의사 확약서"
+            },
+            {
+                src: "{% static 'images/intro/cert/image_5_8.png' %}",
+                text: "새로운 이미지 1"
+            },
+            {
+                src: "{% static 'images/intro/cert/image_5_1.png' %}",
+                text: "새로운 이미지 1"
+            },
+            {
+                src: "{% static 'images/intro/cert/image_5_2.png' %}",
+                text: "새로운 이미지 1"
+            },
+            {
+                src: "{% static 'images/intro/cert/image_5_3.png' %}",
+                text: "새로운 이미지 1"
+            },
+            {
+                src: "{% static 'images/intro/cert/image_5_4.png' %}",
+                text: "새로운 이미지 1"
+            },
+            {
+                src: "{% static 'images/intro/cert/image_5_6.png' %}",
+                text: "새로운 이미지 1"
+            },
+            {
+                src: "{% static 'images/intro/cert/image_5_7.png' %}",
+                text: "새로운 이미지 1"
+            }
+        ],
+
+        [
+            {
+                src: "{% static 'images/intro/cert/입교사실확인서.png' %}",
+                text: "새로운 이미지 2"
+            },
+            {
+                src: "{% static 'images/intro/cert/입교사실확인서.png' %}",
+                text: "새로운 이미지 2"
+            },
+            {
+                src: "{% static 'images/intro/cert/입교사실확인서.png' %}",
+                text: "새로운 이미지 2"
+            },
+            {
+                src: "{% static 'images/intro/cert/입교사실확인서.png' %}",
+                text: "새로운 이미지 2"
+            },
+
+            {
+                src: "{% static '' %}",
+                text: ""
+            }
+        ]
+    
+    
+    ];
+
+            nextButton.addEventListener('click', () => {
+                if (currentIndex < newImages.length) {
+
+                   
+                    currentIndex ++;
+                    slides.forEach((slide, index) =>  {
+
+                    const value = {
+                        "index" : index ,
+                        "currentIndex" : currentIndex,
+                        "data " : slide.querySelector('img').src
+                    }
+                    console.log(value);
+
+
+                    if (index < newImages[currentIndex].length) { // 배열의 길이만큼 반복
+                            slide.querySelector('img').src = newImages[currentIndex][index].src; // 이미지 변경
+                            slide.querySelector('.wrapper').textContent = newImages[currentIndex][index].text; // 텍스트 변경
+                        }
+                    });
+                }
+            
+            });
+            
+            prevButton.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex --;
+
+                    slides.forEach((slide, index) =>  {
+                    if (index < newImages[currentIndex].length) { // 배열의 길이만큼 반복
+                            slide.querySelector('img').src = newImages[currentIndex][index].src; // 이미지 변경
+                            slide.querySelector('.wrapper').textContent = newImages[currentIndex][index].text; // 텍스트 변경
+                        }
+                    });
+
+                }
+                
+            });
+
+    });
+
     </script>
 {% endblock %}
 
@@ -133,7 +281,7 @@
         <section class="certification container">
             <h1>Certification</h1>
             <div class="certs container slide stop">
-                <div class="nav prev slide-left"></div>
+                <div class="bot prev slide-left"></div>
                 <ul class="slide-ul">
                     <li class="cert">
                         <img loading="lazy" src="{% static "images/intro/cert/창업기획자등록증.png" %}"/>
@@ -168,7 +316,7 @@
                         <div class="wrapper">직무발명보상우수기업 인증서</div>
                     </li>
                 </ul>
-                <div class="nav next slide-right"></div>
+                <div class="bot next slide-right"></div>
             </div>
         </section>
         <section class="outro container">
