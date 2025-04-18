@@ -20,7 +20,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 from dotenv import load_dotenv
 
-load_dotenv(dotenv_path=os.path.join(BASE_DIR, ".env"))
+# .env 파일 로드
+env_path = os.path.join(BASE_DIR, ".env")
+print(f"Loading .env from: {env_path}")
+load_dotenv(dotenv_path=env_path, override=True)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -196,3 +199,6 @@ TINYMCE_DEFAULT_CONFIG = {
     "custom_undo_redo_levels": 10,
     "language": "en_US",  # To force a specific language instead of the Django current language.
 }
+
+# 점검 모드 설정
+MAINTENANCE_MODE = os.environ.get('MAINTENANCE_MODE', 'False').lower() == 'true'

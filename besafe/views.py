@@ -11,6 +11,7 @@ from django.views.generic import TemplateView, ListView, DetailView
 from besafe.models.contents import ContentsHero, ContentsNews, ContentsCustomer, ContentsPortfolio, ContentsTeammate, \
     ContentsConsulting
 from besafe.utils import make_new_path
+from besafe.mixins import MaintenanceModeMixin
 from subscription.models import (
     SubscriptionModel,
     SubscriptionModelPricing,
@@ -19,7 +20,7 @@ from subscription.models import (
 
 
 
-class MainPageView(TemplateView):
+class MainPageView(MaintenanceModeMixin, TemplateView):
     template_name = "main.html"
 
     def get_context_data(self, **kwargs):
@@ -34,10 +35,10 @@ class MainPageView(TemplateView):
     
 
 
-class IntroServicePageView(TemplateView):
+class IntroServicePageView(MaintenanceModeMixin, TemplateView):
     template_name = "intro-service.html"
 
-class IntroBizPageView(TemplateView):
+class IntroBizPageView(MaintenanceModeMixin, TemplateView):
     template_name = "intro-biz.html"
     def get_context_data(self, **kwargs):
         context_data = super().get_context_data(**kwargs)
@@ -45,20 +46,20 @@ class IntroBizPageView(TemplateView):
         return context_data
 
 
-class ProgramPageView(TemplateView):
+class ProgramPageView(MaintenanceModeMixin, TemplateView):
     template_name = "program.html"
 
 
-class ServicePageView(TemplateView):
+class ServicePageView(MaintenanceModeMixin, TemplateView):
     template_name = "service.html"
 
 
-class PortfolioListView(ListView):
+class PortfolioListView(MaintenanceModeMixin, ListView):
     template_name = "portfolio/portfolio-list.html"
     queryset = ContentsPortfolio.objects.all()
     paginate_by = 9
 
-class PortfolioDetailView(DetailView):
+class PortfolioDetailView(MaintenanceModeMixin, DetailView):
     template_name = "portfolio/portfolio-detail.html"
     queryset = ContentsPortfolio.objects.all()
 
@@ -70,14 +71,14 @@ class PortfolioDetailView(DetailView):
         return context_data
 
 
-class ContractPageView(TemplateView):
+class ContractPageView(MaintenanceModeMixin, TemplateView):
     template_name = "contract.html"
 
-class ContractView(TemplateView):
+class ContractView(MaintenanceModeMixin, TemplateView):
     template_name = "contract_page.html"
 
 
-class Subscription(TemplateView):
+class Subscription(MaintenanceModeMixin, TemplateView):
     template_name = "subscription.html"
 
     def get_context_data(self, **kwargs):
@@ -108,7 +109,7 @@ class Subscription(TemplateView):
         return context_data
 
 
-class Signin(TemplateView):
+class Signin(MaintenanceModeMixin, TemplateView):
     template_name = "signin.html"
 
 @csrf_exempt
