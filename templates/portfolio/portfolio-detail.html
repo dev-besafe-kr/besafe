@@ -13,14 +13,14 @@
             {% if object.detail %}
                 <div class="link">
                     <label>사이트 바로가기</label>
-                    <a href="{{ object.detail }}" target="_blank">{{ object.detail }}</a>
+                    <a href="{{ object.detail | safe_url }}" target="_blank" rel="noopener noreferrer">{{ object.detail | e }}</a>
                 </div>
             {% endif %}
         </div>
         <div class="detail__body">
             <div class="contents">
                 {% if object.content %}
-                    <p>{{ object.content | safe }}</p>
+                    <p>{{ object.content | sanitize_html }}</p>
                 {% endif %}
             </div>
         </div>

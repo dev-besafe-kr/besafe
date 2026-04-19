@@ -2,6 +2,7 @@ import threading
 
 from django import forms
 from django.core.mail import EmailMessage
+from django.utils.html import escape, strip_tags
 
 from inquiry.models import ConsultingInquiry, PartnershipInquiry
 
@@ -23,17 +24,18 @@ class ConsultingForm(forms.ModelForm):
         instance = super().save(commit)
 
         def sendMail(i: ConsultingInquiry):
-            title = f"[{i.company_name}][컨설팅 요청] 홈페이지를 통해 컨설팅 요청드립니다."
+            parts = ",".join([*i.part01, *i.part02, *i.part03])
+            title = f"[{strip_tags(str(i.company_name))}][컨설팅 요청] 홈페이지를 통해 컨설팅 요청드립니다."
             body = f"""
             <h1>비세이프 홈페이지를 통해 새로운 컨설팅이 요청되었습니다.</h1>
             <table>
-            <tr><th>항목</th><td>{','.join([*i.part01, *i.part02, *i.part03])}</td></tr>
-            <tr><th>업체명</th><td>{i.company_name}</td></tr>
-            <tr><th>요청자</th><td>{i.name}</td></tr>
-            <tr><th>연락처</th><td>{i.phone}</td></tr>
-            <tr><th>업종</th><td>{i.business}</td></tr>
-            <tr><th>매출</th><td>{i.sales}</td></tr>
-            <tr><th>내용</th><td>{i.inquiry}</td></tr>
+            <tr><th>항목</th><td>{escape(parts)}</td></tr>
+            <tr><th>업체명</th><td>{escape(i.company_name)}</td></tr>
+            <tr><th>요청자</th><td>{escape(i.name)}</td></tr>
+            <tr><th>연락처</th><td>{escape(i.phone)}</td></tr>
+            <tr><th>업종</th><td>{escape(i.business)}</td></tr>
+            <tr><th>매출</th><td>{escape(i.sales)}</td></tr>
+            <tr><th>내용</th><td>{escape(i.inquiry)}</td></tr>
             </table>
             <p></p>
             <p></p>
@@ -58,13 +60,13 @@ class PartnershipForm(forms.ModelForm):
         instance = super().save(commit)
 
         def sendMail(i: PartnershipInquiry):
-            title = f"[제휴 문의] 홈페이지를 통해 제휴문의 드립니다."
+            title = "[제휴 문의] 홈페이지를 통해 제휴문의 드립니다."
             body = f"""
             <h1>비세이프 홈페이지를 통해 새로운 제휴 문의가 생성되었습니다.</h1>
             <table>
-            <tr><th>연락처</th><td>{i.phone}</td></tr>
-            <tr><th>이메일</th><td>{i.email}</td></tr>
-            <tr><th>내용</th><td>{i.inquiry}<td/></tr>
+            <tr><th>연락처</th><td>{escape(i.phone)}</td></tr>
+            <tr><th>이메일</th><td>{escape(i.email)}</td></tr>
+            <tr><th>내용</th><td>{escape(i.inquiry)}</td></tr>
             </table>
             <p></p>
             <p></p>

@@ -1,12 +1,15 @@
 import os
+from io import BytesIO
 from uuid import uuid4
 
 from django.conf import settings
 from django.contrib import messages
+from django.contrib.admin.views.decorators import staff_member_required
 from django.db.models import Prefetch
 from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_POST
 from django.views.generic import TemplateView, ListView, DetailView
+from PIL import Image
 
 from besafe.models.contents import ContentsHero, ContentsNews, ContentsCustomer, ContentsPortfolio, ContentsTeammate, \
     ContentsConsulting
@@ -112,31 +115,65 @@ class Subscription(MaintenanceModeMixin, TemplateView):
 class Signin(MaintenanceModeMixin, TemplateView):
     template_name = "signin.html"
 
-@csrf_exempt
+_MAX_IMAGE_BYTES = 5 * 1024 * 1024
+_ALLOWED_SUFFIX = frozenset({"jpg", "jpeg", "png", "gif"})
+_FORMAT_TO_SUFFIX = {"JPEG": "jpg", "PNG": "png", "GIF": "gif"}
+
+
+@staff_member_required
+@require_POST
 def upload_image(request):
-    if request.method != "POST":
-        return JsonResponse({'Error Message': "Wrong request"})
+    if "file" not in request.FILES:
+        return JsonResponse({"Error Message": "파일이 없습니다."}, status=400)
 
-    # If it's not series and not article, handle it differently
+    file_obj = request.FILES["file"]
+    if file_obj.size > _MAX_IMAGE_BYTES:
+        return JsonResponse({"Error Message": "파일이 너무 큽니다. (최대 5MB)"}, status=400)
 
+    name = (file_obj.name or "").lower()
+    if "." not in name:
+        return JsonResponse({"Error Message": "확장자가 없습니다."}, status=400)
+    file_name_suffix = name.rsplit(".", 1)[-1]
+    if file_name_suffix not in _ALLOWED_SUFFIX:
+        return JsonResponse(
+            {"Error Message": f"허용되지 않는 확장자입니다. ({file_name_suffix})"},
+            status=400,
+        )
 
-    file_obj = request.FILES['file']
-    file_name_suffix = file_obj.name.split(".")[-1]
-    if file_name_suffix not in ["jpg", "png", "gif", "jpeg"]:
-        return JsonResponse({"Error Message": f"Wrong file suffix ({file_name_suffix}), supported are .jpg, .png, .gif, .jpeg"})
+    raw = file_obj.read(_MAX_IMAGE_BYTES + 1)
+    if len(raw) > _MAX_IMAGE_BYTES:
+        return JsonResponse({"Error Message": "파일이 너무 큽니다. (최대 5MB)"}, status=400)
 
+    try:
+        with Image.open(BytesIO(raw)) as img:
+            img.verify()
+        with Image.open(BytesIO(raw)) as img2:
+            fmt = (img2.format or "").upper()
+    except Exception:
+        return JsonResponse({"Error Message": "유효한 이미지가 아닙니다."}, status=400)
+
+    if fmt not in _FORMAT_TO_SUFFIX:
+        return JsonResponse({"Error Message": "지원하지 않는 이미지 형식입니다."}, status=400)
+
+    suffix = _FORMAT_TO_SUFFIX[fmt]
     file_path = make_new_path(
-        path_ext=file_obj.name,
-        dirname=f"uploads/portfolio/img",
+        path_ext=f".{suffix}",
+        dirname="uploads/portfolio/img",
         new_filename=str(uuid4().hex),
     )
     full_file_path = os.path.join(settings.MEDIA_ROOT, file_path)
 
-    with open(full_file_path, 'wb+') as f:
-        for chunk in file_obj.chunks():
-            f.write(chunk)
+    with open(full_file_path, "wb") as f:
+        f.write(raw)
 
-        return JsonResponse({
-            'message': 'Image uploaded successfully',
-            'location': os.path.join(settings.MEDIA_URL, file_path)
-        })
+    media_prefix = settings.MEDIA_URL
+    if not media_prefix.endswith("/"):
+        media_prefix = f"{media_prefix}/"
+    location = f"{media_prefix}{file_path.replace(os.sep, '/')}"
+
+    return JsonResponse(
+        {
+            "message": "Image uploaded successfully",
+            "location": location,
+        }
+    )

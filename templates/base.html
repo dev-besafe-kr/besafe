@@ -308,9 +308,8 @@
                         <button class="close primary">닫기</button>
                     </div>
                 {% else %}
-                    <div class="is-
-                    {% if message.tags %}{{ message.tags | replace("error", "danger") }}{% endif %}">
-                        {{ message | safe }}
+                    <div class="is-{% if message.tags %}{{ message.tags | replace("error", "danger") }}{% endif %}">
+                        {{ message }}
                     </div>
                 {% endif %}
             {% endfor %}

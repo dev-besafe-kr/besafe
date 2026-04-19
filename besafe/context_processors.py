@@ -1,6 +1,5 @@
 from urllib.parse import urlencode
 
-from django.conf import settings
 from django.utils.timezone import now
 
 
@@ -17,7 +16,6 @@ def processor(request):
         app_user = None
 
     return {
-        "settings": settings,
         "app_user": app_user,
         "q": _set_query_params,
         "now": now,

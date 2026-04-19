@@ -9,8 +9,10 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+import logging
 import os
 from pathlib import Path
+
 import pymysql
 
 pymysql.install_as_MySQLdb()
@@ -20,23 +22,42 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 from dotenv import load_dotenv
 
+_logger = logging.getLogger(__name__)
+
 # .env 파일 로드
 env_path = os.path.join(BASE_DIR, ".env")
-print(f"Loading .env from: {env_path}")
+_logger.debug("Loading .env from: %s", env_path)
 load_dotenv(dotenv_path=env_path, override=True)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = os.environ["SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
-SESSION_COOKIE_SECURE = False
-CSRF_COOKIE_SECURE = False
+# 쉼표로 구분. 예: be-safe.kr,www.be-safe.kr,localhost,127.0.0.1
+ALLOWED_HOSTS = [
+    h.strip()
+    for h in os.environ.get("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
+    if h.strip()
+]
+
+# HTTPS 배포 시 .env 에 USE_HTTPS=true
+_USE_HTTPS = os.environ.get("USE_HTTPS", "false").lower() in ("true", "1", "yes")
+SESSION_COOKIE_SECURE = _USE_HTTPS
+CSRF_COOKIE_SECURE = _USE_HTTPS
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+        "LOCATION": "besafe-default-cache",
+    }
+}
 
 # Application definition
 
@@ -60,10 +81,9 @@ MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.cache.UpdateCacheMiddleware",
     "django.middleware.common.CommonMiddleware",
-    # "django.middleware.csrf.CsrfViewMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
-    "besafe.middleware.DisableCSRFMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
@@ -74,6 +94,7 @@ TEMPLATES = [
         "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
+            "environment": "besafe.jinja2_env.environment",
             "context_processors": [
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",

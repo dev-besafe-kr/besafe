@@ -1,6 +1,6 @@
 from admin_ordering.admin import OrderableAdmin
 from django.contrib import admin
-from django.utils.safestring import mark_safe
+from django.utils.html import format_html_join
 
 from subscription.models import (
     SubscriptionModel,
@@ -40,9 +40,11 @@ class SubscriptionModelAdmin(OrderableAdmin, admin.ModelAdmin):
         return queryset.prefetch_related("pricings", "services")
 
     def pricing_list(self, instance: SubscriptionModel):
-        return mark_safe("".join(map(lambda i: f"<div>{i}</div>", instance.pricings.all())))
+        return format_html_join("", "<div>{}</div>", ((p,) for p in instance.pricings.all()))
+
     pricing_list.short_description = "구독 결제방식"
 
     def service_list(self, instance: SubscriptionModel):
-        return mark_safe("".join(map(lambda i: f"<div>{i}</div>", instance.services.all())))
+        return format_html_join("", "<div>{}</div>", ((s,) for s in instance.services.all()))
+
     service_list.short_description = "서비스 목록"

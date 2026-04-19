@@ -4,11 +4,11 @@
              style="background-image: url('{{ hc.banner_img.url }}');" data-shift_id="{{ loop.index }}">
             <div class="container contents">
                 <div class="contents__head">
-                    <h1>{{ hc.title | safe }}</h1>
-                    <h3>{{ hc.subtitle | safe }}</h3>
+                    <h1>{{ hc.title | sanitize_html }}</h1>
+                    <h3>{{ hc.subtitle | sanitize_html }}</h3>
                 </div>
                 <div class="contents__foot">
-                    <a class="button" href="{{ hc.button_url }}" target="{{ hc.button_target }}">{{ hc.button_text }}</a>
+                    <a class="button" href="{{ hc.button_url | safe_url }}" target="{{ hc.button_target | safe_html_target }}">{{ hc.button_text | e }}</a>
                 </div>
             </div>
         </div>

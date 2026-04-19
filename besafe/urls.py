@@ -20,7 +20,6 @@ from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.http import HttpRequest
 from django.urls import path, include, re_path
-from django.views.decorators.csrf import csrf_exempt
 from proxy.views import proxy_view
 
 from inquiry.views import ConsultingFormView, PartnershipFormView
@@ -34,7 +33,6 @@ from besafe.views import (
     IntroBizPageView, ProgramPageView, PortfolioDetailView, upload_image,
 )
 
-@csrf_exempt
 def admin_media_proxy(request: HttpRequest, path):
 	extra_requests_args = {}
 	remoteurl = request.build_absolute_uri('/media/' + path)
