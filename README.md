@@ -15,5 +15,5 @@ python manage.py runserver
 
 ## Production
 ```
-gunicorn besafe:application --daemon
+gunicorn -c gunicorn.conf.py besafe.wsgi:application --daemon
 ```
