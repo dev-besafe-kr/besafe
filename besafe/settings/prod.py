@@ -5,7 +5,6 @@ from .base import *
 CSRF_TRUSTED_ORIGINS = [
     "http://be-safe.kr",
     "https://be-safe.kr",
-    "http://34.64.183.234",
 ]
 
 DEBUG = False
