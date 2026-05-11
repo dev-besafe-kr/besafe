@@ -3,6 +3,7 @@
         <div class="main-title">
             <div class="main-title__text">
                 <h1>비세이프와 함께한<br/><strong>120개 이상의 고객사</strong></h1>
+
                 <h2>예비창업부터 EXIT까지, <br/>비세이프는 창업기업과 함께 성장하고 있습니다.</h2>
             </div>
         </div>
@@ -11,12 +12,13 @@
         {% set banners_counts = ((customer_contents | length) / 2) | int %}
         <ul class="banners right-to-left">
             {% for cc in customer_contents[banners_counts:] %}
-                <li class="banner"><img loading="lazy" src="{{ cc.banner_img.url }}" alt="{{ cc.company }}"></li>
 
+                <li class="banner"><img loading="lazy" src="{{ cc.banner_img.url }}" alt="{{ cc.company }}"></li>
             {% endfor %}
         </ul>
         <ul class="banners left-to-right">
             {% for cc in customer_contents[:banners_counts] %}
+
                 <li class="banner"><img loading="lazy" src="{{ cc.banner_img.url }}" alt="{{ cc.company }}"></li>
             {% endfor %}
         </ul>

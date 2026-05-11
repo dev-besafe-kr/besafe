@@ -1079,6 +1079,7 @@ body {
   transform: rotate(90deg);
 }
 
+
 .intro.biz section.team .teammates__wrapper {
   width: 100%;
   overflow: hidden;
@@ -1179,6 +1180,7 @@ body {
 }
 .intro.biz section.certification .certs {
   padding: 0 1em;
+
   display: flex;
   flex-direction: row;
   justify-content: center; /* 수평 가운데 정렬 */
@@ -1214,7 +1216,6 @@ body {
   gap: 43px;
 }
 
-
 @media (max-width: 768px) {
   .intro.biz section.certification .certs ul {
     grid-template-columns: repeat(3, 1fr);
@@ -1232,8 +1233,6 @@ body {
 .intro.biz section.certification .certs .cert img {
   width: 100%;
 }
-
-
 
 @media (max-width: 512px) {
   .intro.biz section.certification .certs .cert {

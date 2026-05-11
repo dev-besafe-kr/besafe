@@ -16,6 +16,7 @@
         <div class="salon__items__head container">
             <div class="salon__ribbon">
                 <ul>
+
                     <li><img loading="lazy" src="{% static "images/pg4_banner01.png" %}"/></li>
                     <li><img loading="lazy" src="{% static "images/pg4_banner02.png" %}"/></li>
                     <li><img loading="lazy" src="{% static "images/pg4_banner03.png" %}"/></li>
@@ -44,6 +45,7 @@
                 {% for pc in portfolio_contents %}
                 <li>
                     <a href="{% url "portfolio-detail" pk=pc.id %}" class="interview-wrap">
+
                         <img loading="lazy" class="logo" src="/static/images/pg4_logo02.png" alt="">
                         <p>{{ pc.client }}</p>
                         <div class="rect">

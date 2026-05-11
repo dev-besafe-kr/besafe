@@ -3,6 +3,7 @@
         <div class="container">
             <div class="main-title">
                 <div class="main-title__ico">
+
                     <img loading="lazy" src="{% static "images/speaker.png" %}"/>
                 </div>
                 <div class="main-title__text">
@@ -20,6 +21,7 @@
             {% for cc in consulting_contents %}
                 <li class="consulting__card">
                     <div class="consulting__card__top">
+
                         <img loading="lazy" class="consulting__card__img" src="{{ cc.profile_img.url }}"/>
                         <div class="consulting__card__name">
                             <div class="div">{{ cc.profile_company }}</div>

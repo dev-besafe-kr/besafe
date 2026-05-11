@@ -214,6 +214,7 @@ body {
   display: flex;
   gap: 30px;
   align-items: center;
+
   height: 100%;
   align-items: stretch;
   padding: 30px;
@@ -221,6 +222,7 @@ body {
   /* background-color: #03C75A; */
   /* height: 80%; */
 } 
+
 
 .contract .main .contract_page .contract {
   width: 100%;
@@ -384,7 +386,6 @@ body {
   }
 }
 
-
 .contract .main .plans .container {
   border : 1px solid #DADADA;
   padding: 37px 28px;
@@ -394,7 +395,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
 
 }
 
@@ -529,7 +529,7 @@ body {
   font-weight: 600;
   line-height: normal;
   letter-spacing: -0.6px;
-  /* margin-top: auto; */
+
   
 }
 
@@ -646,3 +646,4 @@ body {
   height: 100%;
 
 }
+
