@@ -396,6 +396,29 @@ button:hover, .button:hover {
     padding: 40px 1em;
   }
 }
+.portfolio .detail__banner {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+@media (max-width: 768px) {
+  .portfolio .detail__banner {
+    aspect-ratio: 16 / 8;
+    margin-bottom: 30px;
+    border-radius: 8px;
+  }
+}
+@media (max-width: 512px) {
+  .portfolio .detail__banner {
+    aspect-ratio: 16 / 9;
+    margin-bottom: 20px;
+    border-radius: 6px;
+  }
+}
 .portfolio .detail__head {
   margin-bottom: 40px;
 }

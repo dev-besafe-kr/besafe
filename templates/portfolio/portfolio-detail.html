@@ -1,6 +1,10 @@
 {% extends "portfolio/base.html" %}
 {% block portfolio %}
     <div class="detail container">
+        {% if object.banner_img %}
+            <div class="detail__banner"
+                 style="background-image: url('{{ object.banner_img.url }}');"></div>
+        {% endif %}
         <div class="detail__head">
             <h1 class="title">{{ object.biz_name }}</h1>
             {% if object.tags.all() %}
